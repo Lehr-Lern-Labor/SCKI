@@ -43,6 +43,9 @@ def daten():
     from torch.autograd import Variable
     n_data_train = torch.ones(200, 2)
     n_data_test = torch.ones(50, 2)
+    
+    ##### 
+     
     x0 = torch.normal(n_data_train + torch.tensor([2.5,5]), 1)      # class0 x data (tensor), shape=(100, 2)
     y0 = torch.zeros(200)               # class0 y data (tensor), shape=(100, 1)
     x1 = torch.normal(n_data_train + torch.tensor([8,2]), 1)     # class1 x data (tensor), shape=(100, 2)
@@ -53,7 +56,7 @@ def daten():
     n_data_test = torch.ones(50, 2)
     x0 = torch.normal(n_data_test + torch.tensor([2.5,5]), 1)      # class0 x data (tensor), shape=(100, 2)
     y0 = torch.zeros(50)               # class0 y data (tensor), shape=(100, 1)
-    x1 = torch.normal(n_data_test + + torch.tensor([8,2]), 1)     # class1 x data (tensor), shape=(100, 2)
+    x1 = torch.normal(n_data_test + torch.tensor([8,2]), 1)     # class1 x data (tensor), shape=(100, 2)
     y1 = torch.ones(50)                # class1 y data (tensor), shape=(100, 1)
     x_test = torch.cat((x0, x1), 0).type(torch.FloatTensor)  # shape (200, 2) FloatTensor = 32-bit floating
     y_test = torch.cat((y0, y1), ).type(torch.LongTensor) 
@@ -73,6 +76,8 @@ def daten2():
     from torch.autograd import Variable
     n_data_train = torch.ones(200, 2)
     n_data_test = torch.ones(50, 2)
+    
+    
     x0 = torch.normal(n_data_train + torch.tensor([6,5]), 1)      
     y0 = torch.zeros(200)
     x1 = torch.normal(n_data_train + torch.tensor([2,2]), 1)   
