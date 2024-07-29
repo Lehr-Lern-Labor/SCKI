@@ -1,1 +1,2 @@
-git checkout 24-07
+git pull
+sh checkout.sh
