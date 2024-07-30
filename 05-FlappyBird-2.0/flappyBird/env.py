@@ -12,6 +12,8 @@ from gym.utils import seeding
 from pygame.locals import *
 import random as random
 
+from flappyBird.io import *
+
 def standardAction(decission):
 	return [0.0, decission[0]]
 
@@ -29,14 +31,15 @@ class Pipe:
         self.sh = sh
 
         #graphische Elemente
-        self.rectU = pygame.Rect(pos,0,60,sh-height-gap)
+        self.rectU = pygame. Rect(pos,0,60,sh-height-gap)
         self.rectD = pygame.Rect(pos,sh - height,60,height)
     def render(self, context, offset):
-        '''Röhre zeichnen
+        '''
+        Röhre zeichnen
         https://www.pygame.org/docs/ref/draw.html#pygame.draw.rect
         '''
-        pygame.draw.rect(context, pygame.Color(15,104,47), self.rectD.move(-offset +20, 0))
-        pygame.draw.rect(context, pygame.Color(15,104,47), self.rectU.move(-offset +20, 0))
+        pygame.draw.rect(context, getColorPipe(), self.rectD.move(-offset +20, 0))
+        pygame.draw.rect(context, getColorPipe(), self.rectU.move(-offset +20, 0))
 
 class Bird:
     '''
@@ -57,12 +60,15 @@ class Bird:
 
         self.ticks = 0
         self.flap = 0
-        #Graphik
+        
+        #Grafik
         self.rect = pygame.Rect(self.X, sh - self.Y, 30,  30)
-        self.birdImg = pygame.image.load('sprites/sparrow/sparrow.png').convert_alpha()
-        self.birdImgFlap = pygame.image.load('sprites/sparrow/sparrow_flap.png').convert_alpha()
+        
+        self.birdImg = []
+        for img in getImgBird():
+            self.birdImg.append(pygame.image.load(img).convert_alpha())
+        
         self.sh = sh
-
 
     def update(self, dt, decission):
         '''
@@ -104,22 +110,13 @@ class Bird:
         Vogel zeichnen
         '''
         threshold = math.exp(-math.pow(self.forceY,2))
-        # birdImg = pygame.image.load('sprites/kit-birds.gif').convert_alpha()
-        if(self.forceY <2):
-#            pygame.draw.rect(context, pygame.Color(255, 0, 0, 100), self.rect.move(-self.X + 20, 0))
-            context.blit(self.birdImg, (20, -self.Y + pygame.display.get_surface().get_size()[1]))
+        
+        # Animation (alle 8 Ticks wird das nächste Bild angezeigt)
+        self.ticks += 1
+        if(self.ticks >= len(self.birdImg) * getTickBird()):
             self.ticks = 0
-        else:
-            self.ticks += 1
-            if self.ticks > 8:
-#                pygame.draw.rect(context, pygame.Color(255, 0, 0, 100), self.rect.move(-self.X + 20, 0))
-                context.blit(self.birdImg, (20, -self.Y + pygame.display.get_surface().get_size()[1]))
-                if self.ticks > 16:
-                    self.ticks = 0
-            # do rotation here
-            else:
-#                pygame.draw.rect(context, pygame.Color(255, 0, 255, 100), self.rect.move(-self.X + 20, 0))
-                context.blit(self.birdImgFlap, (20, -self.Y + pygame.display.get_surface().get_size()[1]))
+        context.blit(self.birdImg[self.ticks//getTickBird()], (20, -self.Y + pygame.display.get_surface().get_size()[1]))
+            
 
 
 class birdEnv(gym.Env):
@@ -162,7 +159,11 @@ class birdEnv(gym.Env):
         pygame.mouse.set_visible(1)
 
         self.seed()
-        self.img = pygame.image.load('sprites/background-day.png').convert()
+
+        self.ticks = 0
+        self.img = []
+        for img in getImgBg():
+            self.img.append(pygame.image.load(img).convert())
 
 
  #       self.pushPipe()
@@ -257,7 +258,8 @@ class birdEnv(gym.Env):
         self.pushPipe()
         self.pushPipe()
         self.window.fill((0, 0, 30))
-        self.window.blit(self.img, (0,0))
+        self.window.blit(self.img[0], (0,0))
+        self.ticks = 0
         self.text_pop = self.font.render("Population: " + str(self.num_pop), True, (255, 255, 255))
         self.text_score = self.font.render("Score: " + str(self.score), True, (255, 255, 255))
         self.text_evolve = self.font.render("Mutieren....", True, (255, 255, 255))
@@ -276,8 +278,11 @@ class birdEnv(gym.Env):
         self.fps_timer.tick(self.max_FPS)
         self.window.fill((0, 0, 30))
         #self.window.fill(self.background)
-        self.window.blit(self.img, (0,0))
-        #self.window.blit(self.img_base, (0, self.groundy))
+        
+        self.ticks += 1
+        if(self.ticks >= len(self.img) * getTickBg()):
+            self.ticks = 0
+        self.window.blit(self.img[self.ticks//getTickBg()], (0,0))
 
         self.bird.render(self.window)
         for pipe in self.pipes:
@@ -302,10 +307,7 @@ class birdEnv(gym.Env):
             lp = self.pipes[len(self.pipes) - 1]
             offset = lp.pos
 
-        pipe = Pipe(offset + random.uniform(self.prand[0][0], self.prand[0][1]), 
-                    random.uniform(self.prand[1][0], self.prand[1][1]),
-                    random.uniform(self.prand[2][0], self.prand[2][1]), 
-                    self.screen_height)
+        pipe = Pipe(offset + random.uniform(self.prand[0][0], self.prand[0][1]), random.uniform(self.prand[1][0], self.prand[1][1]) ,random.uniform(self.prand[2][0], self.prand[2][1]), self.screen_height)
         self.pipes.append(pipe)
 
 
