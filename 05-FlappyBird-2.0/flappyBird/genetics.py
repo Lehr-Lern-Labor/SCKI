@@ -96,4 +96,3 @@ def mutate_population(pop, PARENTS_COUNT, NOISE_STD):
         net_mut = mutate_net(parent,NOISE_STD )
         pop_mut.nets.append(net_mut)
     return pop_mut
-
