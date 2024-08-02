@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type = Application
+Name = SCKI
+Exec = /home/lll/LLL-utils/scki.sh
+Icon = /home/lll/LLL-utils/favicon.png
+Terminal = true
