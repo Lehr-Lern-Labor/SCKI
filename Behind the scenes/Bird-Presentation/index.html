@@ -24,7 +24,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-image: url("Gabriel/background-day.png");
+            background-image: url("Default/background-day.png");
             height: 512px;
             width: 288px;
             overflow: hidden;
@@ -94,7 +94,7 @@
 
 <body>
     <div class="background">
-        <img id="bird" src="Gabriel/sprite_Duck0.png" alt="" class="bird">
+        <img id="bird" src="Default/sparrow.png" alt="" class="bird">
         <div id="pipeTop" class="pipe"></div>
         <div id="pipeBottom" class="pipe"></div>
     </div>
@@ -143,7 +143,7 @@
                 randA = randomRatio()
             }
             count_random++;
-            if (count_random == 4) {
+            if (count_random >= 4) {
                 count_random = 0;
             }
         }
@@ -160,7 +160,7 @@
             document.getElementsByClassName("bird")[0].src = bird[count_bird]
 
             count_bird++;
-            if (bird.length == count_bird) {
+            if (count_bird >= bird.length) {
                 count_bird = 0;
             }
         }
@@ -171,7 +171,7 @@
             document.getElementsByClassName("background")[0].style.backgroundImage = `url(${bg[count_bg]})`
 
             count_bg++;
-            if (bg.length == count_bg) {
+            if (count_bg >= bg.length) {
                 count_bg = 0;
             }
         } 
