@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluffy Bird</title>
+    <style>
+        :root {
+            --rand: 50%;
+            --randA: 20%;
+            --randB: 80%;
+            --rect-size: 120px;
+        }
+
+        * {
+            margin: 0;
+            image-rendering: pixelated;
+        }
+
+        .background {
+            position: absolute;
+            z-index: -1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-image: url("Gabriel/background-day.png");
+            height: 512px;
+            width: 288px;
+            overflow: hidden;
+        }
+
+        .bird {
+            position: absolute;
+            z-index: 5;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(4);
+            animation-name: bird;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: ease-in-out;
+        }
+
+
+        @keyframes bird {
+
+            from {
+                top: var(--randA);
+            }
+
+            to {
+                top: var(--randB);
+            }
+        }
+
+
+        @keyframes pipe {
+
+            from {
+                left: calc(120px + 100%);
+            }
+
+            to {
+                left: -120px;
+            }
+        }
+
+        .pipe {
+            position: absolute;
+            background-color: green;
+            width: 60px;
+            height: 512px;
+            top: 50%;
+            left: -100px;
+
+            animation-name: pipe;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-delay: 2s;
+        }
+
+        #pipeTop {
+            transform: translate(-50%, calc(-100% - 70px));
+        }
+
+        #pipeBottom {
+            transform: translate(-50%, 70px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">
+        <img id="bird" src="Gabriel/sprite_Duck0.png" alt="" class="bird">
+        <div id="pipeTop" class="pipe"></div>
+        <div id="pipeBottom" class="pipe"></div>
+    </div>
+
+    <script>
+        // Set Images
+        var bird = [
+            "Default/sparrow.png",
+            "Default/sparrow_flap.png"
+        ];
+
+        var bg = [
+            'Default/background-day.png',
+            'Default/background-night.png'
+        ]
+
+        // Handle Randomization
+        var rootStyle = document.querySelector(':root').style
+
+        var randA = randomRatio()
+        var randB = randomRatio()
+
+        var animationBird = setInterval(AnimateBird, 400);
+        var animationBg = setInterval(AnimateBG, 4000);
+        var animationRandom = setInterval(setRandom, 2000)
+
+        function randomRatio() {
+            return Math.random() * 100 + "%"
+        }
+
+        // Move Bird randomly
+        var count_random = 0
+        function setRandom() {
+            if(count_random == 0) {
+                setPipe(randB);
+            }
+            else if(count_random == 1) {
+                rootStyle.setProperty('--randA', randA)
+                randB = randomRatio()
+            }
+            else if(count_random == 2) {
+                setPipe(randA)
+            }
+            else if(count_random == 3) {
+                rootStyle.setProperty('--randB', randB)
+                randA = randomRatio()
+            }
+            count_random++;
+            if (count_random == 4) {
+                count_random = 0;
+            }
+        }
+
+        // Set Hole in Pipe
+        function setPipe(height) {
+            document.getElementById("pipeTop").style.top = height
+            document.getElementById("pipeBottom").style.top = height
+        }
+
+        // Animate Bird
+        var count_bird = 0;
+        function AnimateBird() {
+            document.getElementsByClassName("bird")[0].src = bird[count_bird]
+
+            count_bird++;
+            if (bird.length == count_bird) {
+                count_bird = 0;
+            }
+        }
+
+        // Animate Background
+        var count_bg = 0;
+        function AnimateBG() {
+            document.getElementsByClassName("background")[0].style.backgroundImage = `url(${bg[count_bg]})`
+
+            count_bg++;
+            if (bg.length == count_bg) {
+                count_bg = 0;
+            }
+        } 
+        
+        // Change Images dynamically
+        function setImgBird(files, time) {
+            bird = files;
+            clearInterval(animationBird)
+            animationBird = setInterval(AnimateBird, time*10)
+        }
+
+        function setImgBg(files, time) {
+            bg = files;
+            clearInterval(animationBg)
+            animationBg = setInterval(AnimateBG, time*10)
+
+        }
+
+        function setColorPipe(r, g, b, alpha=255) {
+            document.getElementById("pipeTop").style.backgroundColor = `rgb(${r},${g},${b})`
+            document.getElementById("pipeBottom").style.backgroundColor = `rgb(${r},${g},${b})`
+        }
+    </script>
+
+</body>
+
+</html>
