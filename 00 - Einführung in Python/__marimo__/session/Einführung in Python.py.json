@@ -1,0 +1,1118 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.12.0"
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "67b91ea42ed27bc8f8ce66c297eb0fe2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h1 id=\"einfuhrung\">Einf\u00fchrung</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "fed1ae6e531e50633b7a6beb2ffd7339",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"der-umgang-mit-jupyter-notebooks\">Der Umgang mit Jupyter Notebooks</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "6ff8f92df6f9680fb9a2296287e3d254",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3 id=\"code-ausfuhren\">Code ausf\u00fchren</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "f6e104cab6a74a996cd35a7a51ef3c11",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">In diesem Notebook kannst du Python-Code direkt ausf\u00fchren. Entsprechende Code-Bl\u00f6cke sind grau hinterlegt. </span>\n<hr />\n<span class=\"paragraph\">\u270e <em>F\u00fchre den folgenden Block aus, indem du das Feld ausw\u00e4hlst und entweder oben in der Leiste auf</em>\u2002<strong><a href=\"##\" title=\"Run this cell and advance\">\u25b6</a></strong>\u2002<em>klickst oder</em>\u2002<strong><a href=\"##\" title=\"Shift\">\u21e7</a> + <a href=\"##\" title=\"Enter\">\u23ce</a></strong>\u2002<em>dr\u00fcckst.</em><br />\n\ud83d\uddec <em>Mit</em>\u2002<strong><a href=\"##\" title=\"Strg\">Strg</a> + <a href=\"##\" title=\"Enter\">\u23ce</a></strong>\u2002<em>kannst du einen Block ausf\u00fchren ohne zum n\u00e4chsten Block weiterzuspringen.</em></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "fa77230ec0d6afdbe265892d7e4992e7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Herzlich Willkommen im Lehr-Lern-Labor Informatik am KIT!\n"
+        }
+      ]
+    },
+    {
+      "id": "PKri",
+      "code_hash": "3573295421dacf32fd5fac8d65f7918d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">Den Python-Code k\u00f6nntest du einfach in ein Python-File kopieren und von dort ausf\u00fchren. Jupyter Notebooks erm\u00f6glichen es jedoch, einzelne Code-Bl\u00f6cke getrennt von anderen auszuf\u00fchren. Das hat den Vorteil, dass du dich auf einzelne Code-Abschnitte konzentrieren kannst, kann aber unter Umst\u00e4nden auch dazu f\u00fchren, dass sich dein Code unerwartet verh\u00e4lt, weil der Code nicht von oben nach unten ausgef\u00fchrt wurde.</span>\n<span class=\"paragraph\">\ud83d\uddec <em>Die Zahlen in den eckigen Klammern links vom Block verraten dir, dass und in welcher Reihenfolge der Code ausgef\u00fchrt wurde.</em></span>\n<hr />\n<span class=\"paragraph\">\u270e F\u00fchre die folgenden Code-Bl\u00f6cke von oben nach unten aus. Welche Zahl wird am Ende ausgegeben?</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Xref",
+      "code_hash": "fd352b68bf83391284e044021cab0339",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SFPL",
+      "code_hash": "97b3c13850c18b71170623b908f58b3e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "BYtC",
+      "code_hash": "2da9e7b77ca0e2b16030c0a3986c6e51",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "RGSE",
+      "code_hash": "c431197719a5ec681b59b8ff1e81f86f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Kclp",
+      "code_hash": "7f3b1c79c82a0b7f068de3869400e318",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "42\n"
+        }
+      ]
+    },
+    {
+      "id": "emfo",
+      "code_hash": "2dd58922d067546551509676a29a257d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "42\n111\n"
+        }
+      ]
+    },
+    {
+      "id": "Hstk",
+      "code_hash": "ec7f6fe27cadb4fa1f3c146375daa0e2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">\u270e <em>Nutze die obigen Code-Bl\u00f6cke ohne \u00c4nderung, um <code>111</code> auszugeben.</em></span>\n<details>\n    <summary>Brauchst du Hilfe?</summary>\n    Du kannst die Bl\u00f6cke mehrfach und in beliebiger Reihenfolge ausf\u00fchren.\n</details></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nWHF",
+      "code_hash": "2cc300a14bd0c5441d163d9f4d74eb28",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3 id=\"kernel-neu-starten\">Kernel neu starten</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "iLit",
+      "code_hash": "dc8ff291db471b402e675e92b37483ce",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">Wenn sich dein Programm unerwartet verh\u00e4lt, kannst du den <em>Kernel</em> neu starten. Dadurch wird der aktuelle Zustand des bereits ausgef\u00fchrten Codes verworfen und du kannst bei der Ausf\u00fcrhung von Code wieder bei null beginnen.</span>\n<span class=\"paragraph\">Um den Kernel neu zu starten hast du verschiedene M\u00f6glichkeiten:\n* <strong>Klicke im Men\u00fc auf <a href=\"##\">Kernel &gt; Restart Kernel and Run up to Selected Cell</a>.</strong><br />\n  Dadurch wird der Kernel neu gestartet und der gesamte Code bis zum ausgew\u00e4hlten Block wieder ausgef\u00fchrt.\n* <strong>Klicke im Men\u00fc auf <a href=\"##\">Kernel &gt; Restart Kernel and Clear Output of All Cells</a>.</strong><br />\n  Dadurch wird der Kernel neu gestartet und die bisherigen Ausgaben werden gel\u00f6scht. Den Code musst du dann selbst wieder ausf\u00fchren.\n* <strong>Klicke oben in der Leiste auf\u2002<a href=\"##\" title=\"Restart the kernel\">\u27f3</a>.</strong><br />\n  Dadurch wird der Kernel neu gestartet, die bisherigen Ausgaben bleiben aber erhalten. Den Code musst du dann selbst wieder ausf\u00fchren.\n* <strong>Klicke oben in der Leiste auf\u2002<a href=\"##\" title=\"Restart the kernel and run all cells\">\u25b6\u25b6</a>.</strong><br />\n  Dadurch wird der Kernel neu gestartet und der gesamte Code von oben nach unten ausgef\u00fchrt - auch unterhalb des aktuellen Blocks.</span>\n<span class=\"paragraph\">Welche Variante du verwendest, bleibt dir \u00fcberlassen und h\u00e4ngt unter Umst\u00e4nden von der jeweiligen Situation ab. Wichtig ist, dass du wei\u00dft, wie man den Kernel neu startet und was dadurch passiert.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZHCJ",
+      "code_hash": "1a38533d82a302d1fbfa9ce12897dc29",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3 id=\"speichern\">Speichern</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ROlb",
+      "code_hash": "37f71a8f3afa1e7d58ea244d16266590",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">Um deine \u00c4nderungen nicht zu verlieren, solltest du das Notebook regelm\u00e4\u00dfig speichern. Dabei wird nicht nur dein Code gespeichert sondern  auch die zugeh\u00f6rigen Ausgaben. Der Zustand des Kernels wird allerdings nicht gespeichert, sodass du den Code das n\u00e4chste Mal am besten wieder von ganz oben aus ausf\u00fchrst. </span>\n<span class=\"paragraph\">Das Notebook kannst du genauso wie in anderen Editoren speichern, z.B. durch Klicken auf <strong><a href=\"##\" title=\"Save and create checkpoint\">\ud83d\uddab</a></strong>, durch Dr\u00fccken von <strong><a href=\"##\">Strg + S</a></strong> oder im Men\u00fc \u00fcber <strong><a href=\"##\">File &gt; Save Notebook</a></strong>.</span>\n<hr />\n<span class=\"paragraph\">\u270e <em>Speichere das Notebook.</em></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "qnkX",
+      "code_hash": "606e945304134126ec765d941a0bf35e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3 id=\"navigation-ubersichtlichkeit\">Navigation &amp; \u00dcbersichtlichkeit</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TqIu",
+      "code_hash": "efc7cab5338e46ea4415a094aa6026e5",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h4 id=\"inhaltsverzeichnis\">Inhaltsverzeichnis</h4>\n<span class=\"paragraph\">Im Men\u00fc kannst du \u00fcber <strong><a href=\"##\">View &gt; Table of Contents</a></strong> (oder alternativ mit <strong><a href=\"##\" title=\"Strg + Shift + K\">Strg + \u21e7 + K</a></strong>) das Inhaltsverzeichnis anzeigen lassen. Dar\u00fcber kannst du schneller im gesamten Dokument navigieren und hast einen \u00dcberblick \u00fcber die gesamte Struktur des Notebooks.</span>\n<span class=\"paragraph\">\ud83d\uddec <em>Wenn du im Inhaltsverzeichnis links oben auf\u2002</em><em><a href=\"##\" title=\"Show heading number in the document\">\u2261</a></em><em>\u2002klickst, kannst du dir die \u00dcberschriften nummeriert anzeigen lassen.</em></span>\n<h4 id=\"zeilennummern\">Zeilennummern</h4>\n<span class=\"paragraph\">Im Men\u00fc kannst du \u00fcber <strong><a href=\"##\">View &gt; Show Line Numbers</a></strong> Zeilennummern anzeigen lassen. Das hilft dabei, \u00fcber spezielle Stellen im Code zu sprechen.</span>\n<h4 id=\"inhalte-einklappen\">Inhalte einklappen</h4>\n<span class=\"paragraph\">Wenn du mit der Maus \u00fcber eine \u00dcberschrift f\u00e4hrst, erscheint links ein kleiner Pfeil. Damit kannst du ganze Abschnitte einklappen, wenn du sie gerade nicht ben\u00f6tigst und dann auch wieder ausklappen. Beispielweise k\u00f6nntest du das gesamte Kapitel \u00fcber den Umgang mit Jupyter Notebook einklappen, um das Notebook k\u00fcrzer zu machen und dich besser auf die folgenden Aufgaben konzentrieren zu k\u00f6nnen - aber nat\u00fcrlich nur, wenn dir jetzt klar ist, wie du mit einem Jupyter Notebook umgehst.</span>\n<span class=\"paragraph\">\ud83d\uddec <em>\u00dcbrigens werden eingeklappte Inhalte auch im Inhaltsverzeichnis entsprechend angezeigt. Du kannst daher auch \u00fcber das Inhaltsverzeichnis Inhalte ein- und auch wieder ausklappen.</em></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Vxnm",
+      "code_hash": "51322e01e87548cd2cc13903c2b7a7a3",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"warum-python\">Warum Python?</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "DnEU",
+      "code_hash": "15a3dad40804fdf4c0d03d7f9bc34e05",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">Python ist eine Programmiersprache, die in den letzten Jahren immer beliebter wurde. Python l\u00e4sst sich aufgrund der einfachen Syntax schnell erlernen und bietet insbesondere zu aktuellen Themen der k\u00fcnstlichen Intelligenz wie beispielsweise <em>tiefen neuronalen Netzen</em> oder <em>Sprachverarbeitung</em> (Natural Language Processing) eine breite Auswahl an Bibliotheken (d.h. Code den man f\u00fcr seine eigenen Projekte benutzen kann ohne alles selbst schreiben zu m\u00fcssen). Laut PYPL-Index (\"PopularitY of Programming Language Index\") ist Python momentan sogar die beliebteste Programmiersprache weltweit. </span>\n<span class=\"paragraph\"><img src=\"resources/img/statista_beliebteste_programmiersprachen.png\" alt=\"Liste der beliebtesten Programmiersprachen\" style=\"width:50%\"></span>\n<!-- Quelle: https://de.statista.com/statistik/daten/studie/678732/umfrage/beliebteste-programmiersprachen-weltweit-laut-pypl-index/ -->\n\n<span class=\"paragraph\">Auch f\u00fcr unsere Anwendungsf\u00e4lle eignet sich Python, weshalb du mit den Grundlagen der Sprache vertraut sein solltest.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ulZA",
+      "code_hash": "57da143530f045199355924934f1babf",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"syntax\">Syntax</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ecfG",
+      "code_hash": "1a2f3f3dce799702cb5884140c4f38e1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3 id=\"einruckungen\">Einr\u00fcckungen</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Pvdt",
+      "code_hash": "ee4581ded976773ccdb7d7707e5ee261",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">Python arbeitet mit Einr\u00fcckungen, um die Struktur des Programms sichtbar zu machen. Aus anderen Programmiersprachen wie beispielsweise <em>C#</em> oder <em>Java</em> kennst du vielleicht die geschweiften Klammern, die dort stattdessen verwendet werden. Das bedeutet aber auch, dass du deinen Code nicht beliebig einr\u00fccken darfst. Achte also im Folgenden besonders darauf, welcher Code einger\u00fcckt werden muss.</span>\n<span class=\"paragraph\">\u270e <em>F\u00fchre den folgenden Code aus und behebe anschlie\u00dfend den Fehler.</em></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZBYS",
+      "code_hash": "59fab32eea2467949918d5e94ce65af3",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Hallo!\nHi!\n"
+        }
+      ]
+    },
+    {
+      "id": "aLJB",
+      "code_hash": "ad7ce54608774daaf0503c85b2df974a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3 id=\"variablen-datentypen\">Variablen &amp; Datentypen</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nHfw",
+      "code_hash": "29c37a3061b25edfe920421082313269",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">In Python ist es denkbar einfach, eine Variable zu definieren:\n<div class=\"codehilite\"><pre><span></span><code><span class=\"n\">name</span> <span class=\"o\">=</span> <span class=\"n\">wert</span>\n</code></pre></div></span>\n<span class=\"paragraph\">Der <code>name</code> einer Variablen kann frei gew\u00e4hlt werden, sollte aber aussagekr\u00e4ftig sein - das verbessert die Lesbarkeit des Codes.</span>\n<span class=\"paragraph\">Und auch der <code>wert</code> einer Variable kann frei gew\u00e4hlt werden. Im Gegensatz zu anderen Programmiersprachen musst du den Datentyp einer Variablen (z.B. Zahl, Wahrheitswert oder Zeichenkette) nicht im Vorhinein festlegen. Stattdessen wird w\u00e4hrend der Ausf\u00fchrung des Programms entschieden, welchen Datentyp die Variable haben sollte.</span>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"n\">zahl</span>        <span class=\"o\">=</span> <span class=\"mi\">42</span>\n<span class=\"n\">dezimalzahl</span> <span class=\"o\">=</span> <span class=\"mf\">4.2</span>\n<span class=\"n\">wahr</span>        <span class=\"o\">=</span> <span class=\"kc\">True</span>\n<span class=\"n\">falsch</span>      <span class=\"o\">=</span> <span class=\"kc\">False</span>\n<span class=\"n\">string</span>      <span class=\"o\">=</span> <span class=\"s2\">&quot;Eine Zeichenkette in Anf\u00fchrungszeichen&quot;</span>\n</code></pre></div>\n<hr />\n<span class=\"paragraph\">\u270e <em>Erg\u00e4nze die fehlenden Variablen, sodass die Ausgabe fehlerfrei ist.</em></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "xXTn",
+      "code_hash": "1befded05c28833cd4fc5a6e184ac706",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Steckbrief: \n Name: Lehr-Lern-Labor \n m\u00e4nnlich: False \n Alter: 5 \n Gr\u00f6\u00dfe (in m): 42\n"
+        }
+      ]
+    },
+    {
+      "id": "AjVT",
+      "code_hash": "aef1b6c34cc454a443100859533f2656",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h1 id=\"erfahrung-sammeln\">Erfahrung sammeln</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "pHFh",
+      "code_hash": "636264449220aa9fc2ff1655693d7674",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"variablen\">Variablen</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "NCOB",
+      "code_hash": "3fbb0020631b4e3f1cc0911dff50ebd4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">Du kannst Variablen deklarieren, ihnen Werte zuweisen, sie miteinander kombinieren und sie ausgeben lassen. Dabei helfen dir die folgenden Beispiele.</span>\n<h3 id=\"zahlen\">Zahlen</h3>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"n\">x</span> <span class=\"o\">=</span> <span class=\"mi\">42</span>                      <span class=\"c1\"># deklarieren und initialisieren (d.h. den ersten Wert zuweisen)</span>\n<span class=\"n\">x</span> <span class=\"o\">=</span> <span class=\"mi\">2</span>                       <span class=\"c1\"># Wert zuweisen</span>\n\n<span class=\"c1\"># Rechnen</span>\n<span class=\"n\">a</span> <span class=\"o\">=</span> <span class=\"n\">x</span> <span class=\"o\">+</span> <span class=\"mi\">1</span>                   <span class=\"c1\"># Addition</span>\n<span class=\"n\">b</span> <span class=\"o\">=</span> <span class=\"n\">x</span> <span class=\"o\">-</span> <span class=\"mi\">2</span>                   <span class=\"c1\"># Subtraktion</span>\n<span class=\"n\">c</span> <span class=\"o\">=</span> <span class=\"n\">x</span> <span class=\"o\">*</span> <span class=\"mi\">3</span>                   <span class=\"c1\"># Multiplikation</span>\n<span class=\"n\">d</span> <span class=\"o\">=</span> <span class=\"n\">x</span> <span class=\"o\">/</span> <span class=\"mi\">4</span>                   <span class=\"c1\"># Division</span>\n<span class=\"n\">e</span> <span class=\"o\">=</span> <span class=\"n\">x</span> <span class=\"o\">**</span> <span class=\"mi\">5</span>                  <span class=\"c1\"># Potenz</span>\n<span class=\"n\">f</span> <span class=\"o\">=</span> <span class=\"n\">x</span> <span class=\"o\">//</span> <span class=\"mi\">6</span>                  <span class=\"c1\"># Ganzzahlige Division</span>\n<span class=\"n\">g</span> <span class=\"o\">=</span> <span class=\"n\">x</span> <span class=\"o\">%</span> <span class=\"mi\">7</span>                   <span class=\"c1\"># Modulo (Rest der ganzzahligen Division)</span>\n\n<span class=\"c1\"># Kurzschreibweisen</span>\n<span class=\"n\">x</span> <span class=\"o\">+=</span> <span class=\"mi\">2</span>                      <span class=\"c1\"># x = x + 2</span>\n<span class=\"n\">x</span> <span class=\"o\">-=</span> <span class=\"mi\">2</span>                      <span class=\"c1\"># x = x - 2</span>\n<span class=\"n\">x</span> <span class=\"o\">*=</span> <span class=\"mi\">2</span>                      <span class=\"c1\"># x = x * 2</span>\n<span class=\"n\">x</span> <span class=\"o\">/=</span> <span class=\"mi\">2</span>                      <span class=\"c1\"># x = x / 2</span>\n<span class=\"n\">x</span> <span class=\"o\">**=</span> <span class=\"mi\">2</span>                     <span class=\"c1\"># x = x ** 2</span>\n\n<span class=\"c1\"># Zahlen ausgeben</span>\n<span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"n\">x</span><span class=\"p\">)</span>\n</code></pre></div>\n<h3 id=\"zeichenketten\">Zeichenketten</h3>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"n\">hello</span> <span class=\"o\">=</span> <span class=\"s2\">&quot;Hallo&quot;</span>            <span class=\"c1\"># Zeichenketten, also Strings, deklarieren</span>\n<span class=\"n\">world</span> <span class=\"o\">=</span> <span class=\"s1\">&#39;Welt&#39;</span>             <span class=\"c1\"># &quot;&quot; und &#39;&#39; k\u00f6nnen beide verwendet werden</span>\n\n<span class=\"n\">greeting</span> <span class=\"o\">=</span> <span class=\"n\">hello</span> <span class=\"o\">+</span> <span class=\"n\">world</span>   <span class=\"c1\"># Konkatenation (d.h. Zeichenketten aneinanderh\u00e4ngen)</span>\n<span class=\"n\">length</span> <span class=\"o\">=</span> <span class=\"nb\">len</span><span class=\"p\">(</span><span class=\"n\">greeting</span><span class=\"p\">)</span>     <span class=\"c1\"># L\u00e4nge einer Zeichenkette</span>\n<span class=\"n\">a</span> <span class=\"o\">=</span> <span class=\"n\">greeting</span><span class=\"p\">[</span><span class=\"mi\">0</span><span class=\"p\">]</span>            <span class=\"c1\"># Erstes Zeichen (die Nummerierung beginnt bei 0)</span>\n<span class=\"n\">b</span> <span class=\"o\">=</span> <span class=\"n\">greeting</span><span class=\"p\">[</span><span class=\"o\">-</span><span class=\"mi\">1</span><span class=\"p\">]</span>           <span class=\"c1\"># Letztes Zeichen (negative Nummern z\u00e4hlen von hinten)</span>\n<span class=\"n\">c</span> <span class=\"o\">=</span> <span class=\"n\">greeting</span><span class=\"p\">[</span><span class=\"mi\">3</span><span class=\"p\">:</span><span class=\"mi\">6</span><span class=\"p\">]</span>          <span class=\"c1\"># Teil der Zeichenkette (einschlie\u00dflich Zeichen Nummer 3, ausschlie\u00dflich Zeichen Nummer 6)</span>\n<span class=\"n\">d</span> <span class=\"o\">=</span> <span class=\"n\">greeting</span><span class=\"p\">[:</span><span class=\"mi\">5</span><span class=\"p\">]</span>           <span class=\"c1\"># d = greeting[0:5] (Erster Teil der Zeichenkette, die ersten 5 Zeichen)</span>\n<span class=\"n\">e</span> <span class=\"o\">=</span> <span class=\"n\">greeting</span><span class=\"p\">[</span><span class=\"mi\">5</span><span class=\"p\">:]</span>           <span class=\"c1\"># e = greeting[5:-1] (Letzter Teil der Zeichenkette, ab Zeichen Nummer 5)</span>\n\n<span class=\"c1\"># Zeichenketten ausgeben</span>\n<span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"n\">greeting</span><span class=\"p\">)</span>\n<span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"n\">hello</span><span class=\"p\">,</span> <span class=\"n\">world</span><span class=\"p\">)</span>\n<span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"n\">hello</span><span class=\"p\">,</span> <span class=\"s2\">&quot;an die gesamte&quot;</span><span class=\"p\">,</span> <span class=\"n\">world</span><span class=\"p\">,</span> <span class=\"s2\">&quot;!&quot;</span><span class=\"p\">)</span>\n\n<span class=\"c1\"># \ud83d\uddec Zeichenketten besser formatieren (Weitere Infos unter https://docs.python.org/3/tutorial/inputoutput.html)</span>\n<span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"sa\">f</span><span class=\"s2\">&quot;</span><span class=\"si\">{</span><span class=\"n\">hello</span><span class=\"si\">}</span><span class=\"s2\"> an die gesamte </span><span class=\"si\">{</span><span class=\"n\">world</span><span class=\"si\">}</span><span class=\"s2\">!&quot;</span><span class=\"p\">)</span>\n</code></pre></div>\n<h3 id=\"wahrheitswerte\">Wahrheitswerte</h3>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"n\">wahr</span> <span class=\"o\">=</span> <span class=\"kc\">True</span>\n<span class=\"n\">falsch</span> <span class=\"o\">=</span> <span class=\"kc\">False</span>\n\n<span class=\"c1\"># Boolsche Operatoren</span>\n<span class=\"n\">a</span> <span class=\"o\">=</span> <span class=\"ow\">not</span> <span class=\"n\">wahr</span>               <span class=\"c1\"># Verneinung</span>\n<span class=\"n\">b</span> <span class=\"o\">=</span> <span class=\"n\">wahr</span> <span class=\"ow\">and</span> <span class=\"n\">falsch</span>        <span class=\"c1\"># Und</span>\n<span class=\"n\">c</span> <span class=\"o\">=</span> <span class=\"n\">wahr</span> <span class=\"ow\">or</span> <span class=\"n\">falsch</span>         <span class=\"c1\"># Oder</span>\n\n<span class=\"c1\"># Vergleichen</span>\n<span class=\"n\">d</span> <span class=\"o\">=</span> <span class=\"p\">(</span><span class=\"n\">wahr</span> <span class=\"o\">==</span> <span class=\"n\">falsch</span><span class=\"p\">)</span>       <span class=\"c1\"># Gleichheit</span>\n<span class=\"n\">e</span> <span class=\"o\">=</span> <span class=\"p\">(</span><span class=\"n\">wahr</span> <span class=\"o\">!=</span> <span class=\"n\">falsch</span><span class=\"p\">)</span>       <span class=\"c1\"># Ungleichheit</span>\n<span class=\"n\">f</span> <span class=\"o\">=</span> <span class=\"p\">(</span><span class=\"mi\">1</span> <span class=\"o\">&lt;</span> <span class=\"mi\">2</span><span class=\"p\">)</span>                <span class=\"c1\"># Kleiner</span>\n<span class=\"n\">g</span> <span class=\"o\">=</span> <span class=\"p\">(</span><span class=\"mi\">1</span> <span class=\"o\">&lt;=</span> <span class=\"mi\">2</span><span class=\"p\">)</span>               <span class=\"c1\"># Kleiner oder gleich</span>\n<span class=\"n\">h</span> <span class=\"o\">=</span> <span class=\"p\">(</span><span class=\"mi\">1</span> <span class=\"o\">&gt;</span> <span class=\"mi\">2</span><span class=\"p\">)</span>                <span class=\"c1\"># Gr\u00f6\u00dfer</span>\n<span class=\"n\">i</span> <span class=\"o\">=</span> <span class=\"p\">(</span><span class=\"mi\">1</span> <span class=\"o\">&gt;=</span> <span class=\"mi\">2</span><span class=\"p\">)</span>               <span class=\"c1\"># Gr\u00f6\u00dfer oder gleich</span>\n<span class=\"n\">j</span> <span class=\"o\">=</span> <span class=\"p\">(</span><span class=\"mi\">0</span> <span class=\"o\">&lt;=</span> <span class=\"n\">x</span> <span class=\"o\">&lt;</span> <span class=\"mi\">42</span><span class=\"p\">)</span>          <span class=\"c1\"># Zahlenbereich</span>\n</code></pre></div>\n<hr />\n<span class=\"paragraph\">\u270e <em>Schau dir diese Beispiele an und stelle sicher, dass du wei\u00dft, was der Code bewirkt. Kopiere bei Bedarf Code in das untenstehende Feld und f\u00fchre ihn aus.</em></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "aqbW",
+      "code_hash": "c980110019a3f75473cb6e34f08bbc24",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "------------------ Zahlen\n4.0\n3 0 6 0.5 32 0 2\n------------------ Zeichenketten\nHalloWelt\nHallo Welt\nHallo an die gesamte Welt !\nHallo an die gesamte Welt!\nH t loW Hallo Welt\n------------------ Wahrheitswerte\nFalse False True False True True True False False True\n"
+        }
+      ]
+    },
+    {
+      "id": "TRpd",
+      "code_hash": "4ced00f159d697d93da8584f620c66e8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">\u270e <em>Erg\u00e4nze den folgenden Code. Die Funktion <code>pruefe_eingabe()</code> verr\u00e4t dir, ob du alles richtig gemacht hast.</em></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TXez",
+      "code_hash": "0b2faa63cd6b511bf61ab014e25e9cf8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Du hast alles richtig gemacht! Das Ergebnis ist 42\n"
+        }
+      ]
+    },
+    {
+      "id": "dNNg",
+      "code_hash": "aea017ab9f2bc062f1d2ed40a9cd33e1",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "yCnT",
+      "code_hash": "4914df87d2a7d06899b353c37e441ec5",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "L L L\nLehr Lern Labor\nLehr-Lern-Labor Informatik Karlsruhe\nLehr-Lern-Labor Informatik Karlsruhe\n"
+        }
+      ]
+    },
+    {
+      "id": "wlCL",
+      "code_hash": "a689f09a8f0be450c1497cc53531f38c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"funktionen\">Funktionen</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "kqZH",
+      "code_hash": "2857c29650df520459ae363dc5af31f6",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">Um Code nicht mehrfach schreiben zu m\u00fcssen, verwendet man Funktionen, die an beliebigen Stellen im Programm aufgerufen werden k\u00f6nnen.</span>\n<span class=\"paragraph\">Funktionen besitzen in Python den folgenden Aufbau:\n<div class=\"codehilite\"><pre><span></span><code><span class=\"c1\"># Funktion definieren</span>\n<span class=\"k\">def</span><span class=\"w\"> </span><span class=\"nf\">funktion</span><span class=\"p\">(</span><span class=\"n\">parameterA</span><span class=\"p\">,</span> <span class=\"n\">parameterB</span><span class=\"p\">):</span>\n    <span class=\"n\">tuEtwas</span><span class=\"p\">()</span>\n    <span class=\"k\">return</span> <span class=\"n\">r\u00fcckgabe</span>\n\n<span class=\"c1\"># Funktion aufrufen</span>\n<span class=\"n\">funktion</span><span class=\"p\">(</span><span class=\"n\">wertA</span><span class=\"p\">,</span> <span class=\"n\">wertB</span><span class=\"p\">)</span>\n</code></pre></div>\nDu kannst den Namen der Funktion (fast) frei w\u00e4hlen und musst bei der Definition einer Funktion nicht festlegen, ob ein Wert zur\u00fcckgegeben wird oder nicht. Falls du keinen Wert zur\u00fcckgeben m\u00f6chtest, lass die <code>return</code>-Zeile einfach weg.</span>\n<hr />\n<span class=\"paragraph\">\u270e <em>Erg\u00e4nze die Funktion sinnvoll und begr\u00fc\u00dfe dich selbst.</em></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "wAgl",
+      "code_hash": "84bf9a637d22dc750c64c2642e7107e0",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Hallo Kim\nHallo Lehr-Lern-Labor\n"
+        }
+      ]
+    },
+    {
+      "id": "rEll",
+      "code_hash": "bcf9bbf6904faabd1fa222d767fab8aa",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"kontrollstrukturen\">Kontrollstrukturen</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "dGlV",
+      "code_hash": "93f7b52288789602dd32edb36cb3c563",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3 id=\"bedingungen-if-else\">Bedingungen (if / else)</h3>\n<span class=\"paragraph\">Bedingungen besitzen in Python den folgenden Aufbau:\n<div class=\"codehilite\"><pre><span></span><code><span class=\"k\">if</span> <span class=\"p\">(</span><span class=\"n\">bedingungA</span><span class=\"p\">):</span>\n    <span class=\"n\">tuEtwas</span><span class=\"p\">()</span>\n<span class=\"k\">elif</span> <span class=\"p\">(</span><span class=\"n\">bedingungB</span><span class=\"p\">):</span>\n    <span class=\"n\">tuEtwasAnderes</span><span class=\"p\">()</span>\n<span class=\"k\">else</span><span class=\"p\">:</span>\n    <span class=\"n\">tuSonstEtwas</span><span class=\"p\">()</span>\n</code></pre></div>\nDabei brauchst du weder den <code>elif</code>- noch den <code>else</code>-Block. Und auch auf die Klammern um die Bedingung kannst du verzichten.</span>\n<hr />\n<span class=\"paragraph\">\u270e <em>Realisiere folgenden Sachverhalt:</em></span>\n<span class=\"paragraph\">Wenn der eingeloggte Benutzer Jana ist, dann soll sie zun\u00e4chst begr\u00fc\u00dft werden. Wenn sie das Passwort richtig eingeben hat, soll ihr aktueller Punktestand von 2241 Punkten ausgegeben werden. Wenn sie das Passwort falsch eingegeben hat, soll eine entsprechende R\u00fcckmeldung ausgegeben werden. Wenn der eingeloggte Benutzer Ramon ist, dann ist der Ablauf analog zum oberen Fall, wobei sein aktueller Punktestand 2110 betr\u00e4gt. Wenn der eingeloggte Benutzer weder Jana noch Ramon ist, dann soll ausgegeben werden, dass der Nutzername nicht bekannt ist.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SdmI",
+      "code_hash": "e1b795b2d3f488d2824c8f90ab6b91e8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Hallo Jana\nScore: 2241\nHallo Ramon\nDas Passwort stimmt leider nicht.\nDer Nutzername Kim ist nicht bekannt.\n"
+        }
+      ]
+    },
+    {
+      "id": "lgWD",
+      "code_hash": "a1b4bf78707817dbe437f3d59c51211b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3 id=\"schleifen\">Schleifen</h3>\n<h4 id=\"while-schleife\">while-Schleife</h4>\n<span class=\"paragraph\">Der Code in der while-Schleife wird solange ausgef\u00fchrt, bis die Bedingung der while-Schleife nicht mehr erf\u00fcllt ist. Wenn die Bedingung nie auf <em>falsch</em> gesetzt wird, dann wird die while-Schleife unendlich oft ausgef\u00fchrt und dein Programm wird nie regul\u00e4r beendet. </span>\n<span class=\"paragraph\">While-Schleifen besitzen in Python den folgenden Aufbau:</span>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"k\">while</span> <span class=\"n\">bedingung</span><span class=\"p\">:</span>\n    <span class=\"n\">tuEtwas</span><span class=\"p\">()</span>\n</code></pre></div>\n<hr />\n<span class=\"paragraph\">\u270e <em>Berechne mithilfe einer while-Schleife die Summe der Zahlen von 1 bis 10.</em></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "yOPj",
+      "code_hash": "50f9cf813d1903c21990431a8134c112",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "55\n"
+        }
+      ]
+    },
+    {
+      "id": "fwwy",
+      "code_hash": "52ac411c030b7f61c36e72e4d551fbca",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h4 id=\"for-schleife\">for-Schleife</h4>\n<span class=\"paragraph\">M\u00f6chtest du \u00fcber einen Zahlenbereich (ganze Zahlen), eine Zeichenkette oder allgemein \u00fcber ein iterierbares Objekt iterieren, so eignet sich die for-Schleife dazu.</span>\n<span class=\"paragraph\">For-Schleifen besitzen in Python den folgenden Aufbau:\n<div class=\"codehilite\"><pre><span></span><code><span class=\"k\">for</span> <span class=\"n\">element</span> <span class=\"ow\">in</span> <span class=\"n\">iterierbaresObjekt</span><span class=\"p\">:</span>\n    <span class=\"n\">tuEtwas</span><span class=\"p\">(</span><span class=\"n\">element</span><span class=\"p\">)</span>\n</code></pre></div>\nH\u00e4ufig m\u00f6chte man dabei mit einer Z\u00e4hlvariablen arbeiten. Dabei hilft die <code>range</code>-Funktion.\n<div class=\"codehilite\"><pre><span></span><code><span class=\"k\">for</span> <span class=\"n\">z\u00e4hler</span> <span class=\"ow\">in</span> <span class=\"nb\">range</span><span class=\"p\">(</span><span class=\"n\">start</span><span class=\"p\">,</span> <span class=\"n\">stop</span><span class=\"p\">,</span> <span class=\"n\">schritt</span><span class=\"p\">):</span>\n    <span class=\"n\">tuEtwas</span><span class=\"p\">(</span><span class=\"n\">z\u00e4hler</span><span class=\"p\">)</span>\n\n<span class=\"nb\">range</span><span class=\"p\">(</span><span class=\"mi\">2</span><span class=\"p\">,</span> <span class=\"mi\">42</span><span class=\"p\">,</span> <span class=\"mi\">2</span><span class=\"p\">)</span>     <span class=\"c1\"># Z\u00e4hle von 2 bis ausschlie\u00dflich 42 in Zweier-Schritten</span>\n<span class=\"nb\">range</span><span class=\"p\">(</span><span class=\"mi\">1</span><span class=\"p\">,</span> <span class=\"mi\">30</span><span class=\"p\">)</span>        <span class=\"c1\"># Z\u00e4hle von 1 bis ausschlie\u00dflich 30 (in Einser-Schritten)</span>\n<span class=\"nb\">range</span><span class=\"p\">(</span><span class=\"mi\">5</span><span class=\"p\">)</span>            <span class=\"c1\"># Z\u00e4hle von 0 bis ausschlie\u00dflich 5 (also 5 Zahlen) </span>\n</code></pre></div></span>\n<hr />\n<span class=\"paragraph\">\u270e <em>Z\u00e4hle mit Hilfe einer for-Schleife die Vorkommen des Bustaben <code>a</code> im vorgegebenen Satz. Anschlie\u00dfend kannst du mit <code>satz.count('a')</code> \u00fcberpr\u00fcfen, ob du richtig liegst.</em></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "LJZf",
+      "code_hash": "7dba7d315a58c99c78a5b867e8223fd2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "11\nTrue\n"
+        }
+      ]
+    },
+    {
+      "id": "urSm",
+      "code_hash": "532df9a82225a71da90d54ca80fb13ed",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"daten\">Daten</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "jxvo",
+      "code_hash": "f18cd07acbe070e405d41400d00b43cb",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3 id=\"tupel\">Tupel</h3>\n<span class=\"paragraph\">In Tupeln kannst du mehrere Informationen speichern. Einmal definiert, k\u00f6nnen die Werte in einem Tupel nicht mehr ver\u00e4ndert werden.</span>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"c1\"># Tupel definieren</span>\n<span class=\"n\">tupel</span> <span class=\"o\">=</span> <span class=\"p\">(</span><span class=\"n\">wertA</span><span class=\"p\">,</span> <span class=\"n\">wertB</span><span class=\"p\">,</span> <span class=\"n\">wertC</span><span class=\"p\">)</span>\n\n<span class=\"c1\"># Tupel auslesen</span>\n<span class=\"n\">tupel</span><span class=\"p\">[</span><span class=\"mi\">0</span><span class=\"p\">]</span>     <span class=\"c1\"># erstes Element</span>\n<span class=\"n\">tupel</span><span class=\"p\">[</span><span class=\"o\">-</span><span class=\"mi\">1</span><span class=\"p\">]</span>    <span class=\"c1\"># letztes Element</span>\n\n<span class=\"nb\">len</span><span class=\"p\">(</span><span class=\"n\">tupel</span><span class=\"p\">)</span>   <span class=\"c1\"># L\u00e4nge des Tupel</span>\n</code></pre></div>\n<hr />\n<span class=\"paragraph\">\u270e <em>Gib f\u00fcr jede Person den Namen und den Beruf aus.</em></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "mWxS",
+      "code_hash": "1aa0f459de0d4979fe1ed9e7e9dcc3c1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Sheldon Cooper ist Theoretischer Teilchenphysiker.\nLeonard Hofstadter ist Experimentalphysiker.\nAmy Farrah Fowler ist Neurobiologin.\n"
+        }
+      ]
+    },
+    {
+      "id": "CcZR",
+      "code_hash": "025aa88a2962bbcf5e850e8910571fa3",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3 id=\"listen\">Listen</h3>\n<span class=\"paragraph\">Du kannst mit Hilfe von Listen mehrere Elemente speichern, so wie du es oben bei Tupeln gesehen hast. Allerdings kannst du die Elemente von Listen ver\u00e4ndern, l\u00f6schen und neue Elemente hinzuf\u00fcgen.</span>\n<span class=\"paragraph\"><div class=\"codehilite\"><pre><span></span><code><span class=\"c1\"># Liste definieren und erweitern</span>\n<span class=\"nb\">list</span> <span class=\"o\">=</span> <span class=\"p\">[</span><span class=\"n\">wertA</span><span class=\"p\">,</span> <span class=\"n\">wertB</span><span class=\"p\">,</span> <span class=\"n\">wertC</span><span class=\"p\">]</span>     <span class=\"c1\"># Liste definieren</span>\n<span class=\"n\">otherList</span> <span class=\"o\">=</span> <span class=\"p\">[</span><span class=\"n\">wert1</span><span class=\"p\">,</span> <span class=\"n\">wert2</span><span class=\"p\">,</span> <span class=\"n\">wer3</span><span class=\"p\">]</span>\n\n<span class=\"nb\">list</span><span class=\"o\">.</span><span class=\"n\">append</span><span class=\"p\">(</span><span class=\"n\">wertD</span><span class=\"p\">)</span>               <span class=\"c1\"># Element hinten hinzuf\u00fcgen</span>\n<span class=\"nb\">list</span> <span class=\"o\">=</span> <span class=\"nb\">list</span> <span class=\"o\">+</span> <span class=\"n\">wertE</span>              <span class=\"c1\"># Element zu Liste hinzuf\u00fcgen</span>\n\n<span class=\"n\">newList</span> <span class=\"o\">=</span> <span class=\"nb\">list</span> <span class=\"o\">+</span> <span class=\"n\">otherList</span>       <span class=\"c1\"># Zwei Listen aneinanderh\u00e4ngen</span>\n<span class=\"nb\">zip</span><span class=\"p\">(</span><span class=\"nb\">list</span><span class=\"p\">,</span> <span class=\"n\">otherList</span><span class=\"p\">)</span>             <span class=\"c1\"># H\u00e4ngt Paare aus Elementen aus beiden Listen aneinander: [[wertA,wert1], ...]</span>\n\n<span class=\"c1\"># Liste auslesen</span>\n<span class=\"nb\">list</span><span class=\"p\">[</span><span class=\"mi\">0</span><span class=\"p\">]</span>                          <span class=\"c1\"># erstes Element</span>\n<span class=\"nb\">list</span><span class=\"p\">[</span><span class=\"o\">-</span><span class=\"mi\">1</span><span class=\"p\">]</span>                         <span class=\"c1\"># letztes Element</span>\n\n<span class=\"nb\">len</span><span class=\"p\">(</span><span class=\"nb\">list</span><span class=\"p\">)</span>                        <span class=\"c1\"># L\u00e4nge der Liste</span>\n\n<span class=\"n\">erstesElement</span> <span class=\"o\">=</span> <span class=\"nb\">list</span><span class=\"o\">.</span><span class=\"n\">pop</span><span class=\"p\">()</span>       <span class=\"c1\"># Erstes Element entfernen und zur\u00fcckgeben</span>\n<span class=\"n\">zweitesElement</span> <span class=\"o\">=</span> <span class=\"nb\">list</span><span class=\"o\">.</span><span class=\"n\">pop</span><span class=\"p\">(</span><span class=\"mi\">1</span><span class=\"p\">)</span>     <span class=\"c1\"># Zweites Element entfernen und zur\u00fcckgeben</span>\n</code></pre></div>\nBei Listen wird in der Regel nur die <em>Referenz</em> kopiert, d.h. wenn man in der \"Kopie\" etwas ver\u00e4ndert, wird auch das Original ver\u00e4ndert. Um das zu verhindern, muss man die Liste gezielt kopieren.\n<div class=\"codehilite\"><pre><span></span><code><span class=\"nb\">list</span><span class=\"p\">[</span><span class=\"mi\">0</span><span class=\"p\">]</span> <span class=\"o\">=</span> <span class=\"n\">neuerWert</span>              <span class=\"c1\"># Element ver\u00e4ndern</span>\n<span class=\"n\">newList</span> <span class=\"o\">=</span> <span class=\"nb\">list</span>                   <span class=\"c1\"># Referenz kopieren (newList[0] = neuerWert \u00e4ndert auch list[0])</span>\n<span class=\"n\">newList</span> <span class=\"o\">=</span> <span class=\"nb\">list</span><span class=\"p\">[:]</span>                <span class=\"c1\"># Liste kopieren</span>\n</code></pre></div></span>\n<hr />\n<span class=\"paragraph\">\u270e <em>Erg\u00e4nze die Liste der Fibonacci-Zahlen mit den ersten 15 Fibonacci-Zahlen. \u00dcberpr\u00fcfe dein Ergebnis mit der Funktion <code>pruefe_fibonacci()</code></em></span>\n<span class=\"paragraph\">Eine Fibonacci-Zahl ist jeweils die Summe ihrer beiden Vorg\u00e4nger, wobei die erste Zahl 0 und die zweite Zahl 1 ist. In der Liste <code>fibonacci</code> sind die ersten beiden Zahlen bereits abgespeichert.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "YWSi",
+      "code_hash": "7dfacbd8cd89b5a5a00db09a1ffe8161",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Super! Das sind die ersten 15 Fibonacci-Zahlen: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377]\n"
+        }
+      ]
+    },
+    {
+      "id": "zlud",
+      "code_hash": "9f51f1f1912bdb91baaeff1d2550808e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3 id=\"dictionaries\">Dictionaries</h3>\n<span class=\"paragraph\">Abgesehen von Listen, Strings und Tupeln gibt es in Python noch einen weiteren wichtigen sequentiellen Datentyp: <em>Dictonaries</em> (in anderen Programmierspachen auch als <em>Maps</em> oder <em>Hashs</em> bezeichnet). Sie erm\u00f6glichen den Zugriff auf Werte, die sogenannten <em>values</em>, \u00fcber den Namen, den sogenannten <em>key</em>.</span>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"c1\"># Dictionary definieren und erweitern</span>\n<span class=\"n\">dictionary</span> <span class=\"o\">=</span> <span class=\"p\">{</span><span class=\"n\">keyA</span> <span class=\"p\">:</span> <span class=\"n\">valueA</span><span class=\"p\">,</span> <span class=\"n\">keyB</span> <span class=\"p\">:</span> <span class=\"n\">valueB</span><span class=\"p\">,</span> <span class=\"n\">keyC</span> <span class=\"p\">:</span> <span class=\"n\">valueC</span><span class=\"p\">}</span>  <span class=\"c1\"># Dictionary definieren</span>\n<span class=\"n\">dictionary</span><span class=\"p\">[</span><span class=\"n\">keyD</span><span class=\"p\">]</span> <span class=\"o\">=</span> <span class=\"n\">valueD</span>                                   <span class=\"c1\"># Neues Wertepaar hinzuf\u00fcgen bzw. Eintrag \u00fcberschreiben</span>\n<span class=\"n\">newDictionary</span> <span class=\"o\">=</span> <span class=\"nb\">dict</span><span class=\"p\">(</span><span class=\"nb\">zip</span><span class=\"p\">(</span><span class=\"n\">listA</span><span class=\"p\">,</span> <span class=\"n\">listB</span><span class=\"p\">))</span>                     <span class=\"c1\"># Neues Dictionary aus zwei Listen zusammenf\u00fcgen</span>\n\n<span class=\"c1\"># Dictionary auslesen</span>\n<span class=\"n\">dictionary</span><span class=\"p\">[</span><span class=\"n\">keyA</span><span class=\"p\">]</span>                                            <span class=\"c1\"># Zu keyA geh\u00f6rigen Wert auslesen</span>\n<span class=\"n\">dictionary</span><span class=\"o\">.</span><span class=\"n\">keys</span><span class=\"p\">()</span>                                           <span class=\"c1\"># Liste aller Namen</span>\n<span class=\"n\">dictionary</span><span class=\"o\">.</span><span class=\"n\">values</span><span class=\"p\">()</span>                                         <span class=\"c1\"># Liste aller Werte</span>\n</code></pre></div>\n<hr />\n<span class=\"paragraph\">\u270e <em>Kodiere den gegebenen Ausdruck in Morse-Code und lasse deinen Morse-Code pr\u00fcfen. Dekodiere anschlie\u00dfend den gegebenen Morse-Code.</em></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "tZnO",
+      "code_hash": "db3edd91e6d22bf3502797db794d496d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "1.Aufgabe: Richtig! Der Morsecode lautet: \n -.- ..-- -. ... - .-.. .. -.-. .... . / .. -. - . .-.. .-.. .. --. . -. --.. \n\n2.Aufgabe: Richtig! Das dekodierte Wort lautet: NEURONALES NETZ\n"
+        }
+      ]
+    },
+    {
+      "id": "xvXZ",
+      "code_hash": "431ee16fd1701ea49158452f111ce4fc",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3 id=\"klassen\">Klassen</h3>\n<span class=\"paragraph\">Objekte einer Klasse k\u00f6nnen nicht nur Daten, sogenannte <em>Attribute</em> enthalten sondern auch Funktionalit\u00e4ten bereitstellen.</span>\n<div class=\"codehilite\"><pre><span></span><code><span class=\"c1\"># Klasse definieren</span>\n<span class=\"k\">class</span><span class=\"w\"> </span><span class=\"nc\">Klasse</span><span class=\"p\">:</span>\n    <span class=\"c1\"># Konstruktor, wird beim Erzeugen einer Instanz aufgerufen</span>\n    <span class=\"k\">def</span><span class=\"w\"> </span><span class=\"fm\">__init__</span><span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"p\">,</span> <span class=\"n\">parameterA</span><span class=\"p\">,</span> <span class=\"n\">parameterB</span><span class=\"p\">):</span>\n        <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">attributA</span> <span class=\"o\">=</span> <span class=\"n\">parameterA</span>\n        <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">attributB</span> <span class=\"o\">=</span> <span class=\"n\">parameterB</span>\n\n    <span class=\"c1\"># Funktion, beachte die Verwendung von &#39;self&#39; als ersten Parameter</span>\n    <span class=\"k\">def</span><span class=\"w\"> </span><span class=\"nf\">funktion</span><span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"p\">,</span> <span class=\"n\">parameterA</span><span class=\"p\">):</span>\n        <span class=\"n\">tuEtwas</span><span class=\"p\">()</span>\n\n    <span class=\"k\">def</span><span class=\"w\"> </span><span class=\"nf\">getAttributA</span><span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"p\">):</span>\n        <span class=\"k\">return</span> <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">attributA</span>\n\n    <span class=\"k\">def</span><span class=\"w\"> </span><span class=\"nf\">setAttributB</span><span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"p\">,</span> <span class=\"n\">neuerWert</span><span class=\"p\">):</span>\n        <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">attributB</span> <span class=\"o\">=</span> <span class=\"n\">neuerWert</span>\n\n<span class=\"c1\"># Klasse verwenden</span>\n<span class=\"n\">instanz</span> <span class=\"o\">=</span> <span class=\"n\">Klasse</span><span class=\"p\">(</span><span class=\"n\">wertA</span><span class=\"p\">,</span> <span class=\"n\">wertB</span><span class=\"p\">)</span>   <span class=\"c1\"># Klasse instanziieren, d.h. ein Objekt der Klasse erzeugen</span>\n<span class=\"n\">instanz</span><span class=\"o\">.</span><span class=\"n\">funktion</span><span class=\"p\">(</span><span class=\"n\">argument</span><span class=\"p\">)</span>       <span class=\"c1\"># Funktion aufrufen</span>\n<span class=\"n\">instanz</span><span class=\"o\">.</span><span class=\"n\">setAttributB</span><span class=\"p\">(</span><span class=\"n\">neuerWert</span><span class=\"p\">)</span>\n</code></pre></div>\n<hr />\n<span class=\"paragraph\">\u270e <em>Erstelle eine Klasse, die einen Schokoladenautomaten simuliert. Der Automat soll die Attribute <code>an</code> und <code>konto</code> haben. Folgende Methoden sollen in der Klasse implementiert werden: <code>anschalten()</code>, <code>ausschalten()</code>, <code>muenze_einwerfen()</code> und <code>schoki_ausgeben()</code>. Der Automat soll genau dann eine Schokolade ausgeben und den Kontostand um zwei M\u00fcnzen verkleinern, wenn er eingeschaltet ist, mehr als zwei M\u00fcnzen auf dem Kontostand sind und die Methode <code>schoki_ausgeben()</code> aufgerufen wird.</em></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "CLip",
+      "code_hash": "6465d10ab7ae1b134eafc89709c854c1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "> Schoki ausgeben\n...\n> M\u00fcnze einwerfen\n...\n> Anschalten\n> Schoki ausgeben\nBitte erh\u00f6hen Sie Ihr Guthaben.\n> M\u00fcnze einwerfen\nNeues Guthaben: 1\n> Schoki ausgeben\nBitte erh\u00f6hen Sie Ihr Guthaben.\n> M\u00fcnze einwerfen\nNeues Guthaben: 2\n> Schoki ausgeben\n __________________________ \n|                \\|__|__|__|\n|-----------------\\__|__|__|\n|          SCHOKI  \\_|__|__|\n|-------------------\\|__|__|\n|____________________\\__|__|\n\n> Ausschalten\n"
+        }
+      ]
+    },
+    {
+      "id": "YECM",
+      "code_hash": "e8eca3200b1b5ccb1c0e2d6b4604636c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"import\">Import</h2>\n<span class=\"paragraph\">M\u00f6chtest du auf Code anderer Dateien oder auf deine lokalen Bibliotheken zugreifen, musst du sie vorher in dein Programm importieren. Danach kannst du auf die Funktionen des importierten Moduls zugreifen.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "cEAS",
+      "code_hash": "a787d8258eaa15d89587a0d30c41ccd6",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Heute: Tue Apr  1 17:58:07 2025\nHallo! Das ist eine importierte Funktion.\n"
+        }
+      ]
+    },
+    {
+      "id": "iXej",
+      "code_hash": "7e492ed980c74bfb9a86485cb807c9a4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"fehlerbehandlung\">Fehlerbehandlung</h2>\n<span class=\"paragraph\">Um zu verhindern, dass dein Programm bei einem Fehler w\u00e4hrend der Ausf\u00fchrung abst\u00fcrzt, muss du festlegen, was im Fehlerfall passieren soll.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "EJmg",
+      "code_hash": "67530ea10d7077c465656390e0b47cac",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Beginn der Ausf\u00fchrung des try-Blocks...\nUps! Hier ist etwas schief gelaufen.\nDer finally-Block wird immer ausgef\u00fchrt.\nergebnis = 42\n"
+        }
+      ]
+    },
+    {
+      "id": "UmEG",
+      "code_hash": "1822c3d7984eb45f0f0f5741be45a246",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h1 id=\"weitere-aufgaben\">Weitere Aufgaben</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vEBW",
+      "code_hash": "7a5a923e2e24a8ce4f7914e060d7e53f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"zahlen-sortieren\">Zahlen sortieren</h2>\n<span class=\"paragraph\">\u270e <em>Schreibe eine Funktion, die eine beliebige Liste von Zahlen aufsteigend sortiert und die sortierte Liste ausgibt (z.B. <code>[3, -5, 1]</code> \u2192 <code>[-5, 1, 3]</code>).</em></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "kLmu",
+      "code_hash": "8154e18cbb5a901c4be6d6b3e9adb873",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "[-5, 1, 3]\n[-102, -73, -11, -2, 0, 42, 45, 89, 99, 123, 231]\n"
+        }
+      ]
+    },
+    {
+      "id": "IpqN",
+      "code_hash": "d5f1bce52f8c747c3ab39e91fe849163",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"primzahlen\">Primzahlen</h2>\n<span class=\"paragraph\">\u270e <em>Schreibe eine Funktion, die als Parameter eine nat\u00fcrliche Zahl <code>n</code> \u00fcbergeben bekommt und alle Primzahlen bis <code>n</code> als Liste zur\u00fcckgibt (z.B. <code>10</code> \u2192 <code>[2, 3, 5, 7]</code>).</em></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "dxZZ",
+      "code_hash": "c021473f1765fba3c80c6d43bb0225ab",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[2, 3, 5, 7]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "dlnW",
+      "code_hash": "5ed443e8eab9b2cef56d760c4f49b367",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"groter-gemeinsamer-teiler\">Gr\u00f6\u00dfter gemeinsamer Teiler</h2>\n<span class=\"paragraph\">\u270e <em>Schreibe eine Funktion, die den gr\u00f6\u00dften gemeinsamen Teiler zweier nat\u00fcrlicher Zahlen bestimmt (z.B. <code>30, 20</code> \u2192 <code>10</code>).</em></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TTti",
+      "code_hash": "47d6e57749ee653ac590453e3601a576",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre style='font-size: 12px'>10</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "RKFZ",
+      "code_hash": "55d3e1752d6c222b75bc70c8df9c3e44",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"primfaktorzerlegung\">Primfaktorzerlegung</h2>\n<span class=\"paragraph\">\u270e <em>Schreibe eine Funktion, die eine nat\u00fcrliche Zahl in ihre Primfaktoren zerlegt (z.B. 60 = 2 <marimo-tex class=\"arithmatex\">||(\\cdot||)</marimo-tex> 2 <marimo-tex class=\"arithmatex\">||(\\cdot||)</marimo-tex> 3 <marimo-tex class=\"arithmatex\">||(\\cdot||)</marimo-tex> 5, also <code>60</code> \u2192 <code>2, 2, 3, 5</code>).</em></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "IaQp",
+      "code_hash": "ffe189325f5bbc327acc187b21e4ebd8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "[2, 2, 3, 5]\n"
+        }
+      ]
+    },
+    {
+      "id": "IWgg",
+      "code_hash": "22e1659fcc4b184477ba442ab12f096c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"permutationen-einer-zahlenliste\">Permutationen einer Zahlenliste</h2>\n<span class=\"paragraph\">\u270e <em>Schreibe eine Funktion, die alle Permutation einer Zahlenliste zur\u00fcckgibt (z.B. <code>[1,2,3]</code> \u2192 <code>[1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], [3,2,1]</code>).</em></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "fCoF",
+      "code_hash": "dfada6a63ea09e598014ea0843728ad8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "LkGn",
+      "code_hash": "12a779646e52929f26f167054d8f0d74",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"binares-palindrom\">Bin\u00e4res Palindrom</h2>\n<span class=\"paragraph\">\u270e <em>Schreibe eine Funktion, die eine Zahl in ihre bin\u00e4re Darstellung umwandelt und anschlie\u00dfend pr\u00fcft, ob diese Bin\u00e4rzahl ein Palindrom (also vorw\u00e4rts und r\u00fcckw\u00e4rts gelesen das gleiche) ist (z.B. <marimo-tex class=\"arithmatex\">||(5_{10}=101_2||)</marimo-tex> \u2192 Palindrom / <marimo-tex class=\"arithmatex\">||(6_{10}=110_2||)</marimo-tex> \u2192 kein Palindrom).</em></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "zVRe",
+      "code_hash": "79866c512f85500d165b80b68a71f013",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "5 ist ein Palindrom\n6 ist kein Palindrom\n"
+        }
+      ]
+    },
+    {
+      "id": "woaO",
+      "code_hash": "7890b82cef8251bffb77569126c0c876",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"nim-spiel\">Nim-Spiel</h2>\n<span class=\"paragraph\">\u270e <em>Bearbeite diese Aufgaben nur, wenn du bereits sehr fit in Python bist! Implementiere die Standardvariante des Nim-Spiels (siehe <a href=\"https://library.ethz.ch/standorte-und-medien/plattformen/virtuelle-ausstellungen/alles-ist-spiel/nim.html\" rel=\"noopener\" target=\"_blank\">https://library.ethz.ch/standorte-und-medien/plattformen/virtuelle-ausstellungen/alles-ist-spiel/nim.html</a>) f\u00fcr zwei Spieler:innen (ohne eine graphische Benutzeroberfl\u00e4che). Stelle die aktuelle Anzahl der Streichh\u00f6lzer mit <code>|</code> in der Ausgaben dar und frage bei jedem Zug den aktuellen Spieler, wie viele Streichh\u00f6lzer er wegnehmen m\u00f6chte. Verarbeite seine Ausgaben entsprechend. Recherchiere gegebenenfalls nach geeigneten Funktionen (und Bibliotheken).</em></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "HnMC",
+      "code_hash": "9549c72bdee342f8bdcaba00e3d7a00b",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "interruption",
+          "evalue": "This cell was interrupted and needs to be re-run",
+          "traceback": []
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "1     | | | |     \n2    | | | | |    \n3   | | | | | |   \n4  | | | | | | |  \n\nSpieler 1\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "> Reihe: "
+        },
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">&quot;/home/silas/dev/Lehr-Lern-Labor/SCKI/.venv/lib/python3.10/site-packages/marimo/_runtime/executor.py&quot;</span>, line <span class=\"m\">142</span>, in <span class=\"n\">execute_cell</span>\n<span class=\"w\">    </span><span class=\"k\">return</span> <span class=\"nb\">eval</span><span class=\"p\">(</span><span class=\"n\">cell</span><span class=\"o\">.</span><span class=\"n\">last_expr</span><span class=\"p\">,</span> <span class=\"n\">glbls</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_38466/__marimo__cell_HnMC_.py&quot;</span>, line <span class=\"m\">44</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">nim</span><span class=\"p\">()</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_38466/__marimo__cell_HnMC_.py&quot;</span>, line <span class=\"m\">17</span>, in <span class=\"n\">nim</span>\n<span class=\"w\">    </span><span class=\"n\">_x</span> <span class=\"o\">=</span> <span class=\"nb\">int</span><span class=\"p\">(</span><span class=\"nb\">input</span><span class=\"p\">(</span><span class=\"s1\">&#39;&gt; Reihe: &#39;</span><span class=\"p\">))</span>\n  File <span class=\"nb\">&quot;/home/silas/dev/Lehr-Lern-Labor/SCKI/.venv/lib/python3.10/site-packages/marimo/_runtime/input_override.py&quot;</span>, line <span class=\"m\">9</span>, in <span class=\"n\">input_override</span>\n<span class=\"w\">    </span><span class=\"k\">return</span> <span class=\"n\">sys</span><span class=\"o\">.</span><span class=\"n\">stdin</span><span class=\"o\">.</span><span class=\"n\">_readline_with_prompt</span><span class=\"p\">(</span><span class=\"n\">prompt</span><span class=\"p\">)</span>  <span class=\"c1\"># type: ignore[attr-defined, no-any-return, union-attr]  # noqa: E501</span>\n  File <span class=\"nb\">&quot;/home/silas/dev/Lehr-Lern-Labor/SCKI/.venv/lib/python3.10/site-packages/marimo/_messaging/streams.py&quot;</span>, line <span class=\"m\">386</span>, in <span class=\"n\">_readline_with_prompt</span>\n<span class=\"w\">    </span><span class=\"k\">return</span> <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">_stream</span><span class=\"o\">.</span><span class=\"n\">input_queue</span><span class=\"o\">.</span><span class=\"n\">get</span><span class=\"p\">()</span>\n  File <span class=\"nb\">&quot;/home/silas/.local/share/uv/python/cpython-3.10.16-linux-x86_64-gnu/lib/python3.10/multiprocessing/queues.py&quot;</span>, line <span class=\"m\">103</span>, in <span class=\"n\">get</span>\n<span class=\"w\">    </span><span class=\"n\">res</span> <span class=\"o\">=</span> <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">_recv_bytes</span><span class=\"p\">()</span>\n  File <span class=\"nb\">&quot;/home/silas/.local/share/uv/python/cpython-3.10.16-linux-x86_64-gnu/lib/python3.10/multiprocessing/connection.py&quot;</span>, line <span class=\"m\">216</span>, in <span class=\"n\">recv_bytes</span>\n<span class=\"w\">    </span><span class=\"n\">buf</span> <span class=\"o\">=</span> <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">_recv_bytes</span><span class=\"p\">(</span><span class=\"n\">maxlength</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/home/silas/.local/share/uv/python/cpython-3.10.16-linux-x86_64-gnu/lib/python3.10/multiprocessing/connection.py&quot;</span>, line <span class=\"m\">414</span>, in <span class=\"n\">_recv_bytes</span>\n<span class=\"w\">    </span><span class=\"n\">buf</span> <span class=\"o\">=</span> <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">_recv</span><span class=\"p\">(</span><span class=\"mi\">4</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/home/silas/.local/share/uv/python/cpython-3.10.16-linux-x86_64-gnu/lib/python3.10/multiprocessing/connection.py&quot;</span>, line <span class=\"m\">379</span>, in <span class=\"n\">_recv</span>\n<span class=\"w\">    </span><span class=\"n\">chunk</span> <span class=\"o\">=</span> <span class=\"n\">read</span><span class=\"p\">(</span><span class=\"n\">handle</span><span class=\"p\">,</span> <span class=\"n\">remaining</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/home/silas/dev/Lehr-Lern-Labor/SCKI/.venv/lib/python3.10/site-packages/marimo/_runtime/handlers.py&quot;</span>, line <span class=\"m\">32</span>, in <span class=\"n\">interrupt_handler</span>\n<span class=\"w\">    </span><span class=\"k\">raise</span> <span class=\"n\">MarimoInterrupt</span>\n<span class=\"gr\">KeyboardInterrupt</span>\n</pre></div>\n</span>"
+        }
+      ]
+    },
+    {
+      "id": "wadT",
+      "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    }
+  ]
+}
