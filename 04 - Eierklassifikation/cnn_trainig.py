@@ -1,9 +1,9 @@
 import warnings
 warnings.filterwarnings('ignore')
-from resources.code.help_functions import ei_zeichnen
+from public/resources.code.help_functions import ei_zeichnen
 import torchvision
 from torchvision import transforms
-from torch.utils.data import DataLoader
+from torch.utils.data import public.DataLoader
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -49,8 +49,8 @@ class CNN(nn.Module):
 
 
 
-TRAIN_DATA_PATH = 'DataSet/train'
-TEST_DATA_PATH = 'DataSet/test'
+TRAIN_DATA_PATH = 'public/DataSet/train'
+TEST_DATA_PATH = 'public/DataSet/test'
 
 
 
@@ -61,7 +61,7 @@ train_transforms = transforms.Compose([
 ])
 
 train_dataset = torchvision.datasets.ImageFolder(root=TRAIN_DATA_PATH, transform=train_transforms)
-train_loader = DataLoader(train_dataset, batch_size=16, shuffle=True)
+train_loader = public.DataLoader(train_dataset, batch_size=16, shuffle=True)
 
 cnn = CNN()
 optimizer = torch.optim.SGD(cnn.parameters(), lr=0.01)

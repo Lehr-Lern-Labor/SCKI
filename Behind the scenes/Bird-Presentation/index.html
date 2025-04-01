@@ -24,7 +24,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-image: url("Default/background-day.png");
+            background-image: url("public/Default/background-day.png");
             height: 512px;
             width: 288px;
             overflow: hidden;
@@ -94,7 +94,7 @@
 
 <body>
     <div class="background">
-        <img id="bird" src="Default/sparrow.png" alt="" class="bird">
+        <public/img id="bird" src="public/Default/sparrow.png" alt="" class="bird">
         <div id="pipeTop" class="pipe"></div>
         <div id="pipeBottom" class="pipe"></div>
     </div>
@@ -102,13 +102,13 @@
     <script>
         // Set Images
         var bird = [
-            "Default/sparrow.png",
-            "Default/sparrow_flap.png"
+            "public/Default/sparrow.png",
+            "public/Default/sparrow_flap.png"
         ];
 
         var bg = [
-            'Default/background-day.png',
-            'Default/background-night.png'
+            'public/Default/background-day.png',
+            'public/Default/background-night.png'
         ]
 
         // Handle Randomization

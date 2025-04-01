@@ -2,11 +2,11 @@ import pygame
 import torch
 import os
 import gym
-import flappyBird.genetics as gen
+import public.flappyBird.genetics as gen
 
-img_bird = ['sprites/sparrow.png','sprites/sparrow_flap.png']
+img_bird = ['public/sprites/sparrow.png','public/sprites/sparrow_flap.png']
 tick_bird = 8
-img_bg = ['sprites/background-day.png']
+img_bg = ['public/sprites/background-day.png']
 tick_bg = 8
 color_pipe = pygame.Color(15,104,47)
 

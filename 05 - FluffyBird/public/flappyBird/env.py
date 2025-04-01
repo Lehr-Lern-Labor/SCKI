@@ -12,7 +12,7 @@ from gym.utils import seeding
 from pygame.locals import *
 import random as random
 
-from flappyBird.io import *
+from public.flappyBird.io import *
 
 def standardAction(decission):
 	return [0.0, decission[0]]
