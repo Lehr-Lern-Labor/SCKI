@@ -1,7 +1,7 @@
 import marimo
 
 __generated_with = "0.10.18"
-app = marimo.App(width="medium")
+app = marimo.App()
 
 
 @app.cell
@@ -26,15 +26,7 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        mo.md(
-            r\"""
-            In diesem Notebook kannst du Python-Code direkt ausführen. Entsprechende Code-Blöcke sind grau hinterlegt. 
-        
-            ---
-            ✎ *Führe den folgenden Block aus, indem du das Feld auswählst und entweder oben in der Leiste auf* **[▶](## "Run this cell and advance")** *klickst oder* **[⇧](## "Shift") + [⏎](## "Enter")** *drückst.*  
-            🗬 *Mit* **[Strg](## "Strg") + [⏎](## "Enter")** *kannst du einen Block ausführen ohne zum nächsten Block weiterzuspringen.*
-            \"""
-        )In diesem Notebook kannst du Python-Code direkt ausführen. Entsprechende Code-Blöcke sind grau hinterlegt. 
+        In diesem Notebook kannst du Python-Code direkt ausführen. Entsprechende Code-Blöcke sind grau hinterlegt. 
         
         ---
         ✎ *Führe den folgenden Block aus, indem du das Feld auswählst und entweder oben in der Leiste auf* **[▶](## "Run this cell and advance")** *klickst oder* **[⇧](## "Shift") + [⏎](## "Enter")** *drückst.*  
@@ -49,9 +41,6 @@ def _():
     # Das ist ein ausführbares Feld.
     # Zeilen, die mit dem Symbol # beginnen, sind Kommentare und werden vom Compiler ignoriert. 
 
-    print("Herzlich Willkommen im Lehr-Lern-Labor Informatik am KIT!")# Das ist ein ausführbares Feld.
-    # Zeilen, die mit dem Symbol # beginnen, sind Kommentare und werden vom Compiler ignoriert. 
-
     print("Herzlich Willkommen im Lehr-Lern-Labor Informatik am KIT!")
     return
 
@@ -60,16 +49,7 @@ def _():
 def _(mo):
     mo.md(
         r"""
-        mo.md(
-            r\"""
-            Den Python-Code könntest du einfach in ein Python-File kopieren und von dort ausführen. Jupyter Notebooks ermöglichen es jedoch, einzelne Code-Blöcke getrennt von anderen auszuführen. Das hat den Vorteil, dass du dich auf einzelne Code-Abschnitte konzentrieren kannst, kann aber unter Umständen auch dazu führen, dass sich dein Code unerwartet verhält, weil der Code nicht von oben nach unten ausgeführt wurde.
-        
-            🗬 *Die Zahlen in den eckigen Klammern links vom Block verraten dir, dass und in welcher Reihenfolge der Code ausgeführt wurde.*
-        
-            ---
-            ✎ Führe die folgenden Code-Blöcke von oben nach unten aus. Welche Zahl wird am Ende ausgegeben?
-            \"""
-        )Den Python-Code könntest du einfach in ein Python-File kopieren und von dort ausführen. Jupyter Notebooks ermöglichen es jedoch, einzelne Code-Blöcke getrennt von anderen auszuführen. Das hat den Vorteil, dass du dich auf einzelne Code-Abschnitte konzentrieren kannst, kann aber unter Umständen auch dazu führen, dass sich dein Code unerwartet verhält, weil der Code nicht von oben nach unten ausgeführt wurde.
+        Den Python-Code könntest du einfach in ein Python-File kopieren und von dort ausführen. Jupyter Notebooks ermöglichen es jedoch, einzelne Code-Blöcke getrennt von anderen auszuführen. Das hat den Vorteil, dass du dich auf einzelne Code-Abschnitte konzentrieren kannst, kann aber unter Umständen auch dazu führen, dass sich dein Code unerwartet verhält, weil der Code nicht von oben nach unten ausgeführt wurde.
         
         🗬 *Die Zahlen in den eckigen Klammern links vom Block verraten dir, dass und in welcher Reihenfolge der Code ausgeführt wurde.*
         
@@ -80,48 +60,38 @@ def _(mo):
     return
 
 
-app._unparsable_cell(
-    r"""
-    a = 1a = 1
-    """,
-    name="_"
-)
+@app.cell
+def _():
+    a = 1
+    return (a,)
 
 
-app._unparsable_cell(
-    r"""
-    a_1 = a + 3a_1 = a + 3
-    """,
-    name="_"
-)
+@app.cell
+def _(a):
+    a_1 = a + 3
+    return (a_1,)
 
 
-app._unparsable_cell(
-    r"""
-    a_2 = a_1 * 10a_2 = a_1 * 10
-    """,
-    name="_"
-)
+@app.cell
+def _(a_1):
+    a_2 = a_1 * 10
+    return (a_2,)
 
 
-app._unparsable_cell(
-    r"""
-    a_3 = a_2 + 2a_3 = a_2 + 2
-    """,
-    name="_"
-)
+@app.cell
+def _(a_2):
+    a_3 = a_2 + 2
+    return (a_3,)
 
 
-app._unparsable_cell(
-    r"""
-    print(a_3)print(a_3)
-    """,
-    name="_"
-)
+@app.cell
+def _(a_3):
+    print(a_3)
+    return
 
 
-app._unparsable_cell(
-    r"""
+@app.cell
+def _():
     a_4 = 1
     a_4 = a_4 + 3
     a_4 = a_4 * 10
@@ -134,37 +104,15 @@ app._unparsable_cell(
     a_4 = a_4 + 3
     a_4 = a_4 + 3
     a_4 = a_4 + 2
-    print(a_4)a_4 = 1
-    a_4 = a_4 + 3
-    a_4 = a_4 * 10
-    a_4 = a_4 + 2
     print(a_4)
-    a_4 = 1
-    a_4 = a_4 * 10
-    a_4 = a_4 * 10
-    a_4 = a_4 + 3
-    a_4 = a_4 + 3
-    a_4 = a_4 + 3
-    a_4 = a_4 + 2
-    print(a_4)
-    """,
-    name="_"
-)
+    return (a_4,)
 
 
 @app.cell
 def _(mo):
     mo.md(
         r"""
-        mo.md(
-            r\"""
-            ✎ *Nutze die obigen Code-Blöcke ohne Änderung, um `111` auszugeben.*
-            <details>
-                <summary>Brauchst du Hilfe?</summary>
-                Du kannst die Blöcke mehrfach und in beliebiger Reihenfolge ausführen.
-            </details>
-            \"""
-        )✎ *Nutze die obigen Code-Blöcke ohne Änderung, um `111` auszugeben.*
+        ✎ *Nutze die obigen Code-Blöcke ohne Änderung, um `111` auszugeben.*
         <details>
             <summary>Brauchst du Hilfe?</summary>
             Du kannst die Blöcke mehrfach und in beliebiger Reihenfolge ausführen.
@@ -176,7 +124,7 @@ def _(mo):
 
 @app.cell
 def _(mo):
-    mo.md(r"mo.md(r\"""### Kernel neu starten\""")### Kernel neu starten")
+    mo.md(r"### Kernel neu starten")
     return
 
 
@@ -184,23 +132,7 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        mo.md(
-            r\"""
-            Wenn sich dein Programm unerwartet verhält, kannst du den *Kernel* neu starten. Dadurch wird der aktuelle Zustand des bereits ausgeführten Codes verworfen und du kannst bei der Ausfürhung von Code wieder bei null beginnen.
-        
-            Um den Kernel neu zu starten hast du verschiedene Möglichkeiten:
-            * **Klicke im Menü auf [Kernel > Restart Kernel and Run up to Selected Cell](##).**  
-              Dadurch wird der Kernel neu gestartet und der gesamte Code bis zum ausgewählten Block wieder ausgeführt.
-            * **Klicke im Menü auf [Kernel > Restart Kernel and Clear Output of All Cells](##).**  
-              Dadurch wird der Kernel neu gestartet und die bisherigen Ausgaben werden gelöscht. Den Code musst du dann selbst wieder ausführen.
-            * **Klicke oben in der Leiste auf [⟳](## "Restart the kernel").**  
-              Dadurch wird der Kernel neu gestartet, die bisherigen Ausgaben bleiben aber erhalten. Den Code musst du dann selbst wieder ausführen.
-            * **Klicke oben in der Leiste auf [▶▶](## "Restart the kernel and run all cells").**  
-              Dadurch wird der Kernel neu gestartet und der gesamte Code von oben nach unten ausgeführt - auch unterhalb des aktuellen Blocks.
-        
-            Welche Variante du verwendest, bleibt dir überlassen und hängt unter Umständen von der jeweiligen Situation ab. Wichtig ist, dass du weißt, wie man den Kernel neu startet und was dadurch passiert.
-            \"""
-        )Wenn sich dein Programm unerwartet verhält, kannst du den *Kernel* neu starten. Dadurch wird der aktuelle Zustand des bereits ausgeführten Codes verworfen und du kannst bei der Ausfürhung von Code wieder bei null beginnen.
+        Wenn sich dein Programm unerwartet verhält, kannst du den *Kernel* neu starten. Dadurch wird der aktuelle Zustand des bereits ausgeführten Codes verworfen und du kannst bei der Ausfürhung von Code wieder bei null beginnen.
         
         Um den Kernel neu zu starten hast du verschiedene Möglichkeiten:
         * **Klicke im Menü auf [Kernel > Restart Kernel and Run up to Selected Cell](##).**  
@@ -220,7 +152,7 @@ def _(mo):
 
 @app.cell
 def _(mo):
-    mo.md(r"mo.md(r\"""### Speichern\""")### Speichern")
+    mo.md(r"### Speichern")
     return
 
 
@@ -228,16 +160,7 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        mo.md(
-            r\"""
-            Um deine Änderungen nicht zu verlieren, solltest du das Notebook regelmäßig speichern. Dabei wird nicht nur dein Code gespeichert sondern  auch die zugehörigen Ausgaben. Der Zustand des Kernels wird allerdings nicht gespeichert, sodass du den Code das nächste Mal am besten wieder von ganz oben aus ausführst. 
-        
-            Das Notebook kannst du genauso wie in anderen Editoren speichern, z.B. durch Klicken auf **[🖫](## "Save and create checkpoint")**, durch Drücken von **[Strg + S](##)** oder im Menü über **[File > Save Notebook](##)**.
-        
-            ---
-            ✎ *Speichere das Notebook.*
-            \"""
-        )Um deine Änderungen nicht zu verlieren, solltest du das Notebook regelmäßig speichern. Dabei wird nicht nur dein Code gespeichert sondern  auch die zugehörigen Ausgaben. Der Zustand des Kernels wird allerdings nicht gespeichert, sodass du den Code das nächste Mal am besten wieder von ganz oben aus ausführst. 
+        Um deine Änderungen nicht zu verlieren, solltest du das Notebook regelmäßig speichern. Dabei wird nicht nur dein Code gespeichert sondern  auch die zugehörigen Ausgaben. Der Zustand des Kernels wird allerdings nicht gespeichert, sodass du den Code das nächste Mal am besten wieder von ganz oben aus ausführst. 
         
         Das Notebook kannst du genauso wie in anderen Editoren speichern, z.B. durch Klicken auf **[🖫](## "Save and create checkpoint")**, durch Drücken von **[Strg + S](##)** oder im Menü über **[File > Save Notebook](##)**.
         
@@ -250,7 +173,7 @@ def _(mo):
 
 @app.cell
 def _(mo):
-    mo.md(r"mo.md(r\"""### Navigation & Übersichtlichkeit\""")### Navigation & Übersichtlichkeit")
+    mo.md(r"### Navigation & Übersichtlichkeit")
     return
 
 
@@ -258,22 +181,7 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        mo.md(
-            r\"""
-            #### Inhaltsverzeichnis
-            Im Menü kannst du über **[View > Table of Contents](##)** (oder alternativ mit **[Strg + ⇧ + K](## "Strg + Shift + K")**) das Inhaltsverzeichnis anzeigen lassen. Darüber kannst du schneller im gesamten Dokument navigieren und hast einen Überblick über die gesamte Struktur des Notebooks.
-        
-            🗬 *Wenn du im Inhaltsverzeichnis links oben auf **[≡](## "Show heading number in the document")** klickst, kannst du dir die Überschriften nummeriert anzeigen lassen.*
-        
-            #### Zeilennummern
-            Im Menü kannst du über **[View > Show Line Numbers](##)** Zeilennummern anzeigen lassen. Das hilft dabei, über spezielle Stellen im Code zu sprechen.
-        
-            #### Inhalte einklappen
-            Wenn du mit der Maus über eine Überschrift fährst, erscheint links ein kleiner Pfeil. Damit kannst du ganze Abschnitte einklappen, wenn du sie gerade nicht benötigst und dann auch wieder ausklappen. Beispielweise könntest du das gesamte Kapitel über den Umgang mit Jupyter Notebook einklappen, um das Notebook kürzer zu machen und dich besser auf die folgenden Aufgaben konzentrieren zu können - aber natürlich nur, wenn dir jetzt klar ist, wie du mit einem Jupyter Notebook umgehst.
-        
-            🗬 *Übrigens werden eingeklappte Inhalte auch im Inhaltsverzeichnis entsprechend angezeigt. Du kannst daher auch über das Inhaltsverzeichnis Inhalte ein- und auch wieder ausklappen.*
-            \"""
-        )#### Inhaltsverzeichnis
+        #### Inhaltsverzeichnis
         Im Menü kannst du über **[View > Table of Contents](##)** (oder alternativ mit **[Strg + ⇧ + K](## "Strg + Shift + K")**) das Inhaltsverzeichnis anzeigen lassen. Darüber kannst du schneller im gesamten Dokument navigieren und hast einen Überblick über die gesamte Struktur des Notebooks.
         
         🗬 *Wenn du im Inhaltsverzeichnis links oben auf **[≡](## "Show heading number in the document")** klickst, kannst du dir die Überschriften nummeriert anzeigen lassen.*
@@ -292,7 +200,7 @@ def _(mo):
 
 @app.cell
 def _(mo):
-    mo.md(r"mo.md(r\"""## Warum Python?\""")## Warum Python?")
+    mo.md(r"## Warum Python?")
     return
 
 
@@ -300,16 +208,7 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        mo.md(
-            r\"""
-            Python ist eine Programmiersprache, die in den letzten Jahren immer beliebter wurde. Python lässt sich aufgrund der einfachen Syntax schnell erlernen und bietet insbesondere zu aktuellen Themen der künstlichen Intelligenz wie beispielsweise *tiefen neuronalen Netzen* oder *Sprachverarbeitung* (Natural Language Processing) eine breite Auswahl an Bibliotheken (d.h. Code den man für seine eigenen Projekte benutzen kann ohne alles selbst schreiben zu müssen). Laut PYPL-Index ("PopularitY of Programming Language Index") ist Python momentan sogar die beliebteste Programmiersprache weltweit. 
-        
-            <img src="resources/img/statista_beliebteste_programmiersprachen.png" alt="Liste der beliebtesten Programmiersprachen" style="width:50%">
-            <!-- Quelle: https://de.statista.com/statistik/daten/studie/678732/umfrage/beliebteste-programmiersprachen-weltweit-laut-pypl-index/ -->
-        
-            Auch für unsere Anwendungsfälle eignet sich Python, weshalb du mit den Grundlagen der Sprache vertraut sein solltest.
-            \"""
-        )Python ist eine Programmiersprache, die in den letzten Jahren immer beliebter wurde. Python lässt sich aufgrund der einfachen Syntax schnell erlernen und bietet insbesondere zu aktuellen Themen der künstlichen Intelligenz wie beispielsweise *tiefen neuronalen Netzen* oder *Sprachverarbeitung* (Natural Language Processing) eine breite Auswahl an Bibliotheken (d.h. Code den man für seine eigenen Projekte benutzen kann ohne alles selbst schreiben zu müssen). Laut PYPL-Index ("PopularitY of Programming Language Index") ist Python momentan sogar die beliebteste Programmiersprache weltweit. 
+        Python ist eine Programmiersprache, die in den letzten Jahren immer beliebter wurde. Python lässt sich aufgrund der einfachen Syntax schnell erlernen und bietet insbesondere zu aktuellen Themen der künstlichen Intelligenz wie beispielsweise *tiefen neuronalen Netzen* oder *Sprachverarbeitung* (Natural Language Processing) eine breite Auswahl an Bibliotheken (d.h. Code den man für seine eigenen Projekte benutzen kann ohne alles selbst schreiben zu müssen). Laut PYPL-Index ("PopularitY of Programming Language Index") ist Python momentan sogar die beliebteste Programmiersprache weltweit. 
         
         <img src="resources/img/statista_beliebteste_programmiersprachen.png" alt="Liste der beliebtesten Programmiersprachen" style="width:50%">
         <!-- Quelle: https://de.statista.com/statistik/daten/studie/678732/umfrage/beliebteste-programmiersprachen-weltweit-laut-pypl-index/ -->
@@ -322,13 +221,13 @@ def _(mo):
 
 @app.cell
 def _(mo):
-    mo.md(r"mo.md(r\"""## Syntax\""")## Syntax")
+    mo.md(r"## Syntax")
     return
 
 
 @app.cell
 def _(mo):
-    mo.md(r"mo.md(r\"""### Einrückungen\""")### Einrückungen")
+    mo.md(r"### Einrückungen")
     return
 
 
@@ -336,13 +235,7 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        mo.md(
-            r\"""
-            Python arbeitet mit Einrückungen, um die Struktur des Programms sichtbar zu machen. Aus anderen Programmiersprachen wie beispielsweise *C#* oder *Java* kennst du vielleicht die geschweiften Klammern, die dort stattdessen verwendet werden. Das bedeutet aber auch, dass du deinen Code nicht beliebig einrücken darfst. Achte also im Folgenden besonders darauf, welcher Code eingerückt werden muss.
-        
-            ✎ *Führe den folgenden Code aus und behebe anschließend den Fehler.*
-            \"""
-        )Python arbeitet mit Einrückungen, um die Struktur des Programms sichtbar zu machen. Aus anderen Programmiersprachen wie beispielsweise *C#* oder *Java* kennst du vielleicht die geschweiften Klammern, die dort stattdessen verwendet werden. Das bedeutet aber auch, dass du deinen Code nicht beliebig einrücken darfst. Achte also im Folgenden besonders darauf, welcher Code eingerückt werden muss.
+        Python arbeitet mit Einrückungen, um die Struktur des Programms sichtbar zu machen. Aus anderen Programmiersprachen wie beispielsweise *C#* oder *Java* kennst du vielleicht die geschweiften Klammern, die dort stattdessen verwendet werden. Das bedeutet aber auch, dass du deinen Code nicht beliebig einrücken darfst. Achte also im Folgenden besonders darauf, welcher Code eingerückt werden muss.
         
         ✎ *Führe den folgenden Code aus und behebe anschließend den Fehler.*
         """
@@ -361,22 +254,13 @@ def _():
     ##    print(bad)
     # ---------- Lösung
     print(bad)
-    # -----------------# Hier wurde richtig eingerückt.
-    good = "Hallo!"
-    print(good)
-
-    # Diese Einrückung ist falsch
-    bad = "Hi!"
-    ##    print(bad)
-    # ---------- Lösung
-    print(bad)
     # -----------------
     return bad, good
 
 
 @app.cell
 def _(mo):
-    mo.md(r"mo.md(r\"""### Variablen & Datentypen\""")### Variablen & Datentypen")
+    mo.md(r"### Variablen & Datentypen")
     return
 
 
@@ -384,29 +268,7 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        mo.md(
-            r\"""
-            In Python ist es denkbar einfach, eine Variable zu definieren:
-            ```python
-            name = wert
-            ```
-        
-            Der `name` einer Variablen kann frei gewählt werden, sollte aber aussagekräftig sein - das verbessert die Lesbarkeit des Codes.
-        
-            Und auch der `wert` einer Variable kann frei gewählt werden. Im Gegensatz zu anderen Programmiersprachen musst du den Datentyp einer Variablen (z.B. Zahl, Wahrheitswert oder Zeichenkette) nicht im Vorhinein festlegen. Stattdessen wird während der Ausführung des Programms entschieden, welchen Datentyp die Variable haben sollte.
-        
-            ```python
-            zahl        = 42
-            dezimalzahl = 4.2
-            wahr        = True
-            falsch      = False
-            string      = "Eine Zeichenkette in Anführungszeichen"
-            ```
-        
-            ---
-            ✎ *Ergänze die fehlenden Variablen, sodass die Ausgabe fehlerfrei ist.*
-            \"""
-        )In Python ist es denkbar einfach, eine Variable zu definieren:
+        In Python ist es denkbar einfach, eine Variable zu definieren:
         ```python
         name = wert
         ```
@@ -430,51 +292,35 @@ def _(mo):
     return
 
 
-app._unparsable_cell(
-    r"""
-    steckbrief = \"Steckbrief:\"
+@app.cell
+def _():
+    steckbrief = "Steckbrief:"
 
     # Füge hier deinen Code ein.
     # ---------- Lösung
-    name = \"Lehr-Lern-Labor\"
+    name = "Lehr-Lern-Labor"
     maennlich = False
     alter = 5
     groesse = 42
     # -----------------
 
-    print(steckbrief, \"\n\", 
-          \"Name:\", name, \"\n\", 
-          \"männlich:\", maennlich, \"\n\", 
-          \"Alter:\", alter, \"\n\", 
-          \"Größe (in m):\", groesse)steckbrief = \"Steckbrief:\"
-
-    # Füge hier deinen Code ein.
-    # ---------- Lösung
-    name = \"Lehr-Lern-Labor\"
-    maennlich = False
-    alter = 5
-    groesse = 42
-    # -----------------
-
-    print(steckbrief, \"\n\", 
-          \"Name:\", name, \"\n\", 
-          \"männlich:\", maennlich, \"\n\", 
-          \"Alter:\", alter, \"\n\", 
-          \"Größe (in m):\", groesse)
-    """,
-    name="_"
-)
+    print(steckbrief, "\n", 
+          "Name:", name, "\n", 
+          "männlich:", maennlich, "\n", 
+          "Alter:", alter, "\n", 
+          "Größe (in m):", groesse)
+    return alter, groesse, maennlich, name, steckbrief
 
 
 @app.cell
 def _(mo):
-    mo.md(r"mo.md(r\"""# Erfahrung sammeln\""")# Erfahrung sammeln")
+    mo.md(r"# Erfahrung sammeln")
     return
 
 
 @app.cell
 def _(mo):
-    mo.md(r"mo.md(r\"""## Variablen\""")## Variablen")
+    mo.md(r"## Variablen")
     return
 
 
@@ -482,80 +328,7 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        mo.md(
-            r\"""
-            Du kannst Variablen deklarieren, ihnen Werte zuweisen, sie miteinander kombinieren und sie ausgeben lassen. Dabei helfen dir die folgenden Beispiele.
-        
-            ### Zahlen
-            ```Python
-            x = 42                      # deklarieren und initialisieren (d.h. den ersten Wert zuweisen)
-            x = 2                       # Wert zuweisen
-        
-            # Rechnen
-            a = x + 1                   # Addition
-            b = x - 2                   # Subtraktion
-            c = x * 3                   # Multiplikation
-            d = x / 4                   # Division
-            e = x ** 5                  # Potenz
-            f = x // 6                  # Ganzzahlige Division
-            g = x % 7                   # Modulo (Rest der ganzzahligen Division)
-        
-            # Kurzschreibweisen
-            x += 2                      # x = x + 2
-            x -= 2                      # x = x - 2
-            x *= 2                      # x = x * 2
-            x /= 2                      # x = x / 2
-            x **= 2                     # x = x ** 2
-        
-            # Zahlen ausgeben
-            print(x)
-            ```
-            ### Zeichenketten
-            ```Python
-            hello = "Hallo"            # Zeichenketten, also Strings, deklarieren
-            world = 'Welt'             # "" und '' können beide verwendet werden
-        
-            greeting = hello + world   # Konkatenation (d.h. Zeichenketten aneinanderhängen)
-            length = len(greeting)     # Länge einer Zeichenkette
-            a = greeting[0]            # Erstes Zeichen (die Nummerierung beginnt bei 0)
-            b = greeting[-1]           # Letztes Zeichen (negative Nummern zählen von hinten)
-            c = greeting[3:6]          # Teil der Zeichenkette (einschließlich Zeichen Nummer 3, ausschließlich Zeichen Nummer 6)
-            d = greeting[:5]           # d = greeting[0:5] (Erster Teil der Zeichenkette, die ersten 5 Zeichen)
-            e = greeting[5:]           # e = greeting[5:-1] (Letzter Teil der Zeichenkette, ab Zeichen Nummer 5)
-        
-            # Zeichenketten ausgeben
-            print(greeting)
-            print(hello, world)
-            print(hello, "an die gesamte", world, "!")
-        
-            # 🗬 Zeichenketten besser formatieren (Weitere Infos unter https://docs.python.org/3/tutorial/inputoutput.html)
-            print(f"{hello} an die gesamte {world}!")
-            ```
-        
-            ### Wahrheitswerte
-            ```Python
-            wahr = True
-            falsch = False
-        
-            # Boolsche Operatoren
-            a = not wahr               # Verneinung
-            b = wahr and falsch        # Und
-            c = wahr or falsch         # Oder
-        
-            # Vergleichen
-            d = (wahr == falsch)       # Gleichheit
-            e = (wahr != falsch)       # Ungleichheit
-            f = (1 < 2)                # Kleiner
-            g = (1 <= 2)               # Kleiner oder gleich
-            h = (1 > 2)                # Größer
-            i = (1 >= 2)               # Größer oder gleich
-            j = (0 <= x < 42)          # Zahlenbereich
-            ```
-        
-            ---
-            ✎ *Schau dir diese Beispiele an und stelle sicher, dass du weißt, was der Code bewirkt. Kopiere bei Bedarf Code in das untenstehende Feld und führe ihn aus.*
-            \"""
-        )Du kannst Variablen deklarieren, ihnen Werte zuweisen, sie miteinander kombinieren und sie ausgeben lassen. Dabei helfen dir die folgenden Beispiele.
+        Du kannst Variablen deklarieren, ihnen Werte zuweisen, sie miteinander kombinieren und sie ausgeben lassen. Dabei helfen dir die folgenden Beispiele.
         
         ### Zahlen
         ```Python
@@ -630,8 +403,8 @@ def _(mo):
     return
 
 
-app._unparsable_cell(
-    r"""
+@app.cell
+def _():
     print('------------------ Zahlen')
     _x = 42
     _x = 2
@@ -676,64 +449,18 @@ app._unparsable_cell(
     h = 1 > 2
     _i = 1 >= 2
     j = 0 <= _x < 42
-    print(a_5, b, c, d, e, f, g, h, _i, j)print('------------------ Zahlen')
-    _x = 42
-    _x = 2
-    a_5 = _x + 1
-    b = _x - 2
-    c = _x * 3
-    d = _x / 4
-    e = _x ** 5
-    f = _x // 6
-    g = _x % 7
-    _x = _x + 2
-    _x = _x - 2
-    _x = _x * 2
-    _x = _x / 2
-    _x = _x ** 2
-    print(_x)
-    print(a_5, b, c, d, e, f, g)
-    print('------------------ Zeichenketten')
-    hello = 'Hallo'
-    world = 'Welt'
-    greeting = hello + world
-    a_5 = greeting[0]
-    b = greeting[-1]
-    c = greeting[3:6]
-    d = greeting[:5]
-    e = greeting[5:]
-    print(greeting)
-    print(hello, world)
-    print(hello, 'an die gesamte', world, '!')
-    print(f'{hello} an die gesamte {world}!')
-    print(a_5, b, c, d, e)
-    print('------------------ Wahrheitswerte')
-    wahr = True
-    falsch = False
-    a_5 = not wahr
-    b = wahr and falsch
-    c = wahr or falsch
-    d = wahr == falsch
-    e = wahr != falsch
-    f = 1 < 2
-    g = 1 <= 2
-    h = 1 > 2
-    _i = 1 >= 2
-    j = 0 <= _x < 42
     print(a_5, b, c, d, e, f, g, h, _i, j)
-    """,
-    name="_"
-)
+    return a_5, b, c, d, e, f, falsch, g, greeting, h, hello, j, wahr, world
 
 
 @app.cell
 def _(mo):
-    mo.md(r"mo.md(r\"""✎ *Ergänze den folgenden Code. Die Funktion `pruefe_eingabe()` verrät dir, ob du alles richtig gemacht hast.*\""")✎ *Ergänze den folgenden Code. Die Funktion `pruefe_eingabe()` verrät dir, ob du alles richtig gemacht hast.*")
+    mo.md(r"✎ *Ergänze den folgenden Code. Die Funktion `pruefe_eingabe()` verrät dir, ob du alles richtig gemacht hast.*")
     return
 
 
-app._unparsable_cell(
-    r"""
+@app.cell
+def _():
     from resources.code.help_functions import pruefe_eingabe
     _x = 9
     _x = _x + 6
@@ -741,52 +468,19 @@ app._unparsable_cell(
     _x = _x ** 4
     _x = _x / 91125
     _x = _x - 3
-    pruefe_eingabe(_x)from resources.code.help_functions import pruefe_eingabe
-    _x = 9
-    _x = _x + 6
-    _x = _x * 3
-    _x = _x ** 4
-    _x = _x / 91125
-    _x = _x - 3
     pruefe_eingabe(_x)
-    """,
-    name="_"
-)
+    return (pruefe_eingabe,)
 
 
 @app.cell
 def _(mo):
-    mo.md(r"mo.md(r\"""✎ *Ergänze den folgenden Code. Überprüfe dein Ergebnis selbst.*\""")✎ *Ergänze den folgenden Code. Überprüfe dein Ergebnis selbst.*")
+    mo.md(r"✎ *Ergänze den folgenden Code. Überprüfe dein Ergebnis selbst.*")
     return
 
 
 @app.cell
 def _():
     text = "Labor"
-    string = "Lehr"
-    zeichenkette = "Lern"
-
-    # Konkateniere die drei Zeichenketten in der richtigen Reihenfolge und speichere das Ergebnis in der Variable LLL
-    # ---------- Lösung
-    LLL = string + zeichenkette + text
-    # -----------------
-
-    # Gib das erste Zeichen von LLL aus, das Zeichen Nummer 4 und das Zeichen Nummer 8.
-    # ---------- Lösung
-    print(LLL[0],LLL[4],LLL[8])
-    # -----------------
-
-    # Gib nun die drei Bestandteile des Worts aus.
-    # Verwende dafür aber nicht die zu Beginn definierten Variablen, sondern nur die Variable LLL.
-    # ---------- Lösung
-    print(LLL[:4], LLL[4:8], LLL[-5:])
-    # -----------------
-
-    # Verwende nun zusätzliche Zeichen, um den vollständigen Namen auszugeben.
-    # ---------- Lösung
-    print(f"{string}-{zeichenkette}-{text} Informatik Karlsruhe")
-    print(string+"-"+zeichenkette+"-"+text, "Informatik", "Karlsruhe")
-    # -----------------text = "Labor"
     string = "Lehr"
     zeichenkette = "Lern"
 
