@@ -1,9 +1,9 @@
 import warnings
 warnings.filterwarnings('ignore')
-from public/resources.code.help_functions import ei_zeichnen
+from public.resources.code.help_functions import ei_zeichnen
 import torchvision
 from torchvision import transforms
-from torch.utils.data import public.DataLoader
+from torch.utils.data import DataLoader
 import numpy as np
 import matplotlib.pyplot as plt
 
