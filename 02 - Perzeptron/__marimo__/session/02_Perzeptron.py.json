@@ -1,0 +1,307 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.12.0"
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "68833eb0d28c4b8a51d605d80e711ef5",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h1 id=\"das-perzeptron\">Das Perzeptron</h1>\n<span class=\"paragraph\">In der letzten Einheit haben wir gelernt, dass (reale) Objekte f\u00fcr den Computer nichts anderes als Datenpunkte sind und haben uns mit dem k-Nearest-Neighbors-Algorithmus besch\u00e4ftigt. Im Folgenden betrachten wir unseren n\u00e4chsten KI-Algorithmus, n\u00e4mlich den Urgro\u00dfvater der heutigen neuronalen Netze: das Perzeptron.</span>\n<span class=\"paragraph\">Importiere zun\u00e4chst alle notwendigen Bibliotheken f\u00fcr dieses Jupyter Notebook, indem du das folgende Codefeld ausf\u00fchrst. Beachte, dass du dieses Codefeld bei jedem Neustart des Kernels erneut ausf\u00fchren musst.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "3942b6861b552288b294f0f995af57da",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "beccbb6b76ca8c628f5022d7f9208c24",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3>Motivation</h3>\n\n<span class=\"paragraph\">Das Perzeptron versucht die Funktionweise einer Nervenzelle, auch <b>Neuron</b> genannt, nachzubilden. Sehr vereinfacht gesagt, nimmt ein Neuron elektrische (und chemische) Signale auf, verarbeitet sie und leitet die verarbeiteten Signale weiter. </span>\n<span class=\"paragraph\">&nbsp;</span>\n<figure>\n  <img src=\"public/img/neuronale_zelle.png\" alt=\"neuronale_zelle\" style=\"width:50%\">\n  <figcaption></figcaption>\n</figure>\n\n<span class=\"paragraph\">&nbsp;</span>\n<span class=\"paragraph\">Bei der Nachbildung des biologischen Neurons brauchen wir zun\u00e4chst Einheiten, die eine <b>Eingabe</b> aufnehmen k\u00f6nnen. Wir beschr\u00e4nken uns bei der Eingabe auf zwei Zahlen <marimo-tex class=\"arithmatex\">||(x_1||)</marimo-tex> und <marimo-tex class=\"arithmatex\">||(x_2||)</marimo-tex> (= Datenpunkt (<marimo-tex class=\"arithmatex\">||(x_1||)</marimo-tex>, <marimo-tex class=\"arithmatex\">||(x_2||)</marimo-tex>) im zweidimensionalen Raum). Diese Zahlen werden jeweils mit sogenannte <b>Gewichten</b> des Perzeptrons <marimo-tex class=\"arithmatex\">||(w_1||)</marimo-tex> und <marimo-tex class=\"arithmatex\">||(w_2||)</marimo-tex> multipliziert und zusammenaddiert. Zus\u00e4tzlich addiert man noch den sogenannten <b>Bias</b> <marimo-tex class=\"arithmatex\">||(b||)</marimo-tex> hinzu. Im n\u00e4chsten Verarbeitungsschritt wird diese Summe in eine <b>Aktivierungsfunktion</b> eingesetzt. Als Aktivierungsfunktion wird in einem Perzeptron typischerweise eine spezielle <b>Treppenfunktion</b> verwendet. Wenn die Eingabe dieser Treppenfunktion kleiner oder gleich <marimo-tex class=\"arithmatex\">||(0||)</marimo-tex> ist, wird <marimo-tex class=\"arithmatex\">||(0||)</marimo-tex> zur\u00fcckgegeben; wenn sie gr\u00f6\u00dfer als <marimo-tex class=\"arithmatex\">||(0||)</marimo-tex> ist, wird <marimo-tex class=\"arithmatex\">||(1||)</marimo-tex> zur\u00fcckgegeben:</span>\n<marimo-tex class=\"arithmatex\">||[ f(x) = \\left\\{\n\\begin{array}{ll}\n0 &amp; x \\leq 0 \\\\\n1 &amp; \\, \\textrm{sonst} \\\\\n\\end{array}\n\\right. ||]</marimo-tex><span class=\"paragraph\">Die Ausgabe des Perzeptrons kann als Zuweisung der Eingabe zu einer bestimmten <b>Klasse</b> interpretiert werden, also der Klasse <marimo-tex class=\"arithmatex\">||(0||)</marimo-tex> oder <marimo-tex class=\"arithmatex\">||(1||)</marimo-tex>. Das Perzeptron <b>klassifiziert</b> die eingegebenen Daten. Wenn wir an das Beispiel mit den Vogeleiern zur\u00fcckdenken, so weist das Perzeptron im Optimalfall den Eiern der Blaumeisen den Wert / die Klasse 0 und den Eiern der Greifv\u00f6gel den Wert / die Klasse 1 zu. </span>\n<span class=\"paragraph\">&nbsp;</span>\n<figure>\n  <img src=\"public/img/perzeptron.png\" alt=\"perzeptron\" style=\"width:70%\">\n  <figcaption></figcaption>\n</figure>\n\n<span class=\"paragraph\">&nbsp;</span>\n<hr />\n<span class=\"paragraph\"><img style=\"float: left;\" src=\"public/img/laptop_icon.png\" width=50 height=50 /> <br><br></span>\n<span class=\"paragraph\"><i>Setze das Perzeptron als Funktion in Python um. Rufe deine Funktion mit von dir gew\u00e4hlten Werten f\u00fcr <marimo-tex class=\"arithmatex\">||(w_1||)</marimo-tex>, <marimo-tex class=\"arithmatex\">||(w_2||)</marimo-tex> und <marimo-tex class=\"arithmatex\">||(b||)</marimo-tex> auf und \u00fcberpr\u00fcfe rechnerisch, ob die Ausgabe stimmt.</i></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "30678dd43994b2352eaedeaac5327f37",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "231c3bd07835f2574b2ed7d01d2fbbfa",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">In der letzten Aufgabe haben wir die Werte f\u00fcr <marimo-tex class=\"arithmatex\">||(w_1||)</marimo-tex>, <marimo-tex class=\"arithmatex\">||(w_2||)</marimo-tex> und <marimo-tex class=\"arithmatex\">||(b||)</marimo-tex> selbst festgelegt. Betrachten wir die Daten unserer Vogeleier, so m\u00f6chten wir, dass das Perzeptron f\u00fcr einen Blaumeisen-Ei-Datenpunkt das Ergebnis 0 ausgibt und f\u00fcr einen Greifvogel-Ei-Datenpunkt das Ergebnis 1. Wahrscheinlich war unsere Wahl f\u00fcr die Werte <marimo-tex class=\"arithmatex\">||(w_1||)</marimo-tex>, <marimo-tex class=\"arithmatex\">||(w_2||)</marimo-tex> und <marimo-tex class=\"arithmatex\">||(b||)</marimo-tex> nicht optimal. Unser Ziel ist es, dass der KI-Algorithmus selbst die optimalen Werte f\u00fcr <marimo-tex class=\"arithmatex\">||(w_1||)</marimo-tex>, <marimo-tex class=\"arithmatex\">||(w_2||)</marimo-tex> und <marimo-tex class=\"arithmatex\">||(b||)</marimo-tex> des Perzeptrons bestimmt. Bevor wir untersuchen, wie das geht, kl\u00e4ren wir, wie die uns zur Verf\u00fcgung stehende Daten \u00fcberlicherweise unterteilt werden.</span>\n<h2 id=\"trainings-und-testdaten\">Trainings- und Testdaten</h2>\n<span class=\"paragraph\">Betrachten wir im Folgenden die uns zur Verf\u00fcgung stehenden Daten, d.h. die Datenpunkte der Blaumeisen- und der Greifv\u00f6gel-Eier.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": "09bd0107ab20d21af2d8df3261c98394",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "image/png": "data:image/png;base64,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f/4nT57UTTfdpK9//ev6zW9+o6uuukoffPCBMjIyTJcWM2+88YbC4XDnr9955x3dcsstuvvuuw1WFVurV6/W+vXrtXXrVl1//fV688035ff75fF49Hd/93emy4uJBQsW6J133tG2bds0duxYPf/88/L5fDp06JBycnJMl9c3Nrp1/PhxW5L92muvmS4lrjIyMuznnnvOdBkx19raal977bX2q6++as+aNct++OGHTZcUMytXrrSnTZtmuoy4WrJkif3lL3/ZdBlGPfzww/Y111xjW5ZlupSYmTNnjn3fffd1OXfnnXfa9957r6GKYuvMmTO2y+Wy//M//7PL+S9+8Yv2smXLDFV15XhM04NgMChJGjlypOFK4iMcDuull15SW1ubiouLTZcTc4sXL9acOXPk8/lMlxIXH3zwgcaOHau8vDzde++9amxsNF1STL388ssqLCzU3XffrdGjR+vGG2/Uxo0bTZcVNx0dHXr++ed13333xWWDUVNmzpypmpoaHT58WJL09ttv6/XXX9c3v/lNw5XFxrlz5xQOh5Wamtrl/JAhQ/T6668bqioKTKeh/iocDttz5syxb7rpJtOlxNyBAwfsYcOG2S6Xy/Z4PPYrr7xiuqSYe/HFF+0pU6bYf/rTn2zbtpN+ZmTnzp32v/3bv9lvv/22XV1dbRcXF9tXX321HQqFTJcWM26323a73XZ5ebm9b98++5lnnrFTU1Ptn//856ZLi4uqqirb5XLZH3/8selSYiocDttLliyxHQ6HPWjQINvhcNhPPPGE6bJiqri42J41a5b98ccf2+fOnbO3bdtmO51O+7rrrjNdWp8RRrrx4IMP2uPHj7ebmppMlxJz7e3t9gcffGC/+eab9tKlS+3MzEz73XffNV1WzDQ2NtqjR4+233777c5zyR5GLnTy5Ek7PT09qR/HDR482C4uLu5y7qGHHrK/9KUvGaoovm699Vb7L//yL02XEXMvvviiPW7cOPvFF1+0Dxw4YP/rv/6rPXLkyKQOnQ0NDfZXv/pVW5Ltcrns6dOn2/fee689adIk06X1GWHkEhYvXmyPGzfOPnLkiOlSjLj55pvtBx54wHQZMbNjx47Of8TnD0m2w+GwXS6Xfe7cOdMlxkVhYaG9dOlS02XEzNVXX23ff//9Xc797Gc/s8eOHWuoovj58MMPbafTaf/qV78yXUrMjRs3zl63bl2Xc4899pg9ceJEQxXFz+nTp+1jx47Ztm3b3/rWt+zbbrvNcEV9R8/I59i2re9///vasWOH/uu//ktf+MIXTJdkhGVZam9vN11GzNx88806ePCg9u/f33kUFhbq3nvv1f79++VyuUyXGHOnT5/W73//e40ZM8Z0KTFz0003XfTV/MOHD2v8+PGGKoqfLVu2aPTo0ZozZ47pUmLuzJkzcjq7fpS5XC5ZlmWoovgZNmyYxowZo5MnT2rXrl26/fbbTZfUZ8n93b4ILV68WC+88IJ+/etfKy0tTYFAQJLk8Xg0ZMgQw9XFRnl5ub75zW/q6quvVmtrq1544QXt2bNHu3btMl1azKSlpWnKlCldzg0bNkyjRo266Hyy+OEPf6i5c+dq/PjxOnbsmFauXCmXy6V77rnHdGkx88gjj2jmzJl64okn9K1vfUt1dXV69tln9eyzz5ouLaYsy9KWLVs0f/78pP/6tiTNnTtXjz/+uK6++mpdf/31euutt7RmzRrdd999pkuLmV27dsm2bU2cOFENDQ36+7//e02aNEl+v990aX1nemqmP5F0yWPLli2mS4uZ++67zx4/frydkpJiX3XVVfbNN99s//a3vzVdVtwle89ISUmJPWbMGDslJcXOycmxS0pK7IaGBtNlxdx//Md/2FOmTLHdbrc9adIk+9lnnzVdUszt2rXLlmTX19ebLiUuQqGQ/fDDD9tXX321nZqaaufl5dnLli2z29vbTZcWM1VVVXZeXp6dkpJiZ2dn24sXL7ZPnTpluqwr4rDtJF6mDgAA9Hv0jAAAAKMIIwAAwCjCCAAAMIowAgAAjCKMAAAAowgjAADAKMIIAAAwijACAACMIowAAACjCCMAAMAowggAADCKMAIAAIz6f/R+bD6BbRKAAAAAAElFTkSuQmCC"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Xref",
+      "code_hash": "0660ed76f6754545f91bcdd0044cfb84",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">Um eine KI mit Daten zu trainieren, unterteilen wir die uns zur Verf\u00fcgung stehende Daten in <b>Trainigsdaten</b> und <b>Testdaten</b>. \u00dcberlicherweise unterteilt man die Daten in 80% Trainings- und 20% Testdaten, also ein Verh\u00e4ltnis von 8:2. Auf den Trainigsdaten wird die KI trainiert, d.h. sie passt sich so an, dass sie viele Trainingsdaten richtig klassifiziert. In unserem Fall bedeutet es, dass sie einen Trainingspunkt <marimo-tex class=\"arithmatex\">||((2, 0.8)||)</marimo-tex> als Ei einer Blaumeise klassifiziert. Nach einem Trainingsdurchlauf (auch <b>Epoche</b> genannt) wird auf den Testdaten die Genauigkeit (engl. Accuracy) der KI gemessen. Es ist dabei wichtig, dass es bei den Trainings- und Testdaten keine \u00dcberschneidungen gibt!</span>\n<span class=\"paragraph\"><img style=\"float: left;\" src=\"public/img/laptop_icon.png\" width=50 height=50 /> <br><br></span>\n<span class=\"paragraph\"><i>Erstelle eine Liste mit allen Datenpunkten als (<marimo-tex class=\"arithmatex\">||(x_1||)</marimo-tex>, <marimo-tex class=\"arithmatex\">||(x_2||)</marimo-tex>, <marimo-tex class=\"arithmatex\">||(l||)</marimo-tex>)-Tripel. <marimo-tex class=\"arithmatex\">||(l||)</marimo-tex> bezeichnet dabei das <b>Label</b> des Datenpunkts. Geh\u00f6rt der Datenpunkt zu der Klasse der Blaumeiseneier, so ist <marimo-tex class=\"arithmatex\">||(l=0||)</marimo-tex>, ansonsten ist <marimo-tex class=\"arithmatex\">||(l=1||)</marimo-tex>. Durchmische die Liste und unterteile die Daten in Trainings- und Testdaten in einem Verh\u00e4ltnis von 8:2.</i></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SFPL",
+      "code_hash": "338ca93935d764964d28b07dd8992a5c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "BYtC",
+      "code_hash": "9ca9b85e28d726dbef264b863646ac87",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><hr />\n<span class=\"paragraph\"><img style=\"float: left;\" src=\"public/img/laptop_icon.png\" width=50 height=50 /> <br><br></span>\n<span class=\"paragraph\"><i>Z\u00e4hle wie viele Punkte das Perzeptron mit deiner Wahl der Gewichte <marimo-tex class=\"arithmatex\">||(w_1||)</marimo-tex> und <marimo-tex class=\"arithmatex\">||(w_2||)</marimo-tex> und des Bias <marimo-tex class=\"arithmatex\">||(b||)</marimo-tex> richtig klassifiziert und gebe die Genauigkeit in Prozent aus. Benutze dabei die von dir implementierte Funktion aus der ersten Aufgabe.</i></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "RGSE",
+      "code_hash": "338ca93935d764964d28b07dd8992a5c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Kclp",
+      "code_hash": "089481c0046018c5c5d44856bab8088b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">In unserem Datensatz gibt es gleich viele Blaumeisen- und Greifvogel-Eier. Wenn also jemand r\u00e4t und sich jeweils zuf\u00e4llig f\u00fcr eine Klasse entscheidet, liegt seine Rategenauigkeit bei 50%. Wenn dein Perzeptron eine \u00e4hnliche Genauigkeit aufweist, dann ist dieses Ergebnis nicht besonders erstrebenswert. Im n\u00e4chsten Abschnitt schauen wir uns an, mit welchem Algorithmus die Gewichte angepasst werden, sodass das Perzeptron alle unsere Daten richtig klassifizieren kann.</span>\n<h3>Geometrische Betrachtung</h3>\n\n<span class=\"paragraph\">Um die Funktionsweise des Perzeptrons anschaulich darzustellen, betrachten wir wie bisher unsere zweidimensionalen Datenpunkte. Das Perzeptron kann aber auch <marimo-tex class=\"arithmatex\">||(n||)</marimo-tex>-dimensionale Datenpunkte f\u00fcr beliebige ganzzahlige <marimo-tex class=\"arithmatex\">||(n||)</marimo-tex> klassifizieren. Zur besseren Veranschaulichung nehmen wir in den folgenden Abschnitten au\u00dferdem an, dass <marimo-tex class=\"arithmatex\">||(b = 0||)</marimo-tex> ist. Demzufolge ist der Output des Perzeptrons <marimo-tex class=\"arithmatex\">||(f(w_1 \\cdot x_1 + w_2 \\cdot x_2)||)</marimo-tex>. Bei der Aktivierungsfunktion <marimo-tex class=\"arithmatex\">||(f||)</marimo-tex> handelt es sich um die bereits vorgestellte Treppenfunktion.</span>\n<hr />\n<span class=\"paragraph\"><i style=\"font-size:38px\">?</i>&nbsp;</span>\n<span class=\"paragraph\"><i>Wir betrachten genau die Grenze der beiden Klassen, die zwar noch zur Klasse 0 geh\u00f6rt, aber trotzdem die Klassen voneinander trennt. Diese Grenze wird durch die Gleichung <marimo-tex class=\"arithmatex\">||(w_1 \\cdot x_1 + w_2 \\cdot x_2 = 0||)</marimo-tex> beschrieben. An was erinnert dich das? <br> Tipp: Setze f\u00fcr <marimo-tex class=\"arithmatex\">||(w_1||)</marimo-tex> und <marimo-tex class=\"arithmatex\">||(w_2||)</marimo-tex> konktrete Werte ein, um dir den Sachverhalt besser zu veranschaulichen.</i></span>\n<details>\n<summary>\u27a4 Klick hier, um deine Antwort zu pr\u00fcfen.</summary>\n\nDie Gleichung beschreibt eine Gerade. Du kannst die Gleichung auch nach $x_2$ umstellen, sodass du die gewohnte Form einer Geradengleichung erh\u00e4ltst, die du aus der Schule kennst: $$x_2 = - \\frac{w_1}{w_2} x_1 + 0.$$ <br><br>\n\nWenn $w_1 \\cdot x_1 + w_2 \\cdot x_2 \\leq 0$, dann wird dem Punkt $(x_1, x_2)$ die Ausgabe 0 zugewiesen. Wenn $w_1 \\cdot x_1 + w_2 \\cdot x_2 > 0$, dann die Ausgabe $1$. Durch die Gleichung $w_1 \\cdot x_1 + w_2 \\cdot x_2 = 0$ wird also eine Entscheidungsgrenze in Form einer Geraden beschrieben. Alle Punkte, die auf dieser Geraden liegen, geh\u00f6ren \u201egerade noch so\u201d der Klasse $0$ an. Wenn ein Punkt auf der einen Seite der Geraden liegt, so wird ihm $0$ als Ausgabe zugewiesen und wenn ein Punkt auf der anderen Seite der Geraden liegt, so wird ihm $1$ zugewiesen. <br><br>\n\nAlternativ kannst du die \u201eEntscheidungsgerade\u201d, auch \u00fcber den Gewichtsvektor $\\vec{w} = \\begin{pmatrix} w_1 \\\\ w2 \\end{pmatrix}$ konstruieren. Die Gerade (blau dargestellt) l\u00e4uft durch den Ursprung $(0,0)$ und ist orthogonal (rechtwinklig) zum Gewichtsvektor (schwarz dargestellt).\n<br><br>    \n<figure>\n  <img src=\"public/img/vector.png\" alt=\"weight vector\" style=\"width:30%\">\n</figure> \n\n\nZusatzfrage: Was \u00e4ndert sich, wenn b $\\neq$ 0?\n\n</details></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "emfo",
+      "code_hash": "031d2ff530515fa6366473670c85af16",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3>Update der Gewichte</h3>\n\n<span class=\"paragraph\">Im letzten Abschnitt haben wir die geometrische Bedeutung der Gleichung <marimo-tex class=\"arithmatex\">||(w_1 \\cdot x_1 + w_2 \\cdot x_2 = 0||)</marimo-tex> kennen gelernt. In diesem Abschnitt finden wir heraus, wie wir die Gewichte anpassen, wenn das Perzeptron Datenpunkte falsch klassifiziert.</span>\n<hr />\n<span class=\"paragraph\"><i style=\"font-size:38px\">?</i>&nbsp;</span>\n<span class=\"paragraph\"><i>Der Punkt P <marimo-tex class=\"arithmatex\">||((-2, 0)||)</marimo-tex> wird vom Perzeptron falsch, der Punkt Q <marimo-tex class=\"arithmatex\">||((-1,1)||)</marimo-tex> wird dagegen richtig klassifiziert. Wie muss die Gerade (bzw. der <b>Gewichtsvektor</b>) angepasst werden, damit beide Punkte richtig klassifiziert werden? Beziehe in dein Update den Vektor <marimo-tex class=\"arithmatex\">||(\\vec{p} = \\begin{pmatrix} -2 \\\\ 0 \\end{pmatrix}||)</marimo-tex> mit ein.</i></span>\n<span class=\"paragraph\">&nbsp;</span>\n<figure>\n  <img src=\"public/img/vector2.png\" alt=\"weight vector\" style=\"width:30%\">\n  <figcaption></figcaption>\n</figure>\n\n<span class=\"paragraph\">&nbsp;</span>\n<details>\n\n<summary>\u27a4 Klicke hier, um die L\u00f6sung anzuzeigen.</summary>\n\nDas Perzeptron klassifiziert die Punkte richtig, wenn die Entscheidungsgrenze zwischen den beiden Punkten $P$ und $Q$ verl\u00e4uft. Einen passenden neuen Gewichtsvektor erh\u00e4ltst du beispielsweise \u00fcber $\\vec{w}_{\\text{neu}} = \\vec{w}_{\\text{alt}} + 0.6 \\cdot \\vec{p}$.\n\n<br><br>\n\n\n <figure>\n  <img src=\"public/img/vector3.png\" alt=\"weight vector\" style=\"width:30%\">\n  <figcaption></figcaption>\n</figure> \n\n</details></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hstk",
+      "code_hash": "b964e265a5a043b4db1948b8625ad0bf",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><hr />\n<span class=\"paragraph\"><img style=\"float: left;\" src=\"public/img/laptop_icon.png\" width=50 height=50 /> <br><br></span>\n<span class=\"paragraph\"><i>Setze nun folgende Formeln zur Gewichtsanpassung als Funktion in Code um.</i></span>\n<marimo-tex class=\"arithmatex\">||[w_i^{\\text{neu}} = w_i^{\\text{alt}} + 0.1 \\cdot (o - l) \\cdot x_i||]</marimo-tex><marimo-tex class=\"arithmatex\">||[b^{\\text{neu}} = b^{\\text{alt}} + 0.1 \\cdot (o - l)||]</marimo-tex><span class=\"paragraph\"><i>Dabei wir mit <marimo-tex class=\"arithmatex\">||(o||)</marimo-tex> der Output des Perzeptrons und mit <marimo-tex class=\"arithmatex\">||(l||)</marimo-tex> das tats\u00e4chliche Label des Datenpunkts bezeichnet. Die <b>Lernrate</b> ist in der Formel auf 0.1 gesetzt. Sie gibt an, wie stark sich der Gewichtsvektor ver\u00e4ndern soll.</i></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nWHF",
+      "code_hash": "9874a95ecb1d832f98cc6851623ac4b4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "iLit",
+      "code_hash": "7a302f0a0840a09ee220c7baf827d8a9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">Nun sind wir bereit, unser Perzeptron zu <b>trainieren</b>. d.h. die Gewichte schrittweise an unsere Datenpunkte anzupassen. Wir geben dem Perzeptron jeden Datenpunkt als Input und \u00fcberpr\u00fcfen, ob das Perzeptron den Datenpunkt richtig klassifiziert. Wenn das nicht der Fall ist, rufen wir unsere Funktion auf, die wir gerade implementiert haben, und passen die Gewichte an.</span>\n<hr />\n<span class=\"paragraph\"><img style=\"float: left;\" src=\"public/img/laptop_icon.png\" width=50 height=50 /> <br><br></span>\n<span class=\"paragraph\"><i>Du hast oben bereits einen Datensatz erzeugt. Trainiere das Perzeptron solange, bis es jeden Punkt richtig klassifiziert (maximal aber drei Epochen lang). Zeichne nach jeder \u00c4nderung des Gewichtsvektors <marimo-tex class=\"arithmatex\">||(\\vec{w}||)</marimo-tex> ein Schaubild mit den Punkten und der Entscheidungsgerade ein. F\u00e4rbe die Punkte oberhalb der Geraden mit der Farbe der Blaumeisen-Eier und die Punkte unterhalb der Geraden mit der Farbe der Greifvogel-Eier.</i></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZHCJ",
+      "code_hash": "ccd5ec5b03f4c65f8051678778fc1bbc",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ROlb",
+      "code_hash": "e6248a6a82c0f2df490de531feeff76c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><hr />\n<span class=\"paragraph\"><img style=\"float: left;\" src=\"public/img/laptop_icon.png\" width=50 height=50 /> <br><br></span>\n<span class=\"paragraph\"><i>Wenn du alles richtig gemacht hast, sollte der Algorithmus nach wenigen Schritten die Datenpunkte durch eine Gerade voneinander trennen. F\u00fchre deinen Code nun mit dem unteren Datensatz noch einmal aus. Beobachte, was passiert, und passe gegebenenfalls die Lernrate an.</i></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "qnkX",
+      "code_hash": "75629741c90ea5ff17e352649c91e8a4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TqIu",
+      "code_hash": "a0ea7cae1a10b875740b4bcbc765d45d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><hr />\n<span class=\"paragraph\"><i style=\"font-size:38px\">?</i></span>\n<span class=\"paragraph\"><i>Das Perzeptron kann Datenpunkte zweier Klassen durch eine Gerade trennen. F\u00fchre das folgende Feld aus. Erkennst du ein Problem? F\u00fchre deinen implementierten Algorithmus auf diesem Datensatz aus. Was passiert?</i></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Vxnm",
+      "code_hash": "716edea4a992dac370c37cde2d0fb3ad",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "DnEU",
+      "code_hash": "64d6476379ffc99db7359d76c76e6ad7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3 id=\"grenzen-des-perzeptrons\">Grenzen des Perzeptrons</h3>\n<span class=\"paragraph\">Die M\u00f6glichkeiten des Perzeptrons sind begrenzt. Vielleicht hast du schon im letzten Abschnitt mindestens einen Nachteil entdeckt. Fallen dir weitere ein? Hast du eine Idee, warum das Perzeptron nicht so m\u00e4chtig ist?</span>\n<hr />\n<span class=\"paragraph\"><i style=\"font-size:38px\">?</i></span>\n<span class=\"paragraph\"><i>\u00dcberlege dir, in welchen Szenarien das Perzeptron an seine Grenzen st\u00f6\u00dft und klicke anschlie\u00dfend die L\u00f6sungen an.</i></span>\n<span class=\"paragraph\">&nbsp;</span>\n<details>\n\n<summary>\u27a4 1. Nachteil</summary>\n\nWie das letzte Beispiel zeigt, ist das Perzeptron nicht in der Lage, alle Daten richtig zu klassifizieren, wenn die Datenpunkte unterschiedlicher Klassen nicht durch eine Gerade getrennt werden k\u00f6nnen. \n\n&nbsp;\n\n</details>\n\n<details>\n\n<summary>\u27a4 2. Nachteil</summary>\n\nDas Perzeptron kann nur zwei Klassen von Datenpunkten durch eine Entscheidungsgerade voneinander trennen. Wenn der Datensatz mehr als zwei Klassen beinhaltet (bspw. drei Arten von Vogeleiern), ist das Perzeptron nicht in der Lage alle Datenpunkte richtig zu klassifizieren, da es nur $0$ oder $1$ ausgeben kann.\n\n&nbsp;\n\n\n</details>\n\n<details>\n\n<summary>\u27a4 3. Nachteil</summary>\n\nDer Lernalgorithmus des Perzeptrons ist nicht optimal, d.h. es gibt F\u00e4lle bei denen er nicht funktoniert oder sich nur sehr langsam der L\u00f6sung n\u00e4hert.\n\n</details>\n\n<h3 id=\"zusammenfassung\">Zusammenfassung</h3>\n<span class=\"paragraph\">Bevor wir zur n\u00e4chsten Einheit \u00fcbergehen, fassen wir hier kurz unsere wichtigsten Erkenntnisse zusammen. </span>\n<span class=\"paragraph\">Aus Sicht des Computers k\u00f6nnen allerlei Daten als Punkte in einem zwei-, drei- oder <marimo-tex class=\"arithmatex\">||(n||)</marimo-tex>-dimensionalen Raum aufgefasst werden. Das Perzeptron zieht eine Gerade / Ebene durch den betrachteten Raum, um die Daten entweder der Klasse 0 oder 1 zuzuordnen. Wenn nicht alle Punkte richtig klassifiziert werden, wird die Gerade in jedem Schritt leicht angepasst. Dieser Algorithmus st\u00f6\u00dft allerdings schnell an seine Grenzen, wenn die Datenpunkte unterschiedlicher Klassen nicht durch eine Gerade getrennt werden k\u00f6nnen, es mehr als zwei Klassen gibt oder die Startgewichte ung\u00fcnstig gew\u00e4hlt wurden.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ulZA",
+      "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "YdNW",
+      "code_hash": null,
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    }
+  ]
+}

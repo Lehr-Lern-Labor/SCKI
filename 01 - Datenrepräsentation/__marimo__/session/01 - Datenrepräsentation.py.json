@@ -1,0 +1,131 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.12.0"
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "9100e9f626557871b01fc546ba7a9496",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h1 id=\"reprasentation-von-informationen-im-computer\">Repr\u00e4sentation von Informationen im Computer</h1>\n<span class=\"paragraph\">Nachdem du einige Grundlagen der Pythonprogrammierung kennen gelernt hast, widmen wir uns in diesem Abschnitt der Repr\u00e4sentation von Informationen im Computer, die f\u00fcr die Anwendungen k\u00fcnstlicher Intelligenz besonders wichtig ist. </span>\n<span class=\"paragraph\">Um es m\u00f6glichst einfach zu halten, betrachten wir zwei Arten von Gegenst\u00e4nden: die Eier von Blaumeisen und die Eier von Greifv\u00f6geln. </span>\n<span class=\"paragraph\">&nbsp;</span>\n<figure>\n  <img src=\"public/img/voegel_und_eier.png\" alt=\"V\u00f6gel und Eier\" style=\"width:45%\">\n  <figcaption></figcaption>\n</figure>\n\n<span class=\"paragraph\">&nbsp;</span>\n<span class=\"paragraph\">Diese Objekte unterscheiden sich z.B. in ihrer Helligkeit und H\u00f6he voneinander. Die Eier der Blaumeisen sind relativ hell und klein. Demgegen\u00fcber sind die Eier mancher Greifv\u00f6gel besonders hoch und relativ dunkel. Messen wir die Helligkeit und die H\u00f6he eines Eis einer Blaumeise und eines Greifvogels, so k\u00f6nnte z.B. der zweidimensionale Punkt <marimo-tex class=\"arithmatex\">||(p_1=(0.8, 2)||)</marimo-tex> ein Ei einer Blaumeise und <marimo-tex class=\"arithmatex\">||(p_2=(0.3, 8)||)</marimo-tex> ein Ei eines Greifvogels beschreiben. Dabei steht der erste Wert f\u00fcr die Helligkeit und der zweite f\u00fcr die H\u00f6he des Eis. Demzufolge k\u00f6nnen wir jedes Ei als Punkt in einem Koordinatensystem darstellen.  </span>\n<span class=\"paragraph\">&nbsp;</span>\n<figure>\n  <img src=\"public/img/koordinatensystem_eier.png\" alt=\"Koordinatensystem mit Eiern\" style=\"width:45%\">\n  <figcaption></figcaption>\n</figure>\n\n<span class=\"paragraph\">&nbsp;</span>\n<span class=\"paragraph\">F\u00fcr Computer sind also derartige Informationen nichts weiter als zwei-, drei- oder n-dimensionale Datenpunkte, denn ein Computer hat im Gegensatz zum Menschen kein intuitives Verst\u00e4ndnis von Formen, Farben oder sonstigen Sinneswahrnehmungen. </span>\n<h2 id=\"darstellung-von-datenpunkten-in-python\">Darstellung von Datenpunkten in Python</h2>\n<span class=\"paragraph\">Um Datenpunkte in Python darzustellen, gibt es unterschiedliche Bibliotheken, wie z.B. <i>NumPy</i> oder <i>PyTorch</i>. F\u00fcr den jetzigen Anwendungsfall reicht es jedoch aus, einen Datenpunkt durch ein Zahlentupel zu beschreiben. M\u00f6chtest du diese Datenpunkte in einem zweidimensionalen Koordinatensystem abbilden, bietet dir die Bibliothek <i>Matplotlib</i> die passende Funktion dazu.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "5ae31d3d8f8957b4aa9a1664aaa9b17d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "image/png": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAiMAAAGdCAYAAADAAnMpAAAAOnRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjEwLjEsIGh0dHBzOi8vbWF0cGxvdGxpYi5vcmcvc2/+5QAAAAlwSFlzAAAPYQAAD2EBqD+naQAAI2BJREFUeJzt3X1UlGXi//HPgDpgMmOsKZD4lGYPGuLpYFjmmpRPy+Zxvycf2sQ0y9LVsizZUrN2j1pu+91t7WE7KnWyPOpR61eG2YORLuVqUD62mpikQKuuM4DKhly/P/wxvyZAZ3CYC+j9OmdOzc11M9fF7TDvM3PP4DDGGAEAAFgSYXsCAADg540YAQAAVhEjAADAKmIEAABYRYwAAACriBEAAGAVMQIAAKwiRgAAgFUtbE8gEFVVVTp69KhiYmLkcDhsTwcAAATAGKPS0lIlJCQoIqLu5z+aRIwcPXpUiYmJtqcBAADqobCwUB07dqzz600iRmJiYiSdW4zL5bI8GwAAEAiv16vExETf43hdmkSMVL8043K5iBEAAJqYC51iwQmsAADAKmIEAABYRYwAAACriBEAAGAVMQIAAKwiRgAAgFXECAAAsIoYAQAAVjWJDz0D0DydrTLaVnBC35eeUfuYKKV0jVVkBH9/CgiXxnIfDCpGFixYoLVr12rfvn2Kjo5W//79tWjRIvXs2fO8+61evVpz5szRoUOH1KNHDy1atEjDhw+/qIkDaNqydxVp/v/ZoyLPGd+2eHeU5qVfo6G94i3ODPh5aEz3waBepvnkk080depUffbZZ9q0aZN++OEH3XbbbSovL69zn3/84x8aO3asJk2apLy8PI0cOVIjR47Url27LnryAJqm7F1Fuv/1L/x+CUpSseeM7n/9C2XvKrI0M+DnobHdBx3GGFPfnf/973+rffv2+uSTT3TzzTfXOmb06NEqLy/XO++849t2ww03qE+fPnrppZcCuh2v1yu32y2Px8PfpgGauLNVRjct+qjGL8FqDklx7ihteewWXrIBGkA474OBPn5f1AmsHo9HkhQbG1vnmNzcXKWlpfltGzJkiHJzc+vcp6KiQl6v1+8CoHnYVnCizl+CkmQkFXnOaFvBifBNCvgZaYz3wXrHSFVVlR588EHdeOON6tWrV53jiouL1aFDB79tHTp0UHFxcZ37LFiwQG6323dJTEys7zQBNDLfl9b9S7A+4wAEpzHeB+sdI1OnTtWuXbu0cuXKUM5HkpSZmSmPx+O7FBYWhvw2ANjRPiYqpOMABKcx3gfr9dbeadOm6Z133lFOTo46dux43rFxcXEqKSnx21ZSUqK4uLg693E6nXI6nfWZGoBGLqVrrOLdUSr2nFFtJ6xVv16d0rXul38B1F9jvA8G9cyIMUbTpk3TunXr9NFHH6lr164X3Cc1NVUffvih37ZNmzYpNTU1uJkCaBYiIxyal36NpHO/9H6s+vq89Gs4eRVoII3xPhhUjEydOlWvv/663njjDcXExKi4uFjFxcU6ffq0b8z48eOVmZnpuz5jxgxlZ2frT3/6k/bt26cnn3xS27dv17Rp00K3CgBNytBe8Xrxt30V5/Z/GjjOHaUXf9uXzxkBGlhjuw8G9dZeh6P2Slq+fLkmTJggSfrlL3+pLl26KCsry/f11atX64knnvB96NkzzzwT1Iee8dZeoHlqLJ/+CPxcNfR9MNDH74v6nJFwIUYAAGh6wvI5IwAAABeLGAEAAFYRIwAAwCpiBAAAWEWMAAAAq4gRAABgFTECAACsIkYAAIBVxAgAALCKGAEAAFYRIwAAwCpiBAAAWEWMAAAAq4gRAABgFTECAACsIkYAAIBVxAgAALCKGAEAAFYRIwAAwCpiBAAAWEWMAAAAq4gRAABgFTECAACsIkYAAIBVxAgAALCKGAEAAFYRIwAAwCpiBAAAWEWMAAAAq4gRAABgFTECAACsIkYAAIBVxAgAALCKGAEAAFYRIwAAwCpiBAAAWEWMAAAAq4gRAABgFTECAACsIkYAAIBVxAgAALCKGAEAAFYRIwAAwCpiBAAAWEWMAAAAq4gRAABgFTECAACsIkYAAIBVxAgAALCKGAEAAFYRIwAAwCpiBAAAWEWMAAAAq4gRAABgFTECAACsIkYAAIBVQcdITk6O0tPTlZCQIIfDofXr119wnxUrVigpKUmtW7dWfHy8Jk6cqOPHj9dnvgAAoJkJOkbKy8uVlJSkJUuWBDR+69atGj9+vCZNmqTdu3dr9erV2rZtmyZPnhz0ZAEAQPPTItgdhg0bpmHDhgU8Pjc3V126dNH06dMlSV27dtV9992nRYsWBXvTAACgGWrwc0ZSU1NVWFioDRs2yBijkpISrVmzRsOHD2/omwYAAE1Ag8fIjTfeqBUrVmj06NFq1aqV4uLi5Ha7z/syT0VFhbxer98FAAA0Tw0eI3v27NGMGTM0d+5c7dixQ9nZ2Tp06JCmTJlS5z4LFiyQ2+32XRITExt6mgAAwBKHMcbUe2eHQ+vWrdPIkSPrHHPXXXfpzJkzWr16tW/bli1bNGDAAB09elTx8fE19qmoqFBFRYXvutfrVWJiojwej1wuV32nCwAAwsjr9crtdl/w8TvoE1iDderUKbVo4X8zkZGRkqS6OsjpdMrpdDb01AAAQCMQ9Ms0ZWVlys/PV35+viSpoKBA+fn5Onz4sCQpMzNT48eP941PT0/X2rVr9eKLL+rgwYPaunWrpk+frpSUFCUkJIRmFQAAoMkK+pmR7du3a9CgQb7rM2fOlCRlZGQoKytLRUVFvjCRpAkTJqi0tFR/+9vf9PDDD6tt27a65ZZbeGsvAACQdJHnjIRLoK85AQCAxiPQx2/+Ng0AALCKGAEAAFYRIwAAwCpiBAAAWEWMAAAAq4gRAABgFTECAACsIkYAAIBVxAgAALCKGAEAAFYRIwAAwCpiBAAAWEWMAAAAq4gRAABgFTECAACsIkYAAIBVxAgAALCKGAEAAFYRIwAAwCpiBAAAWEWMAAAAq4gRAABgFTECAACsIkYAAIBVxAgAALCKGAEAAFYRIwAAwCpiBAAAWEWMAAAAq4gRAABgFTECAACsIkYAAIBVxAgAALCKGAEAAFYRIwAAwCpiBAAAWEWMAAAAq4gRAABgFTECAACsIkYAAIBVxAgAALCKGAEAAFYRIwAAwCpiBAAAWEWMAAAAq4gRAABgFTECAACsIkYAAIBVxAgAALCKGAEAAFYRIwAAwCpiBAAAWEWMAAAAq4gRAABgFTECAACsIkYAAIBVxAgAALAq6BjJyclRenq6EhIS5HA4tH79+gvuU1FRoccff1ydO3eW0+lUly5dtGzZsvrMFwAANDMtgt2hvLxcSUlJmjhxokaNGhXQPnfccYdKSkq0dOlSde/eXUVFRaqqqgp6sgAAoPkJOkaGDRumYcOGBTw+Oztbn3zyiQ4ePKjY2FhJUpcuXYK9WQAA0Ew1+Dkjb7/9tq6//no988wzuvzyy3XllVfqkUce0enTp+vcp6KiQl6v1+8CAACap6CfGQnWwYMHtWXLFkVFRWndunU6duyYHnjgAR0/flzLly+vdZ8FCxZo/vz5DT01AADQCDT4MyNVVVVyOBxasWKFUlJSNHz4cD333HN69dVX63x2JDMzUx6Px3cpLCxs6GkCAABLGvyZkfj4eF1++eVyu92+bVdffbWMMfruu+/Uo0ePGvs4nU45nc6GnhoAAGgEGvyZkRtvvFFHjx5VWVmZb9u//vUvRUREqGPHjg198wAAoJELOkbKysqUn5+v/Px8SVJBQYHy8/N1+PBhSedeYhk/frxv/Lhx4/SLX/xCd999t/bs2aOcnBzNmjVLEydOVHR0dGhWAQAAmqygY2T79u1KTk5WcnKyJGnmzJlKTk7W3LlzJUlFRUW+MJGkNm3aaNOmTTp58qSuv/563XnnnUpPT9df//rXEC0BAAA0ZQ5jjLE9iQvxer1yu93yeDxyuVy2pwMAAAIQ6OM3f5sGAABYRYwAAACriBEAAGAVMQIAAKwiRgAAgFXECAAAsIoYAQAAVhEjAADAKmIEAABYRYwAAACriBEAAGAVMQIAAKwiRgAAgFXECAAAsIoYAQAAVhEjAADAKmIEAABYRYwAAACriBEAAGAVMQIAAKwiRgAAgFXECAAAsIoYAQAAVhEjAADAKmIEAABYRYwAAACriBEAAGAVMQIAAKwiRgAAgFXECAAAsIoYAQAAVhEjAADAKmIEAABYRYwAAACriBEAAGAVMQIAAKwiRgAAgFXECAAAsIoYAQAAVhEjAADAKmIEAABYRYwAAACriBEAAGAVMQIAAKwiRgAAgFXECAAAsIoYAQAAVhEjAADAKmIEAABYRYwAAACriBEAAGAVMQIAAKwiRgAAgFXECAAAsIoYAQAAVhEjAADAqqBjJCcnR+np6UpISJDD4dD69esD3nfr1q1q0aKF+vTpE+zNAgCAZiroGCkvL1dSUpKWLFkS1H4nT57U+PHjNXjw4GBvEgAANGMtgt1h2LBhGjZsWNA3NGXKFI0bN06RkZFBPZsCAACat7CcM7J8+XIdPHhQ8+bNC2h8RUWFvF6v3wUAADRPDR4j+/fv1+zZs/X666+rRYvAnohZsGCB3G6375KYmNjAswQAALY0aIycPXtW48aN0/z583XllVcGvF9mZqY8Ho/vUlhY2ICzBAAANgV9zkgwSktLtX37duXl5WnatGmSpKqqKhlj1KJFC73//vu65ZZbauzndDrldDobcmoAAKCRaNAYcblc2rlzp9+2F154QR999JHWrFmjrl27NuTNAwCAJiDoGCkrK9OBAwd81wsKCpSfn6/Y2Fh16tRJmZmZOnLkiF577TVFRESoV69efvu3b99eUVFRNbYDAICfp6BjZPv27Ro0aJDv+syZMyVJGRkZysrKUlFRkQ4fPhy6GQIAgGbNYYwxtidxIV6vV263Wx6PRy6Xy/Z0AABAAAJ9/OZv0wAAAKuIEQAAYBUxAgAArCJGAACAVcQIAACwihgBAABWESMAAMAqYgQAAFhFjAAAAKuIEQAAYBUxAgAArCJGAACAVcQIAACwihgBAABWESMAAMAqYgQAAFhFjAAAAKuIEQAAYBUxAgAArCJGAACAVcQIAACwihgBAABWESMAAMAqYgQAAFhFjAAAAKuIEQAAYBUxAgAArCJGAACAVcQIAACwihgBAABWESMAAMAqYgQAAFhFjAAAAKuIEQAAYBUxAgAArCJGAACAVcQIAACwihgBAABWESMAAMAqYgQAAFhFjAAAAKuIEQAAYBUxAgAArCJGAACAVcQIAACwihgBAABWESMAAMAqYgQAAFhFjAAAAKuIEQAAYBUxAgAArCJGAACAVcQIAACwihgBAABWESMAAMAqYgQAAFgVdIzk5OQoPT1dCQkJcjgcWr9+/XnHr127Vrfeeqsuu+wyuVwupaamauPGjfWdLwAAaGaCjpHy8nIlJSVpyZIlAY3PycnRrbfeqg0bNmjHjh0aNGiQ0tPTlZeXF/RkAQBA8+Mwxph67+xwaN26dRo5cmRQ+1177bUaPXq05s6dG9B4r9crt9stj8cjl8tVj5kCAIBwC/Txu0UY5yRJqqqqUmlpqWJjY+scU1FRoYqKCt91r9cbjqkBAAALwn4C6+LFi1VWVqY77rijzjELFiyQ2+32XRITE8M4QwAAEE5hjZE33nhD8+fP16pVq9S+ffs6x2VmZsrj8fguhYWFYZwlAAAIp7C9TLNy5Urdc889Wr16tdLS0s471ul0yul0hmlmAADAprA8M/Lmm2/q7rvv1ptvvqkRI0aE4yYBAEATEfQzI2VlZTpw4IDvekFBgfLz8xUbG6tOnTopMzNTR44c0WuvvSbp3EszGRkZ+stf/qJ+/fqpuLhYkhQdHS232x2iZQAAgKYq6GdGtm/fruTkZCUnJ0uSZs6cqeTkZN/bdIuKinT48GHf+L///e+qrKzU1KlTFR8f77vMmDEjREsAAABN2UV9zki48DkjAAA0PYE+fvO3aQAAgFXECAAAsIoYAQAAVhEjAADAKmIEAABYRYwAAACriBEAAGAVMQIAAKwiRgAAgFXECAAAsIoYAQAAVhEjAADAKmIEAABYRYwAAACriBEAAGAVMQIAAKwiRgAAgFXECAAAsIoYAQAAVhEjAADAKmIEAABYRYwAAACriBEAAGAVMQIAAKwiRgAAgFXECAAAsIoYAQAAVhEjAADAKmIEAABYRYwAAACriBEAAGAVMQIAAKwiRgAAgFXECAAAsIoYAQAAVhEjAADAKmIEAABYRYwAAACriBEAAGAVMQIAAKwiRgAAgFXECAAAsIoYAQAAVhEjAADAKmIEAABYRYwAAACriBEAAGAVMQIAAKwiRgAAgFXECAAAsIoYAQAAVhEjAADAKmIEAABYRYwAAACriBEAAGBVC9sTsOVsldG2ghP6vvSM2sdEKaVrrCIjHLanBQBA+Jw9K336qVRUJMXHSwMGSJGRYZ9G0M+M5OTkKD09XQkJCXI4HFq/fv0F99m8ebP69u0rp9Op7t27Kysrqx5TDZ3sXUW6adFHGvvKZ5qxMl9jX/lMNy36SNm7iqzOCwCAsFm7VurSRRo0SBo37tx/u3Q5tz3Mgo6R8vJyJSUlacmSJQGNLygo0IgRIzRo0CDl5+frwQcf1D333KONGzcGPdlQyN5VpPtf/0JFnjN+24s9Z3T/618QJACA5m/tWul//kf67jv/7UeOnNse5iBxGGNMvXd2OLRu3TqNHDmyzjGPPfaY3n33Xe3atcu3bcyYMTp58qSys7MDuh2v1yu32y2PxyOXy1Xf6epsldFNiz6qESLVHJLi3FHa8tgtvGQDAGiezp499wzIT0OkmsMhdewoFRRc9Es2gT5+N/gJrLm5uUpLS/PbNmTIEOXm5ta5T0VFhbxer98lFLYVnKgzRCTJSCrynNG2ghMhuT0AABqdTz+tO0QkyRipsPDcuDBp8BgpLi5Whw4d/LZ16NBBXq9Xp0+frnWfBQsWyO12+y6JiYkhmcv3pXWHSH3GAQDQ5BQFeDpCoONCoFG+tTczM1Mej8d3KSwsDMn3bR8TFdJxAAA0OfHxoR0XAg3+1t64uDiVlJT4bSspKZHL5VJ0dHSt+zidTjmdzpDPJaVrrOLdUSr2nFFtJ8pUnzOS0jU25LcNAECjMGDAuXNCjhw595LMT1WfMzJgQNim1ODPjKSmpurDDz/027Zp0yalpqY29E3XEBnh0Lz0aySdC48fq74+L/0aTl4FADRfkZHSX/5y7v8dP3m8q77+v/8b1s8bCTpGysrKlJ+fr/z8fEnn3rqbn5+vw4cPSzr3Esv48eN946dMmaKDBw/q0Ucf1b59+/TCCy9o1apVeuihh0KzgiAN7RWvF3/bV3Fu/5di4txRevG3fTW0V/ielgIAwIpRo6Q1a6TLL/ff3rHjue2jRoV1OkG/tXfz5s0aNGhQje0ZGRnKysrShAkTdOjQIW3evNlvn4ceekh79uxRx44dNWfOHE2YMCHg2wzVW3t/jE9gBQD87DXwJ7AG+vh9UZ8zEi4NESMAAKBhNZrPGQEAADgfYgQAAFhFjAAAAKuIEQAAYBUxAgAArCJGAACAVcQIAACwihgBAABWESMAAMCqBv+rvaFQ/SGxXq/X8kwAAECgqh+3L/Rh700iRkpLSyVJiYmJlmcCAACCVVpaKrfbXefXm8TfpqmqqtLRo0cVExMjx0//3PFF8Hq9SkxMVGFhYbP9mzfNfY2sr+lr7mts7uuTmv8aWV/9GWNUWlqqhIQERUTUfWZIk3hmJCIiQh07dmyw7+9yuZrlP7Afa+5rZH1NX3NfY3Nfn9T818j66ud8z4hU4wRWAABgFTECAACs+lnHiNPp1Lx58+R0Om1PpcE09zWyvqavua+xua9Pav5rZH0Nr0mcwAoAAJqvn/UzIwAAwD5iBAAAWEWMAAAAq4gRAABgVbOPkT/+8Y/q37+/WrdurbZt2wa0jzFGc+fOVXx8vKKjo5WWlqb9+/f7jTlx4oTuvPNOuVwutW3bVpMmTVJZWVkDrOD8gp3HoUOH5HA4ar2sXr3aN662r69cuTIcS/JTn5/zL3/5yxpznzJlit+Yw4cPa8SIEWrdurXat2+vWbNmqbKysiGXUqdg13jixAn97ne/U8+ePRUdHa1OnTpp+vTp8ng8fuNsHcMlS5aoS5cuioqKUr9+/bRt27bzjl+9erWuuuoqRUVFqXfv3tqwYYPf1wO5P4ZbMGt85ZVXNGDAAF166aW69NJLlZaWVmP8hAkTahyroUOHNvQy6hTM+rKysmrMPSoqym9MUz+Gtf1OcTgcGjFihG9MYzmGOTk5Sk9PV0JCghwOh9avX3/BfTZv3qy+ffvK6XSqe/fuysrKqjEm2Pt10EwzN3fuXPPcc8+ZmTNnGrfbHdA+CxcuNG6326xfv958+eWX5te//rXp2rWrOX36tG/M0KFDTVJSkvnss8/Mp59+arp3727Gjh3bQKuoW7DzqKysNEVFRX6X+fPnmzZt2pjS0lLfOElm+fLlfuN+vP5wqc/PeeDAgWby5Ml+c/d4PL6vV1ZWml69epm0tDSTl5dnNmzYYNq1a2cyMzMbejm1CnaNO3fuNKNGjTJvv/22OXDggPnwww9Njx49zG9+8xu/cTaO4cqVK02rVq3MsmXLzO7du83kyZNN27ZtTUlJSa3jt27daiIjI80zzzxj9uzZY5544gnTsmVLs3PnTt+YQO6P4RTsGseNG2eWLFli8vLyzN69e82ECROM2+023333nW9MRkaGGTp0qN+xOnHiRLiW5CfY9S1fvty4XC6/uRcXF/uNaerH8Pjx437r27Vrl4mMjDTLly/3jWksx3DDhg3m8ccfN2vXrjWSzLp16847/uDBg6Z169Zm5syZZs+ePeb55583kZGRJjs72zcm2J9XfTT7GKm2fPnygGKkqqrKxMXFmWeffda37eTJk8bpdJo333zTGGPMnj17jCTzz3/+0zfmvffeMw6Hwxw5ciTkc69LqObRp08fM3HiRL9tgfwjbmj1Xd/AgQPNjBkz6vz6hg0bTEREhN8vzBdffNG4XC5TUVERkrkHKlTHcNWqVaZVq1bmhx9+8G2zcQxTUlLM1KlTfdfPnj1rEhISzIIFC2odf8cdd5gRI0b4bevXr5+57777jDGB3R/DLdg1/lRlZaWJiYkxr776qm9bRkaGuf3220M91XoJdn0X+t3aHI/hn//8ZxMTE2PKysp82xrTMawWyO+ARx991Fx77bV+20aPHm2GDBniu36xP69ANPuXaYJVUFCg4uJipaWl+ba53W7169dPubm5kqTc3Fy1bdtW119/vW9MWlqaIiIi9Pnnn4dtrqGYx44dO5Sfn69JkybV+NrUqVPVrl07paSkaNmyZRf8E9ChdjHrW7Fihdq1a6devXopMzNTp06d8vu+vXv3VocOHXzbhgwZIq/Xq927d4d+IecRqn9LHo9HLpdLLVr4/7mpcB7D//73v9qxY4fffSciIkJpaWm++85P5ebm+o2Xzh2L6vGB3B/DqT5r/KlTp07phx9+UGxsrN/2zZs3q3379urZs6fuv/9+HT9+PKRzD0R911dWVqbOnTsrMTFRt99+u9/9qDkew6VLl2rMmDG65JJL/LY3hmMYrAvdB0Px8wpEk/hDeeFUXFwsSX4PVNXXq79WXFys9u3b+329RYsWio2N9Y0Jh1DMY+nSpbr66qvVv39/v+1PPfWUbrnlFrVu3Vrvv/++HnjgAZWVlWn69Okhm/+F1Hd948aNU+fOnZWQkKCvvvpKjz32mL7++mutXbvW931rO77VXwunUBzDY8eO6emnn9a9997rtz3cx/DYsWM6e/ZsrT/bffv21bpPXcfix/e16m11jQmn+qzxpx577DElJCT4/XIfOnSoRo0apa5du+qbb77R73//ew0bNky5ubmKjIwM6RrOpz7r69mzp5YtW6brrrtOHo9HixcvVv/+/bV792517Nix2R3Dbdu2adeuXVq6dKnf9sZyDINV133Q6/Xq9OnT+s9//nPR/+YD0SRjZPbs2Vq0aNF5x+zdu1dXXXVVmGYUWoGu72KdPn1ab7zxhubMmVPjaz/elpycrPLycj377LMheSBr6PX9+EG5d+/eio+P1+DBg/XNN9/oiiuuqPf3DUa4jqHX69WIESN0zTXX6Mknn/T7WkMeQ9TPwoULtXLlSm3evNnvJM8xY8b4/r9379667rrrdMUVV2jz5s0aPHiwjakGLDU1Vampqb7r/fv319VXX62XX35ZTz/9tMWZNYylS5eqd+/eSklJ8dvelI9hY9AkY+Thhx/WhAkTzjumW7du9frecXFxkqSSkhLFx8f7tpeUlKhPnz6+Md9//73ffpWVlTpx4oRv/4sR6Poudh5r1qzRqVOnNH78+AuO7devn55++mlVVFRc9N8vCNf6qvXr10+SdODAAV1xxRWKi4urcSZ4SUmJJIXk+EnhWWNpaamGDh2qmJgYrVu3Ti1btjzv+FAew9q0a9dOkZGRvp9ltZKSkjrXEhcXd97xgdwfw6k+a6y2ePFiLVy4UB988IGuu+66847t1q2b2rVrpwMHDoT1gexi1letZcuWSk5O1oEDByQ1r2NYXl6ulStX6qmnnrrg7dg6hsGq6z7ocrkUHR2tyMjIi/43EZCQnX3SyAV7AuvixYt92zweT60nsG7fvt03ZuPGjdZOYK3vPAYOHFjjHRh1+cMf/mAuvfTSes+1PkL1c96yZYuRZL788ktjzP8/gfXHZ4K//PLLxuVymTNnzoRuAQGo7xo9Ho+54YYbzMCBA015eXlAtxWOY5iSkmKmTZvmu3727Flz+eWXn/cE1l/96ld+21JTU2ucwHq++2O4BbtGY4xZtGiRcblcJjc3N6DbKCwsNA6Hw7z11lsXPd9g1Wd9P1ZZWWl69uxpHnroIWNM8zmGxpx7HHE6nebYsWMXvA2bx7CaAjyBtVevXn7bxo4dW+ME1ov5NxHQXEP2nRqpb7/91uTl5fnevpqXl2fy8vL83sbas2dPs3btWt/1hQsXmrZt25q33nrLfPXVV+b222+v9a29ycnJ5vPPPzdbtmwxPXr0sPbW3vPN47vvvjM9e/Y0n3/+ud9++/fvNw6Hw7z33ns1vufbb79tXnnlFbNz506zf/9+88ILL5jWrVubuXPnNvh6firY9R04cMA89dRTZvv27aagoMC89dZbplu3bubmm2/27VP91t7bbrvN5Ofnm+zsbHPZZZdZfWtvMGv0eDymX79+pnfv3ubAgQN+byWsrKw0xtg7hitXrjROp9NkZWWZPXv2mHvvvde0bdvW986lu+66y8yePds3fuvWraZFixZm8eLFZu/evWbevHm1vrX3QvfHcAp2jQsXLjStWrUya9as8TtW1b+DSktLzSOPPGJyc3NNQUGB+eCDD0zfvn1Njx49wh7H9Vnf/PnzzcaNG80333xjduzYYcaMGWOioqLM7t27fWOa+jGsdtNNN5nRo0fX2N6YjmFpaanvcU6See6550xeXp759ttvjTHGzJ4929x1112+8dVv7Z01a5bZu3evWbJkSa1v7T3fzysUmn2MZGRkGEk1Lh9//LFvjP7f5zFUq6qqMnPmzDEdOnQwTqfTDB482Hz99dd+3/f48eNm7Nixpk2bNsblcpm7777bL3DC5ULzKCgoqLFeY4zJzMw0iYmJ5uzZszW+53vvvWf69Olj2rRpYy655BKTlJRkXnrppVrHNrRg13f48GFz8803m9jYWON0Ok337t3NrFmz/D5nxBhjDh06ZIYNG2aio6NNu3btzMMPP+z3tthwCnaNH3/8ca3/piWZgoICY4zdY/j888+bTp06mVatWpmUlBTz2Wef+b42cOBAk5GR4Td+1apV5sorrzStWrUy1157rXn33Xf9vh7I/THcgllj586daz1W8+bNM8YYc+rUKXPbbbeZyy67zLRs2dJ07tzZTJ48OaS/6IMVzPoefPBB39gOHTqY4cOHmy+++MLv+zX1Y2iMMfv27TOSzPvvv1/jezWmY1jX74fq9WRkZJiBAwfW2KdPnz6mVatWplu3bn6Ph9XO9/MKBYcxYX6/JgAAwI/wOSMAAMAqYgQAAFhFjAAAAKuIEQAAYBUxAgAArCJGAACAVcQIAACwihgBAABWESMAAMAqYgQAAFhFjAAAAKuIEQAAYNX/BRGDB/pTvyD0AAAAAElFTkSuQmCC"
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "for-Schleife:\nx-werte: [1, -1, 0]\ny-werte: [2, 1, 2]\n\nlist comprehension:\nx-werte: [1, -1, 0]\ny-werte: [2, 1, 2]\n"
+        }
+      ]
+    },
+    {
+      "id": "vblA",
+      "code_hash": "c2e9284f1ebdc1cd1779732e0c5548e4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\"><img style=\"float: left;\" src=\"public/img/laptop_icon.png\" width=50 height=50 /> <br><br></span>\n<span class=\"paragraph\"><i>Plotte die Punkte des Graphen der Funktion <marimo-tex class=\"arithmatex\">||(x^2||)</marimo-tex> im Koordinatensystem, deren x-Werte im Intervall von <marimo-tex class=\"arithmatex\">||(-4||)</marimo-tex> bis <marimo-tex class=\"arithmatex\">||(4||)</marimo-tex> liegen und jeweils den Abstand <marimo-tex class=\"arithmatex\">||(0.5||)</marimo-tex> voneinander haben.</i></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "338ca93935d764964d28b07dd8992a5c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "39a27a11fb37026745b241d5b55be869",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"k-nearest-neighbors-knn\">k-Nearest-Neighbors (kNN)</h2>\n<span class=\"paragraph\">Im Folgenden schauen wir uns unseren ersten KI-Algorithmus an. Der k-Nearest-Neighbor-Algorithmus ist ein einfacher Klassifikationsalgorithmus. Im ersten Schritt wird dem Computer \u201emitgeteilt\u201c, bei welchen Daten es sich um Datenpunkte der Klasse 0, 1, 2, etc. handelt; in unserem Fall welche Datenpunkte die Eier der Blaumeise und welche Datenpunkte die Eier von Greifv\u00f6geln repr\u00e4sentieren. Im zweiten Schritt wird <i>k</i> festgelegt. Wir w\u00e4hlen <marimo-tex class=\"arithmatex\">||(k=3||)</marimo-tex>. Wenn wir nun einen neuen Datenpunkt klassifizieren m\u00fcssen, dessen Klasse uns nicht bekannt ist, bestimmen wir die <marimo-tex class=\"arithmatex\">||(k=3||)</marimo-tex> n\u00e4chsten Nachbarn dieses Datenpunkts. Hat dieser Datenpunkt mehr Nachbarn, die als Eier der Blaumeise klassifiziert sind, wird auch dieser Datenpunkt als ein Ei der Blaumeise klassifiziert. Gibt es mehr Eier der Greifv\u00f6gel als Nachbarn, wird der neue Datenpunkt als Ei eines Greifvogels klassiziert. Die Herausforderung des k-Nearest-Neighbours-Algorithmus besteht u.a. darin, <i>k</i> optimal zu w\u00e4hlen.</span>\n<span class=\"paragraph\">&nbsp;</span>\n<figure>\n  <img src=\"public/img/koordinatensystem_eier_knn.png\" alt=\"Koordinatensystem mit Eiern\" style=\"width:45%\">\n  <figcaption></figcaption>\n</figure>\n\n<span class=\"paragraph\">&nbsp;</span>\n<span class=\"paragraph\"><img style=\"float: left;\" src=\"public/img/laptop_icon.png\" width=50 height=50 /> <br><br></span>\n<span class=\"paragraph\"><i> Jetzt betrachten wir Mini-Greifv\u00f6gel, deren Eier etwas kleiner und heller sind als die der bisherigen Greifv\u00f6gel. Au\u00dferdem haben wir ein paar unbekannte Eier (rot markierte Datenbpunkte), die entweder von den Mini-Greifv\u00f6geln oder den Blaumeisen stammen. Ordne die unbekannten Eier mit Hilfe des kNN-Algorithmus entweder der Klasse der Eier der Blaumeise oder der Eier der Greifv\u00f6gel zu. F\u00fchre dazu das Feld aus, um alle Datenpunkte zu visualisieren. Implementiere anschlie\u00dfend den kNN-Algorithmus und f\u00fchre die implementierte Funktion auf allen Datenpunkten aus. \u00c4ndert sich die Klassifikation f\u00fcr unterschiedliche <i>k</i>?</i></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": "9d6d33d67794c0765dc976b3e19ceff5",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Xref",
+      "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "iQjh",
+      "code_hash": null,
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "rGvm",
+      "code_hash": null,
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    }
+  ]
+}

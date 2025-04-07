@@ -210,7 +210,7 @@ def _(mo):
         r"""
         Python ist eine Programmiersprache, die in den letzten Jahren immer beliebter wurde. Python lässt sich aufgrund der einfachen Syntax schnell erlernen und bietet insbesondere zu aktuellen Themen der künstlichen Intelligenz wie beispielsweise *tiefen neuronalen Netzen* oder *Sprachverarbeitung* (Natural Language Processing) eine breite Auswahl an Bibliotheken (d.h. Code den man für seine eigenen Projekte benutzen kann ohne alles selbst schreiben zu müssen). Laut PYPL-Index ("PopularitY of Programming Language Index") ist Python momentan sogar die beliebteste Programmiersprache weltweit. 
 
-        <img src="resources/img/statista_beliebteste_programmiersprachen.png" alt="Liste der beliebtesten Programmiersprachen" style="width:50%">
+        <img src="public/resources/img/statista_beliebteste_programmiersprachen.png" alt="Liste der beliebtesten Programmiersprachen" style="width:50%">
         <!-- Quelle: https://de.statista.com/statistik/daten/studie/678732/umfrage/beliebteste-programmiersprachen-weltweit-laut-pypl-index/ -->
 
         Auch für unsere Anwendungsfälle eignet sich Python, weshalb du mit den Grundlagen der Sprache vertraut sein solltest.
@@ -825,7 +825,7 @@ def _(mo):
 
 @app.cell
 def _():
-    from resources.code.help_functions import morse, pruefe_kodiertes_wort, pruefe_dekodiertes_wort
+    from public.resources.code.help_functions import morse, pruefe_kodiertes_wort, pruefe_dekodiertes_wort
     morse = morse()
     ausdruck = 'KÜNSTLICHE INTELLIGENZ'
     codiertes_wort = ''
@@ -977,7 +977,7 @@ def _():
     # Du kannst auch deine eigenen Dateien in dein Programm importieren.
     # Wenn du eine Datei von einem Ordner in deinem aktuellen Verzeichnis
     # importieren möchtest, gibst du den relativen Pfad durch Punkte getrennt an:
-    from resources.code.help_functions import sagHallo
+    from public.resources.code.help_functions import sagHallo
 
     sagHallo()
     return date, os, p, sagHallo, time
