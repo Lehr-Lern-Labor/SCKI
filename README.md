@@ -19,3 +19,9 @@ pip install -r requirements.txt
 ```bash
 marimo edit
 ```
+
+## Start Marimo server (headless)
+```bash
+marimo edit --headless
+```
+

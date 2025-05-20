@@ -1,12 +1,12 @@
 {
   "version": "1",
   "metadata": {
-    "marimo_version": "0.12.0"
+    "marimo_version": "0.13.10"
   },
   "cells": [
     {
       "id": "Hbol",
-      "code_hash": "68833eb0d28c4b8a51d605d80e711ef5",
+      "code_hash": "383f1fe99d330d4eb28000b1bf740b94",
       "outputs": [
         {
           "type": "data",
@@ -32,12 +32,12 @@
     },
     {
       "id": "vblA",
-      "code_hash": "beccbb6b76ca8c628f5022d7f9208c24",
+      "code_hash": "e782465fb75377442dc75aa5a9ccf5dd",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3>Motivation</h3>\n\n<span class=\"paragraph\">Das Perzeptron versucht die Funktionweise einer Nervenzelle, auch <b>Neuron</b> genannt, nachzubilden. Sehr vereinfacht gesagt, nimmt ein Neuron elektrische (und chemische) Signale auf, verarbeitet sie und leitet die verarbeiteten Signale weiter. </span>\n<span class=\"paragraph\">&nbsp;</span>\n<figure>\n  <img src=\"public/img/neuronale_zelle.png\" alt=\"neuronale_zelle\" style=\"width:50%\">\n  <figcaption></figcaption>\n</figure>\n\n<span class=\"paragraph\">&nbsp;</span>\n<span class=\"paragraph\">Bei der Nachbildung des biologischen Neurons brauchen wir zun\u00e4chst Einheiten, die eine <b>Eingabe</b> aufnehmen k\u00f6nnen. Wir beschr\u00e4nken uns bei der Eingabe auf zwei Zahlen <marimo-tex class=\"arithmatex\">||(x_1||)</marimo-tex> und <marimo-tex class=\"arithmatex\">||(x_2||)</marimo-tex> (= Datenpunkt (<marimo-tex class=\"arithmatex\">||(x_1||)</marimo-tex>, <marimo-tex class=\"arithmatex\">||(x_2||)</marimo-tex>) im zweidimensionalen Raum). Diese Zahlen werden jeweils mit sogenannte <b>Gewichten</b> des Perzeptrons <marimo-tex class=\"arithmatex\">||(w_1||)</marimo-tex> und <marimo-tex class=\"arithmatex\">||(w_2||)</marimo-tex> multipliziert und zusammenaddiert. Zus\u00e4tzlich addiert man noch den sogenannten <b>Bias</b> <marimo-tex class=\"arithmatex\">||(b||)</marimo-tex> hinzu. Im n\u00e4chsten Verarbeitungsschritt wird diese Summe in eine <b>Aktivierungsfunktion</b> eingesetzt. Als Aktivierungsfunktion wird in einem Perzeptron typischerweise eine spezielle <b>Treppenfunktion</b> verwendet. Wenn die Eingabe dieser Treppenfunktion kleiner oder gleich <marimo-tex class=\"arithmatex\">||(0||)</marimo-tex> ist, wird <marimo-tex class=\"arithmatex\">||(0||)</marimo-tex> zur\u00fcckgegeben; wenn sie gr\u00f6\u00dfer als <marimo-tex class=\"arithmatex\">||(0||)</marimo-tex> ist, wird <marimo-tex class=\"arithmatex\">||(1||)</marimo-tex> zur\u00fcckgegeben:</span>\n<marimo-tex class=\"arithmatex\">||[ f(x) = \\left\\{\n\\begin{array}{ll}\n0 &amp; x \\leq 0 \\\\\n1 &amp; \\, \\textrm{sonst} \\\\\n\\end{array}\n\\right. ||]</marimo-tex><span class=\"paragraph\">Die Ausgabe des Perzeptrons kann als Zuweisung der Eingabe zu einer bestimmten <b>Klasse</b> interpretiert werden, also der Klasse <marimo-tex class=\"arithmatex\">||(0||)</marimo-tex> oder <marimo-tex class=\"arithmatex\">||(1||)</marimo-tex>. Das Perzeptron <b>klassifiziert</b> die eingegebenen Daten. Wenn wir an das Beispiel mit den Vogeleiern zur\u00fcckdenken, so weist das Perzeptron im Optimalfall den Eiern der Blaumeisen den Wert / die Klasse 0 und den Eiern der Greifv\u00f6gel den Wert / die Klasse 1 zu. </span>\n<span class=\"paragraph\">&nbsp;</span>\n<figure>\n  <img src=\"public/img/perzeptron.png\" alt=\"perzeptron\" style=\"width:70%\">\n  <figcaption></figcaption>\n</figure>\n\n<span class=\"paragraph\">&nbsp;</span>\n<hr />\n<span class=\"paragraph\"><img style=\"float: left;\" src=\"public/img/laptop_icon.png\" width=50 height=50 /> <br><br></span>\n<span class=\"paragraph\"><i>Setze das Perzeptron als Funktion in Python um. Rufe deine Funktion mit von dir gew\u00e4hlten Werten f\u00fcr <marimo-tex class=\"arithmatex\">||(w_1||)</marimo-tex>, <marimo-tex class=\"arithmatex\">||(w_2||)</marimo-tex> und <marimo-tex class=\"arithmatex\">||(b||)</marimo-tex> auf und \u00fcberpr\u00fcfe rechnerisch, ob die Ausgabe stimmt.</i></span></span>"
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3>Motivation</h3>\n\n<span class=\"paragraph\">Das Perzeptron versucht die Funktionweise einer Nervenzelle, auch <b>Neuron</b> genannt, nachzubilden. Sehr vereinfacht gesagt, nimmt ein Neuron elektrische (und chemische) Signale auf, verarbeitet sie und leitet die verarbeiteten Signale weiter. </span>\n<span class=\"paragraph\">&nbsp;</span>\n<figure>\n  <img src=\"02 - Perzeptron/public/img/neuronale_zelle.png\" alt=\"neuronale_zelle\" style=\"width:50%\">\n  <figcaption></figcaption>\n</figure>\n\n<span class=\"paragraph\">&nbsp;</span>\n<span class=\"paragraph\">Bei der Nachbildung des biologischen Neurons brauchen wir zun\u00e4chst Einheiten, die eine <b>Eingabe</b> aufnehmen k\u00f6nnen. Wir beschr\u00e4nken uns bei der Eingabe auf zwei Zahlen <marimo-tex class=\"arithmatex\">||(x_1||)</marimo-tex> und <marimo-tex class=\"arithmatex\">||(x_2||)</marimo-tex> (= Datenpunkt (<marimo-tex class=\"arithmatex\">||(x_1||)</marimo-tex>, <marimo-tex class=\"arithmatex\">||(x_2||)</marimo-tex>) im zweidimensionalen Raum). Diese Zahlen werden jeweils mit sogenannte <b>Gewichten</b> des Perzeptrons <marimo-tex class=\"arithmatex\">||(w_1||)</marimo-tex> und <marimo-tex class=\"arithmatex\">||(w_2||)</marimo-tex> multipliziert und zusammenaddiert. Zus\u00e4tzlich addiert man noch den sogenannten <b>Bias</b> <marimo-tex class=\"arithmatex\">||(b||)</marimo-tex> hinzu. Im n\u00e4chsten Verarbeitungsschritt wird diese Summe in eine <b>Aktivierungsfunktion</b> eingesetzt. Als Aktivierungsfunktion wird in einem Perzeptron typischerweise eine spezielle <b>Treppenfunktion</b> verwendet. Wenn die Eingabe dieser Treppenfunktion kleiner oder gleich <marimo-tex class=\"arithmatex\">||(0||)</marimo-tex> ist, wird <marimo-tex class=\"arithmatex\">||(0||)</marimo-tex> zur\u00fcckgegeben; wenn sie gr\u00f6\u00dfer als <marimo-tex class=\"arithmatex\">||(0||)</marimo-tex> ist, wird <marimo-tex class=\"arithmatex\">||(1||)</marimo-tex> zur\u00fcckgegeben:</span>\n<marimo-tex class=\"arithmatex\">||[ f(x) = \\left\\{\n\\begin{array}{ll}\n0 &amp; x \\leq 0 \\\\\n1 &amp; \\, \\textrm{sonst} \\\\\n\\end{array}\n\\right. ||]</marimo-tex><span class=\"paragraph\">Die Ausgabe des Perzeptrons kann als Zuweisung der Eingabe zu einer bestimmten <b>Klasse</b> interpretiert werden, also der Klasse <marimo-tex class=\"arithmatex\">||(0||)</marimo-tex> oder <marimo-tex class=\"arithmatex\">||(1||)</marimo-tex>. Das Perzeptron <b>klassifiziert</b> die eingegebenen Daten. Wenn wir an das Beispiel mit den Vogeleiern zur\u00fcckdenken, so weist das Perzeptron im Optimalfall den Eiern der Blaumeisen den Wert / die Klasse 0 und den Eiern der Greifv\u00f6gel den Wert / die Klasse 1 zu. </span>\n<span class=\"paragraph\">&nbsp;</span>\n<figure>\n  <img src=\"02 - Perzeptron/public/img/perzeptron.png\" alt=\"perzeptron\" style=\"width:70%\">\n  <figcaption></figcaption>\n</figure>\n\n<span class=\"paragraph\">&nbsp;</span>\n<hr />\n<span class=\"paragraph\"><img style=\"float: left;\" src=\"02 - Perzeptron/public/img/laptop_icon.png\" width=50 height=50 /> <br><br></span>\n<span class=\"paragraph\"><i>Setze das Perzeptron als Funktion in Python um. Rufe deine Funktion mit von dir gew\u00e4hlten Werten f\u00fcr <marimo-tex class=\"arithmatex\">||(w_1||)</marimo-tex>, <marimo-tex class=\"arithmatex\">||(w_2||)</marimo-tex> und <marimo-tex class=\"arithmatex\">||(b||)</marimo-tex> auf und \u00fcberpr\u00fcfe rechnerisch, ob die Ausgabe stimmt.</i></span></span>"
           }
         }
       ],
@@ -58,7 +58,7 @@
     },
     {
       "id": "lEQa",
-      "code_hash": "231c3bd07835f2574b2ed7d01d2fbbfa",
+      "code_hash": "14f085900912a0d88394b687473ad7d5",
       "outputs": [
         {
           "type": "data",
@@ -84,12 +84,12 @@
     },
     {
       "id": "Xref",
-      "code_hash": "0660ed76f6754545f91bcdd0044cfb84",
+      "code_hash": "02587b16e68ef3b1ea606401a5b4da84",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">Um eine KI mit Daten zu trainieren, unterteilen wir die uns zur Verf\u00fcgung stehende Daten in <b>Trainigsdaten</b> und <b>Testdaten</b>. \u00dcberlicherweise unterteilt man die Daten in 80% Trainings- und 20% Testdaten, also ein Verh\u00e4ltnis von 8:2. Auf den Trainigsdaten wird die KI trainiert, d.h. sie passt sich so an, dass sie viele Trainingsdaten richtig klassifiziert. In unserem Fall bedeutet es, dass sie einen Trainingspunkt <marimo-tex class=\"arithmatex\">||((2, 0.8)||)</marimo-tex> als Ei einer Blaumeise klassifiziert. Nach einem Trainingsdurchlauf (auch <b>Epoche</b> genannt) wird auf den Testdaten die Genauigkeit (engl. Accuracy) der KI gemessen. Es ist dabei wichtig, dass es bei den Trainings- und Testdaten keine \u00dcberschneidungen gibt!</span>\n<span class=\"paragraph\"><img style=\"float: left;\" src=\"public/img/laptop_icon.png\" width=50 height=50 /> <br><br></span>\n<span class=\"paragraph\"><i>Erstelle eine Liste mit allen Datenpunkten als (<marimo-tex class=\"arithmatex\">||(x_1||)</marimo-tex>, <marimo-tex class=\"arithmatex\">||(x_2||)</marimo-tex>, <marimo-tex class=\"arithmatex\">||(l||)</marimo-tex>)-Tripel. <marimo-tex class=\"arithmatex\">||(l||)</marimo-tex> bezeichnet dabei das <b>Label</b> des Datenpunkts. Geh\u00f6rt der Datenpunkt zu der Klasse der Blaumeiseneier, so ist <marimo-tex class=\"arithmatex\">||(l=0||)</marimo-tex>, ansonsten ist <marimo-tex class=\"arithmatex\">||(l=1||)</marimo-tex>. Durchmische die Liste und unterteile die Daten in Trainings- und Testdaten in einem Verh\u00e4ltnis von 8:2.</i></span></span>"
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">Um eine KI mit Daten zu trainieren, unterteilen wir die uns zur Verf\u00fcgung stehende Daten in <b>Trainigsdaten</b> und <b>Testdaten</b>. \u00dcberlicherweise unterteilt man die Daten in 80% Trainings- und 20% Testdaten, also ein Verh\u00e4ltnis von 8:2. Auf den Trainigsdaten wird die KI trainiert, d.h. sie passt sich so an, dass sie viele Trainingsdaten richtig klassifiziert. In unserem Fall bedeutet es, dass sie einen Trainingspunkt <marimo-tex class=\"arithmatex\">||((2, 0.8)||)</marimo-tex> als Ei einer Blaumeise klassifiziert. Nach einem Trainingsdurchlauf (auch <b>Epoche</b> genannt) wird auf den Testdaten die Genauigkeit (engl. Accuracy) der KI gemessen. Es ist dabei wichtig, dass es bei den Trainings- und Testdaten keine \u00dcberschneidungen gibt!</span>\n<span class=\"paragraph\"><img style=\"float: left;\" src=\"02 - Perzeptron/public/img/laptop_icon.png\" width=50 height=50 /> <br><br></span>\n<span class=\"paragraph\"><i>Erstelle eine Liste mit allen Datenpunkten als (<marimo-tex class=\"arithmatex\">||(x_1||)</marimo-tex>, <marimo-tex class=\"arithmatex\">||(x_2||)</marimo-tex>, <marimo-tex class=\"arithmatex\">||(l||)</marimo-tex>)-Tripel. <marimo-tex class=\"arithmatex\">||(l||)</marimo-tex> bezeichnet dabei das <b>Label</b> des Datenpunkts. Geh\u00f6rt der Datenpunkt zu der Klasse der Blaumeiseneier, so ist <marimo-tex class=\"arithmatex\">||(l=0||)</marimo-tex>, ansonsten ist <marimo-tex class=\"arithmatex\">||(l=1||)</marimo-tex>. Durchmische die Liste und unterteile die Daten in Trainings- und Testdaten in einem Verh\u00e4ltnis von 8:2.</i></span></span>"
           }
         }
       ],
@@ -110,7 +110,7 @@
     },
     {
       "id": "BYtC",
-      "code_hash": "9ca9b85e28d726dbef264b863646ac87",
+      "code_hash": "14a182626114bdd06b96f312357cbff5",
       "outputs": [
         {
           "type": "data",
@@ -136,12 +136,12 @@
     },
     {
       "id": "Kclp",
-      "code_hash": "089481c0046018c5c5d44856bab8088b",
+      "code_hash": "b0e1533872c607802b44b3c829aaac3d",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">In unserem Datensatz gibt es gleich viele Blaumeisen- und Greifvogel-Eier. Wenn also jemand r\u00e4t und sich jeweils zuf\u00e4llig f\u00fcr eine Klasse entscheidet, liegt seine Rategenauigkeit bei 50%. Wenn dein Perzeptron eine \u00e4hnliche Genauigkeit aufweist, dann ist dieses Ergebnis nicht besonders erstrebenswert. Im n\u00e4chsten Abschnitt schauen wir uns an, mit welchem Algorithmus die Gewichte angepasst werden, sodass das Perzeptron alle unsere Daten richtig klassifizieren kann.</span>\n<h3>Geometrische Betrachtung</h3>\n\n<span class=\"paragraph\">Um die Funktionsweise des Perzeptrons anschaulich darzustellen, betrachten wir wie bisher unsere zweidimensionalen Datenpunkte. Das Perzeptron kann aber auch <marimo-tex class=\"arithmatex\">||(n||)</marimo-tex>-dimensionale Datenpunkte f\u00fcr beliebige ganzzahlige <marimo-tex class=\"arithmatex\">||(n||)</marimo-tex> klassifizieren. Zur besseren Veranschaulichung nehmen wir in den folgenden Abschnitten au\u00dferdem an, dass <marimo-tex class=\"arithmatex\">||(b = 0||)</marimo-tex> ist. Demzufolge ist der Output des Perzeptrons <marimo-tex class=\"arithmatex\">||(f(w_1 \\cdot x_1 + w_2 \\cdot x_2)||)</marimo-tex>. Bei der Aktivierungsfunktion <marimo-tex class=\"arithmatex\">||(f||)</marimo-tex> handelt es sich um die bereits vorgestellte Treppenfunktion.</span>\n<hr />\n<span class=\"paragraph\"><i style=\"font-size:38px\">?</i>&nbsp;</span>\n<span class=\"paragraph\"><i>Wir betrachten genau die Grenze der beiden Klassen, die zwar noch zur Klasse 0 geh\u00f6rt, aber trotzdem die Klassen voneinander trennt. Diese Grenze wird durch die Gleichung <marimo-tex class=\"arithmatex\">||(w_1 \\cdot x_1 + w_2 \\cdot x_2 = 0||)</marimo-tex> beschrieben. An was erinnert dich das? <br> Tipp: Setze f\u00fcr <marimo-tex class=\"arithmatex\">||(w_1||)</marimo-tex> und <marimo-tex class=\"arithmatex\">||(w_2||)</marimo-tex> konktrete Werte ein, um dir den Sachverhalt besser zu veranschaulichen.</i></span>\n<details>\n<summary>\u27a4 Klick hier, um deine Antwort zu pr\u00fcfen.</summary>\n\nDie Gleichung beschreibt eine Gerade. Du kannst die Gleichung auch nach $x_2$ umstellen, sodass du die gewohnte Form einer Geradengleichung erh\u00e4ltst, die du aus der Schule kennst: $$x_2 = - \\frac{w_1}{w_2} x_1 + 0.$$ <br><br>\n\nWenn $w_1 \\cdot x_1 + w_2 \\cdot x_2 \\leq 0$, dann wird dem Punkt $(x_1, x_2)$ die Ausgabe 0 zugewiesen. Wenn $w_1 \\cdot x_1 + w_2 \\cdot x_2 > 0$, dann die Ausgabe $1$. Durch die Gleichung $w_1 \\cdot x_1 + w_2 \\cdot x_2 = 0$ wird also eine Entscheidungsgrenze in Form einer Geraden beschrieben. Alle Punkte, die auf dieser Geraden liegen, geh\u00f6ren \u201egerade noch so\u201d der Klasse $0$ an. Wenn ein Punkt auf der einen Seite der Geraden liegt, so wird ihm $0$ als Ausgabe zugewiesen und wenn ein Punkt auf der anderen Seite der Geraden liegt, so wird ihm $1$ zugewiesen. <br><br>\n\nAlternativ kannst du die \u201eEntscheidungsgerade\u201d, auch \u00fcber den Gewichtsvektor $\\vec{w} = \\begin{pmatrix} w_1 \\\\ w2 \\end{pmatrix}$ konstruieren. Die Gerade (blau dargestellt) l\u00e4uft durch den Ursprung $(0,0)$ und ist orthogonal (rechtwinklig) zum Gewichtsvektor (schwarz dargestellt).\n<br><br>    \n<figure>\n  <img src=\"public/img/vector.png\" alt=\"weight vector\" style=\"width:30%\">\n</figure> \n\n\nZusatzfrage: Was \u00e4ndert sich, wenn b $\\neq$ 0?\n\n</details></span>"
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">In unserem Datensatz gibt es gleich viele Blaumeisen- und Greifvogel-Eier. Wenn also jemand r\u00e4t und sich jeweils zuf\u00e4llig f\u00fcr eine Klasse entscheidet, liegt seine Rategenauigkeit bei 50%. Wenn dein Perzeptron eine \u00e4hnliche Genauigkeit aufweist, dann ist dieses Ergebnis nicht besonders erstrebenswert. Im n\u00e4chsten Abschnitt schauen wir uns an, mit welchem Algorithmus die Gewichte angepasst werden, sodass das Perzeptron alle unsere Daten richtig klassifizieren kann.</span>\n<h3>Geometrische Betrachtung</h3>\n\n<span class=\"paragraph\">Um die Funktionsweise des Perzeptrons anschaulich darzustellen, betrachten wir wie bisher unsere zweidimensionalen Datenpunkte. Das Perzeptron kann aber auch <marimo-tex class=\"arithmatex\">||(n||)</marimo-tex>-dimensionale Datenpunkte f\u00fcr beliebige ganzzahlige <marimo-tex class=\"arithmatex\">||(n||)</marimo-tex> klassifizieren. Zur besseren Veranschaulichung nehmen wir in den folgenden Abschnitten au\u00dferdem an, dass <marimo-tex class=\"arithmatex\">||(b = 0||)</marimo-tex> ist. Demzufolge ist der Output des Perzeptrons <marimo-tex class=\"arithmatex\">||(f(w_1 \\cdot x_1 + w_2 \\cdot x_2)||)</marimo-tex>. Bei der Aktivierungsfunktion <marimo-tex class=\"arithmatex\">||(f||)</marimo-tex> handelt es sich um die bereits vorgestellte Treppenfunktion.</span>\n<hr />\n<span class=\"paragraph\"><i style=\"font-size:38px\">?</i>&nbsp;</span>\n<span class=\"paragraph\"><i>Wir betrachten genau die Grenze der beiden Klassen, die zwar noch zur Klasse 0 geh\u00f6rt, aber trotzdem die Klassen voneinander trennt. Diese Grenze wird durch die Gleichung <marimo-tex class=\"arithmatex\">||(w_1 \\cdot x_1 + w_2 \\cdot x_2 = 0||)</marimo-tex> beschrieben. An was erinnert dich das? <br> Tipp: Setze f\u00fcr <marimo-tex class=\"arithmatex\">||(w_1||)</marimo-tex> und <marimo-tex class=\"arithmatex\">||(w_2||)</marimo-tex> konktrete Werte ein, um dir den Sachverhalt besser zu veranschaulichen.</i></span>\n<details>\n<summary>\u27a4 Klick hier, um deine Antwort zu pr\u00fcfen.</summary>\n\nDie Gleichung beschreibt eine Gerade. Du kannst die Gleichung auch nach $x_2$ umstellen, sodass du die gewohnte Form einer Geradengleichung erh\u00e4ltst, die du aus der Schule kennst: $$x_2 = - \\frac{w_1}{w_2} x_1 + 0.$$ <br><br>\n\nWenn $w_1 \\cdot x_1 + w_2 \\cdot x_2 \\leq 0$, dann wird dem Punkt $(x_1, x_2)$ die Ausgabe 0 zugewiesen. Wenn $w_1 \\cdot x_1 + w_2 \\cdot x_2 > 0$, dann die Ausgabe $1$. Durch die Gleichung $w_1 \\cdot x_1 + w_2 \\cdot x_2 = 0$ wird also eine Entscheidungsgrenze in Form einer Geraden beschrieben. Alle Punkte, die auf dieser Geraden liegen, geh\u00f6ren \u201egerade noch so\u201d der Klasse $0$ an. Wenn ein Punkt auf der einen Seite der Geraden liegt, so wird ihm $0$ als Ausgabe zugewiesen und wenn ein Punkt auf der anderen Seite der Geraden liegt, so wird ihm $1$ zugewiesen. <br><br>\n\nAlternativ kannst du die \u201eEntscheidungsgerade\u201d, auch \u00fcber den Gewichtsvektor $\\vec{w} = \\begin{pmatrix} w_1 \\\\ w2 \\end{pmatrix}$ konstruieren. Die Gerade (blau dargestellt) l\u00e4uft durch den Ursprung $(0,0)$ und ist orthogonal (rechtwinklig) zum Gewichtsvektor (schwarz dargestellt).\n<br><br>    \n<figure>\n  <img src=\"02 - Perzeptron/public/img/vector.png\" alt=\"weight vector\" style=\"width:30%\">\n</figure> \n\n\nZusatzfrage: Was \u00e4ndert sich, wenn b $\\neq$ 0?\n\n</details></span>"
           }
         }
       ],
@@ -149,12 +149,12 @@
     },
     {
       "id": "emfo",
-      "code_hash": "031d2ff530515fa6366473670c85af16",
+      "code_hash": "7f2cd296d0bebe1e3811545d7203c9a6",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3>Update der Gewichte</h3>\n\n<span class=\"paragraph\">Im letzten Abschnitt haben wir die geometrische Bedeutung der Gleichung <marimo-tex class=\"arithmatex\">||(w_1 \\cdot x_1 + w_2 \\cdot x_2 = 0||)</marimo-tex> kennen gelernt. In diesem Abschnitt finden wir heraus, wie wir die Gewichte anpassen, wenn das Perzeptron Datenpunkte falsch klassifiziert.</span>\n<hr />\n<span class=\"paragraph\"><i style=\"font-size:38px\">?</i>&nbsp;</span>\n<span class=\"paragraph\"><i>Der Punkt P <marimo-tex class=\"arithmatex\">||((-2, 0)||)</marimo-tex> wird vom Perzeptron falsch, der Punkt Q <marimo-tex class=\"arithmatex\">||((-1,1)||)</marimo-tex> wird dagegen richtig klassifiziert. Wie muss die Gerade (bzw. der <b>Gewichtsvektor</b>) angepasst werden, damit beide Punkte richtig klassifiziert werden? Beziehe in dein Update den Vektor <marimo-tex class=\"arithmatex\">||(\\vec{p} = \\begin{pmatrix} -2 \\\\ 0 \\end{pmatrix}||)</marimo-tex> mit ein.</i></span>\n<span class=\"paragraph\">&nbsp;</span>\n<figure>\n  <img src=\"public/img/vector2.png\" alt=\"weight vector\" style=\"width:30%\">\n  <figcaption></figcaption>\n</figure>\n\n<span class=\"paragraph\">&nbsp;</span>\n<details>\n\n<summary>\u27a4 Klicke hier, um die L\u00f6sung anzuzeigen.</summary>\n\nDas Perzeptron klassifiziert die Punkte richtig, wenn die Entscheidungsgrenze zwischen den beiden Punkten $P$ und $Q$ verl\u00e4uft. Einen passenden neuen Gewichtsvektor erh\u00e4ltst du beispielsweise \u00fcber $\\vec{w}_{\\text{neu}} = \\vec{w}_{\\text{alt}} + 0.6 \\cdot \\vec{p}$.\n\n<br><br>\n\n\n <figure>\n  <img src=\"public/img/vector3.png\" alt=\"weight vector\" style=\"width:30%\">\n  <figcaption></figcaption>\n</figure> \n\n</details></span>"
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3>Update der Gewichte</h3>\n\n<span class=\"paragraph\">Im letzten Abschnitt haben wir die geometrische Bedeutung der Gleichung <marimo-tex class=\"arithmatex\">||(w_1 \\cdot x_1 + w_2 \\cdot x_2 = 0||)</marimo-tex> kennen gelernt. In diesem Abschnitt finden wir heraus, wie wir die Gewichte anpassen, wenn das Perzeptron Datenpunkte falsch klassifiziert.</span>\n<hr />\n<span class=\"paragraph\"><i style=\"font-size:38px\">?</i>&nbsp;</span>\n<span class=\"paragraph\"><i>Der Punkt P <marimo-tex class=\"arithmatex\">||((-2, 0)||)</marimo-tex> wird vom Perzeptron falsch, der Punkt Q <marimo-tex class=\"arithmatex\">||((-1,1)||)</marimo-tex> wird dagegen richtig klassifiziert. Wie muss die Gerade (bzw. der <b>Gewichtsvektor</b>) angepasst werden, damit beide Punkte richtig klassifiziert werden? Beziehe in dein Update den Vektor <marimo-tex class=\"arithmatex\">||(\\vec{p} = \\begin{pmatrix} -2 \\\\ 0 \\end{pmatrix}||)</marimo-tex> mit ein.</i></span>\n<span class=\"paragraph\">&nbsp;</span>\n<figure>\n  <img src=\"02 - Perzeptron/public/img/vector2.png\" alt=\"weight vector\" style=\"width:30%\">\n  <figcaption></figcaption>\n</figure>\n\n<span class=\"paragraph\">&nbsp;</span>\n<details>\n\n<summary>\u27a4 Klicke hier, um die L\u00f6sung anzuzeigen.</summary>\n\nDas Perzeptron klassifiziert die Punkte richtig, wenn die Entscheidungsgrenze zwischen den beiden Punkten $P$ und $Q$ verl\u00e4uft. Einen passenden neuen Gewichtsvektor erh\u00e4ltst du beispielsweise \u00fcber $\\vec{w}_{\\text{neu}} = \\vec{w}_{\\text{alt}} + 0.6 \\cdot \\vec{p}$.\n\n<br><br>\n\n\n <figure>\n  <img src=\"02 - Perzeptron/public/img/vector3.png\" alt=\"weight vector\" style=\"width:30%\">\n  <figcaption></figcaption>\n</figure> \n\n</details></span>"
           }
         }
       ],
@@ -162,12 +162,12 @@
     },
     {
       "id": "Hstk",
-      "code_hash": "b964e265a5a043b4db1948b8625ad0bf",
+      "code_hash": "3eadd131a680d57506cb5e5b0962d2a6",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<span class=\"markdown prose dark:prose-invert\"><hr />\n<span class=\"paragraph\"><img style=\"float: left;\" src=\"public/img/laptop_icon.png\" width=50 height=50 /> <br><br></span>\n<span class=\"paragraph\"><i>Setze nun folgende Formeln zur Gewichtsanpassung als Funktion in Code um.</i></span>\n<marimo-tex class=\"arithmatex\">||[w_i^{\\text{neu}} = w_i^{\\text{alt}} + 0.1 \\cdot (o - l) \\cdot x_i||]</marimo-tex><marimo-tex class=\"arithmatex\">||[b^{\\text{neu}} = b^{\\text{alt}} + 0.1 \\cdot (o - l)||]</marimo-tex><span class=\"paragraph\"><i>Dabei wir mit <marimo-tex class=\"arithmatex\">||(o||)</marimo-tex> der Output des Perzeptrons und mit <marimo-tex class=\"arithmatex\">||(l||)</marimo-tex> das tats\u00e4chliche Label des Datenpunkts bezeichnet. Die <b>Lernrate</b> ist in der Formel auf 0.1 gesetzt. Sie gibt an, wie stark sich der Gewichtsvektor ver\u00e4ndern soll.</i></span></span>"
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><hr />\n<span class=\"paragraph\"><img style=\"float: left;\" src=\"02 - Perzeptron/public/img/laptop_icon.png\" width=50 height=50 /> <br><br></span>\n<span class=\"paragraph\"><i>Setze nun folgende Formeln zur Gewichtsanpassung als Funktion in Code um.</i></span>\n<marimo-tex class=\"arithmatex\">||[w_i^{\\text{neu}} = w_i^{\\text{alt}} + 0.1 \\cdot (o - l) \\cdot x_i||]</marimo-tex><marimo-tex class=\"arithmatex\">||[b^{\\text{neu}} = b^{\\text{alt}} + 0.1 \\cdot (o - l)||]</marimo-tex><span class=\"paragraph\"><i>Dabei wir mit <marimo-tex class=\"arithmatex\">||(o||)</marimo-tex> der Output des Perzeptrons und mit <marimo-tex class=\"arithmatex\">||(l||)</marimo-tex> das tats\u00e4chliche Label des Datenpunkts bezeichnet. Die <b>Lernrate</b> ist in der Formel auf 0.1 gesetzt. Sie gibt an, wie stark sich der Gewichtsvektor ver\u00e4ndern soll.</i></span></span>"
           }
         }
       ],
@@ -188,12 +188,12 @@
     },
     {
       "id": "iLit",
-      "code_hash": "7a302f0a0840a09ee220c7baf827d8a9",
+      "code_hash": "9015b46b38e28fcd17e67571270a5181",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">Nun sind wir bereit, unser Perzeptron zu <b>trainieren</b>. d.h. die Gewichte schrittweise an unsere Datenpunkte anzupassen. Wir geben dem Perzeptron jeden Datenpunkt als Input und \u00fcberpr\u00fcfen, ob das Perzeptron den Datenpunkt richtig klassifiziert. Wenn das nicht der Fall ist, rufen wir unsere Funktion auf, die wir gerade implementiert haben, und passen die Gewichte an.</span>\n<hr />\n<span class=\"paragraph\"><img style=\"float: left;\" src=\"public/img/laptop_icon.png\" width=50 height=50 /> <br><br></span>\n<span class=\"paragraph\"><i>Du hast oben bereits einen Datensatz erzeugt. Trainiere das Perzeptron solange, bis es jeden Punkt richtig klassifiziert (maximal aber drei Epochen lang). Zeichne nach jeder \u00c4nderung des Gewichtsvektors <marimo-tex class=\"arithmatex\">||(\\vec{w}||)</marimo-tex> ein Schaubild mit den Punkten und der Entscheidungsgerade ein. F\u00e4rbe die Punkte oberhalb der Geraden mit der Farbe der Blaumeisen-Eier und die Punkte unterhalb der Geraden mit der Farbe der Greifvogel-Eier.</i></span></span>"
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">Nun sind wir bereit, unser Perzeptron zu <b>trainieren</b>. d.h. die Gewichte schrittweise an unsere Datenpunkte anzupassen. Wir geben dem Perzeptron jeden Datenpunkt als Input und \u00fcberpr\u00fcfen, ob das Perzeptron den Datenpunkt richtig klassifiziert. Wenn das nicht der Fall ist, rufen wir unsere Funktion auf, die wir gerade implementiert haben, und passen die Gewichte an.</span>\n<hr />\n<span class=\"paragraph\"><img style=\"float: left;\" src=\"02 - Perzeptron/public/img/laptop_icon.png\" width=50 height=50 /> <br><br></span>\n<span class=\"paragraph\"><i>Du hast oben bereits einen Datensatz erzeugt. Trainiere das Perzeptron solange, bis es jeden Punkt richtig klassifiziert (maximal aber drei Epochen lang). Zeichne nach jeder \u00c4nderung des Gewichtsvektors <marimo-tex class=\"arithmatex\">||(\\vec{w}||)</marimo-tex> ein Schaubild mit den Punkten und der Entscheidungsgerade ein. F\u00e4rbe die Punkte oberhalb der Geraden mit der Farbe der Blaumeisen-Eier und die Punkte unterhalb der Geraden mit der Farbe der Greifvogel-Eier.</i></span></span>"
           }
         }
       ],
@@ -214,12 +214,12 @@
     },
     {
       "id": "ROlb",
-      "code_hash": "e6248a6a82c0f2df490de531feeff76c",
+      "code_hash": "fe5339eb63cff80c7fda2018357eda88",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<span class=\"markdown prose dark:prose-invert\"><hr />\n<span class=\"paragraph\"><img style=\"float: left;\" src=\"public/img/laptop_icon.png\" width=50 height=50 /> <br><br></span>\n<span class=\"paragraph\"><i>Wenn du alles richtig gemacht hast, sollte der Algorithmus nach wenigen Schritten die Datenpunkte durch eine Gerade voneinander trennen. F\u00fchre deinen Code nun mit dem unteren Datensatz noch einmal aus. Beobachte, was passiert, und passe gegebenenfalls die Lernrate an.</i></span></span>"
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><hr />\n<span class=\"paragraph\"><img style=\"float: left;\" src=\"02 - Perzeptron/public/img/laptop_icon.png\" width=50 height=50 /> <br><br></span>\n<span class=\"paragraph\"><i>Wenn du alles richtig gemacht hast, sollte der Algorithmus nach wenigen Schritten die Datenpunkte durch eine Gerade voneinander trennen. F\u00fchre deinen Code nun mit dem unteren Datensatz noch einmal aus. Beobachte, was passiert, und passe gegebenenfalls die Lernrate an.</i></span></span>"
           }
         }
       ],
@@ -240,7 +240,7 @@
     },
     {
       "id": "TqIu",
-      "code_hash": "a0ea7cae1a10b875740b4bcbc765d45d",
+      "code_hash": "29a888fbd70e4c5cef2ba7c0bda356a5",
       "outputs": [
         {
           "type": "data",
@@ -266,7 +266,7 @@
     },
     {
       "id": "DnEU",
-      "code_hash": "64d6476379ffc99db7359d76c76e6ad7",
+      "code_hash": "bba2e6df283d1d09112a54d0293894c0",
       "outputs": [
         {
           "type": "data",
@@ -291,13 +291,39 @@
       "console": []
     },
     {
-      "id": "YdNW",
-      "code_hash": null,
+      "id": "ngvZ",
+      "code_hash": "e67d70a01edd87a095f859a2c5daa2de",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/plain": ""
+            "text/html": "<img src='./@file/101632-9301-rrDIgugv.png' />"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "txbI",
+      "code_hash": "d4ac4de8b79caa55d02d42624c6fd911",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<img src='./@file/1146-9301-oo4Ta8K7.png' />"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "pHmO",
+      "code_hash": "7b568bf9d10b84db6e9893380ede99d3",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<img src='./@file/1146-9301-m9aZso4K.png' />"
           }
         }
       ],
