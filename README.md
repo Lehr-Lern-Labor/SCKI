@@ -22,6 +22,6 @@ marimo edit
 
 ## Start Marimo server (headless)
 ```bash
-marimo edit --headless
+marimo edit --headless --host 0.0.0.0 --port 8080
 ```
 
