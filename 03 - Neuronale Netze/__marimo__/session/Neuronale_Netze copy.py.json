@@ -19,20 +19,20 @@
     },
     {
       "id": "MJUe",
-      "code_hash": "a0f6e85f382c970ad8d9099f0c1f8e51",
+      "code_hash": "e964c04e08451e17994f6ad423e312b1",
       "outputs": [
         {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
+          "type": "error",
+          "ename": "exception",
+          "evalue": "name 'FullyConnectedLayer' is not defined",
+          "traceback": []
         }
       ],
       "console": [
         {
           "type": "stream",
-          "name": "stdout",
-          "text": "Hallo mein Name ist Netzi!\n\nDas ist mein Aufbau:\n\nModel name: Netzi\nLayer 1 (fc1):\nWeights shape: (5, 4)\nBias shape: (5,)\n\nLayer 2 (fc2):\nWeights shape: (5, 5)\nBias shape: (5,)\n\nLayer 3 (fc3):\nWeights shape: (3, 5)\nBias disabled\n \n\nUnd das sind meine zuf\u00e4llig initialisiert/en Gewichte:\n\nfc1 layer parameters:\n Weights:\n [[ 0.17640523  0.04001572  0.0978738   0.22408932]\n [ 0.1867558  -0.09772779  0.09500884 -0.01513572]\n [-0.01032189  0.04105985  0.01440436  0.14542735]\n [ 0.07610377  0.0121675   0.04438632  0.03336743]\n [ 0.14940791 -0.02051583  0.03130677 -0.08540957]]\nBias:\n [-0.25529898  0.06536186  0.08644362 -0.0742165   0.22697546]\n\nfc2 layer parameters:\n Weights:\n [[-0.14543657  0.00457585 -0.01871839  0.15327792  0.14693588]\n [ 0.01549474  0.03781625 -0.08877857 -0.19807965 -0.03479121]\n [ 0.0156349   0.12302907  0.12023798 -0.03873268 -0.03023028]\n [-0.1048553  -0.14200179 -0.17062702  0.19507754 -0.05096522]\n [-0.04380743 -0.12527954  0.07774904 -0.16138978 -0.02127403]]\nBias:\n [-0.08954666  0.03869025 -0.05108051 -0.11806322 -0.00281822]\n\nfc3 layer parameters:\n Weights:\n [[ 0.04283319  0.00665172  0.03024719 -0.06343221 -0.03627412]\n [-0.06724604 -0.03595532 -0.08131463 -0.17262826  0.01774261]\n [-0.04017809 -0.16301983  0.04627823 -0.09072984  0.00519454]]\n\nAusgabe (Ergebnis des Vorw\u00e4rtsdurchlaufs): [0.33362124 0.33349089 0.33288788]\n"
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">&quot;/home/silas/dev/Lehr-Lern-Labor/SCKI/.venv/lib/python3.10/site-packages/marimo/_runtime/executor.py&quot;</span>, line <span class=\"m\">122</span>, in <span class=\"n\">execute_cell</span>\n<span class=\"w\">    </span><span class=\"n\">exec</span><span class=\"p\">(</span><span class=\"n\">cell</span><span class=\"o\">.</span><span class=\"n\">body</span><span class=\"p\">,</span> <span class=\"n\">glbls</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_5516/__marimo__cell_MJUe_.py&quot;</span>, line <span class=\"m\">30</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">erstes_nn</span> <span class=\"o\">=</span> <span class=\"n\">Net</span><span class=\"p\">(</span><span class=\"mi\">4</span><span class=\"p\">,</span> <span class=\"mi\">3</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_5516/__marimo__cell_MJUe_.py&quot;</span>, line <span class=\"m\">6</span>, in <span class=\"n\">__init__</span>\n<span class=\"w\">    </span><span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">fc1</span> <span class=\"o\">=</span> <span class=\"n\">FullyConnectedLayer</span><span class=\"p\">(</span><span class=\"n\">num_in</span><span class=\"p\">,</span> <span class=\"mi\">5</span><span class=\"p\">)</span>      <span class=\"c1\"># first layer: num_in -&gt; 5</span>\n<span class=\"gr\">NameError</span>: <span class=\"n\">name &#39;FullyConnectedLayer&#39; is not defined</span>\n</pre></div>\n</span>"
         }
       ]
     },
@@ -133,7 +133,7 @@
     },
     {
       "id": "ZHCJ",
-      "code_hash": "8a7ac6f0693a7558f7c32e3526ccbbd5",
+      "code_hash": "285e2c5d2cbcdde96b24bc4406551610",
       "outputs": [
         {
           "type": "error",
@@ -146,7 +146,7 @@
         {
           "type": "stream",
           "name": "stderr",
-          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">&quot;/home/silas/dev/Lehr-Lern-Labor/SCKI/.venv/lib/python3.10/site-packages/marimo/_runtime/executor.py&quot;</span>, line <span class=\"m\">122</span>, in <span class=\"n\">execute_cell</span>\n<span class=\"w\">    </span><span class=\"n\">exec</span><span class=\"p\">(</span><span class=\"n\">cell</span><span class=\"o\">.</span><span class=\"n\">body</span><span class=\"p\">,</span> <span class=\"n\">glbls</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_5516/__marimo__cell_ZHCJ_.py&quot;</span>, line <span class=\"m\">10</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">loss</span> <span class=\"o\">=</span> <span class=\"n\">cross_entropy_loss</span><span class=\"p\">(</span><span class=\"n\">output</span><span class=\"p\">,</span> <span class=\"n\">label</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_5516/__marimo__cell_nWHF_.py&quot;</span>, line <span class=\"m\">14</span>, in <span class=\"n\">cross_entropy_loss</span>\n<span class=\"w\">    </span><span class=\"n\">probs</span> <span class=\"o\">=</span> <span class=\"n\">outputs</span><span class=\"p\">[</span><span class=\"n\">np</span><span class=\"o\">.</span><span class=\"n\">arange</span><span class=\"p\">(</span><span class=\"nb\">len</span><span class=\"p\">(</span><span class=\"n\">labels</span><span class=\"p\">)),</span> <span class=\"n\">labels</span><span class=\"p\">]</span>\n<span class=\"gr\">TypeError</span>: <span class=\"n\">object of type &#39;numpy.int64&#39; has no len()</span>\n</pre></div>\n</span>"
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">&quot;/home/silas/dev/Lehr-Lern-Labor/SCKI/.venv/lib/python3.10/site-packages/marimo/_runtime/executor.py&quot;</span>, line <span class=\"m\">122</span>, in <span class=\"n\">execute_cell</span>\n<span class=\"w\">    </span><span class=\"n\">exec</span><span class=\"p\">(</span><span class=\"n\">cell</span><span class=\"o\">.</span><span class=\"n\">body</span><span class=\"p\">,</span> <span class=\"n\">glbls</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_5516/__marimo__cell_ZHCJ_.py&quot;</span>, line <span class=\"m\">18</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">loss</span> <span class=\"o\">=</span> <span class=\"n\">cross_entropy_loss</span><span class=\"p\">(</span><span class=\"n\">probs</span><span class=\"p\">,</span> <span class=\"n\">label</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_5516/__marimo__cell_nWHF_.py&quot;</span>, line <span class=\"m\">14</span>, in <span class=\"n\">cross_entropy_loss</span>\n<span class=\"w\">    </span><span class=\"n\">probs</span> <span class=\"o\">=</span> <span class=\"n\">outputs</span><span class=\"p\">[</span><span class=\"n\">np</span><span class=\"o\">.</span><span class=\"n\">arange</span><span class=\"p\">(</span><span class=\"nb\">len</span><span class=\"p\">(</span><span class=\"n\">labels</span><span class=\"p\">)),</span> <span class=\"n\">labels</span><span class=\"p\">]</span>\n<span class=\"gr\">TypeError</span>: <span class=\"n\">object of type &#39;numpy.int64&#39; has no len()</span>\n</pre></div>\n</span>"
         }
       ]
     },
@@ -384,7 +384,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Loss: 0.69027\nAccuracy: 60.0\n"
+          "text": "Loss: 0.66752\nAccuracy: 70.0\n"
         }
       ]
     },
@@ -400,6 +400,38 @@
         }
       ],
       "console": []
+    },
+    {
+      "id": "acIg",
+      "code_hash": "c72bdeee4fd611357a37096efc28c436",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "__scratch__",
+      "code_hash": null,
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "object of type 'numpy.int64' has no len()",
+          "traceback": []
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">&quot;/home/silas/dev/Lehr-Lern-Labor/SCKI/.venv/lib/python3.10/site-packages/marimo/_runtime/executor.py&quot;</span>, line <span class=\"m\">122</span>, in <span class=\"n\">execute_cell</span>\n<span class=\"w\">    </span><span class=\"n\">exec</span><span class=\"p\">(</span><span class=\"n\">cell</span><span class=\"o\">.</span><span class=\"n\">body</span><span class=\"p\">,</span> <span class=\"n\">glbls</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_5516/__marimo__cell___scratch___.py&quot;</span>, line <span class=\"m\">29</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">loss</span> <span class=\"o\">=</span> <span class=\"n\">cross_entropy_loss</span><span class=\"p\">(</span><span class=\"n\">probs</span><span class=\"p\">,</span> <span class=\"n\">label</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_5516/__marimo__cell_nWHF_.py&quot;</span>, line <span class=\"m\">14</span>, in <span class=\"n\">cross_entropy_loss</span>\n<span class=\"w\">    </span><span class=\"n\">probs</span> <span class=\"o\">=</span> <span class=\"n\">outputs</span><span class=\"p\">[</span><span class=\"n\">np</span><span class=\"o\">.</span><span class=\"n\">arange</span><span class=\"p\">(</span><span class=\"nb\">len</span><span class=\"p\">(</span><span class=\"n\">labels</span><span class=\"p\">)),</span> <span class=\"n\">labels</span><span class=\"p\">]</span>\n<span class=\"gr\">TypeError</span>: <span class=\"n\">object of type &#39;numpy.int64&#39; has no len()</span>\n</pre></div>\n</span>"
+        }
+      ]
     }
   ]
 }
