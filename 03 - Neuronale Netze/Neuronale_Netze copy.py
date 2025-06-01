@@ -238,12 +238,6 @@ def _(mo):
                 x = self.fc2.forward(x)
                 x = softmax(x)
                 return x
-
-            def __str__(self):
-                rep = "Net_1 architecture:\n"
-                rep += "Layer 1 (fc1):\n" + str(self.fc1) + "\n"
-                rep += "Layer 2 (fc2):\n" + str(self.fc2) + "\n"
-                return rep
     ```
     """
     ),
@@ -364,7 +358,7 @@ def _(mo):
 
 
 @app.cell
-def _(FullyConnectedLayer, np):
+def _(FullyConnectedLayer, relu, softmax):
     class Net_1:
         def __init__(self, num_in, num_out):
             # First fully connected layer maps from num_in to 2
@@ -373,50 +367,10 @@ def _(FullyConnectedLayer, np):
             self.fc2 = FullyConnectedLayer(2, 2)
 
         def forward(self, x):
-            self.z1 = self.fc1.forward(x)
-            self.a1 = np.maximum(0, self.z1)  # ReLU activation
-            self.z2 = self.fc2.forward(self.a1)
-            # Numerically stable softmax:
-            exp_scores = np.exp(self.z2 - np.max(self.z2))
-            self.out = exp_scores / np.sum(exp_scores)
-            return self.out
-
-        # For training purposes, you’d also implement a function to compute gradients.
-        # This example provides a skeleton for backpropagation:
-        def backward(self, x, label):
-            # Assume label is an integer representing the true class.
-            # Compute gradient of the loss (cross-entropy) wrt. the output (softmax output).
-            y_true = np.zeros_like(self.out)
-            y_true[label] = 1
-
-            # dL/dz2 for softmax + cross-entropy simplifies to (y_pred - y_true)
-            delta2 = self.out - y_true  
-
-            # Gradients for fc2 parameters:
-            self.fc2.grad_weights = np.outer(delta2, self.a1)
-            if self.fc2.use_bias:
-                self.fc2.grad_bias = delta2
-
-            # Backprop through fc2 to hidden layer:
-            delta1 = np.dot(self.fc2.weight.T, delta2)
-            # Backprop through ReLU:
-            delta1[self.z1 <= 0] = 0
-
-            # Gradients for fc1 parameters:
-            self.fc1.grad_weights = np.outer(delta1, x)
-            if self.fc1.use_bias:
-                self.fc1.grad_bias = delta1
-
-        def update_params(self, lr=0.1):
-            # Update fc1 weights and bias:
-            self.fc1.weight -= lr * self.fc1.grad_weights
-            if self.fc1.use_bias:
-                self.fc1.bias -= lr * self.fc1.grad_bias
-            # Update fc2 weights and bias:
-            self.fc2.weight -= lr * self.fc2.grad_weights
-            if self.fc2.use_bias:
-                self.fc2.bias -= lr * self.fc2.grad_bias
-
+            x = relu(self.fc1.forward(x))
+            x = self.fc2.forward(x)
+            x = softmax(x)
+            return x
 
         def __str__(self):
             rep = "Net_1 architecture:\n"
@@ -427,113 +381,14 @@ def _(FullyConnectedLayer, np):
 
 
 @app.cell
-def _(np):
-    def cross_entropy_loss(outputs, labels, epsilon=1e-10):
-        """
-        Compute the average cross entropy loss.
-
-        Parameters:
-            outputs: An array of shape (N, num_classes) with the predicted probabilities.
-            labels:  A 1D array of length N with the true labels (integer class indices).
-            epsilon: Small constant to avoid log(0).
-
-        Returns:
-            The average cross entropy loss.
-        """
-        # Select the probabilities corresponding to the true labels
-        probs = outputs[np.arange(len(labels)), labels]
-        # Compute the negative log likelihood for each sample
-        losses = -np.log(probs + epsilon)
-        # Return the mean loss
-        return np.mean(losses)
-
-    def evaluation(model, x, labels):
-        """
-        Evaluate a neural network model on a given dataset.
-
-        Parameters:
-          model:     A neural network model with a `forward` method.
-          x:         Input data. Expected to be a 2D numpy array of shape (N, features).
-                     Alternatively, if x is a list of 1D arrays, each representing a sample.
-          labels:    True labels as a 1D numpy array with integer class indices.
-
-        Returns:
-          A tuple (loss, accuracy) where:
-          - loss: average cross entropy loss over all samples (rounded to 5 decimals)
-          - accuracy: classification accuracy in percent (rounded to three decimals)
-        """
-        # Assume model is in evaluation mode:
-        # Note: In our NumPy-only model, there's no train()/eval() mode.
-
-        outputs = []  # Will hold the output probability vector for each sample
-
-        # If x is two-dimensional (N, features) then iterate over each sample.
-        for sample in x:
-            out = model.forward(sample)
-            outputs.append(out)
-
-        # Stack the outputs into a (N, num_classes) numpy array.
-        outputs = np.vstack(outputs)
-
-        # Get the predicted labels using argmax along axis=1.
-        preds = np.argmax(outputs, axis=1)
-
-        # Compute cross entropy loss using our helper function.
-        loss_value = cross_entropy_loss(outputs, labels)
-
-        # Compute accuracy in percentage
-        correct = np.sum(preds == labels)
-        total = labels.shape[0]
-        accuracy = round(correct / total, 3) * 100
-
-        return round(loss_value, 5), accuracy
-    return cross_entropy_loss, evaluation
-
-
-@app.cell
-def _(Net_1, evaluation, np):
+def _(Net_1):
     net = Net_1(2,2)
-
-    # Create a dummy dataset: 10 samples with 4 features each.
-    x_data = np.random.randn(10, 2)
-    # Random integer labels from 0 to 2.
-    labels = np.random.randint(0, 2, size=10)
-
-    # Evaluate the dummy model.
-    loss1, accuracy = evaluation(net, x_data, labels)
-    print("Loss:", loss1)
-    print("Accuracy:", accuracy)
+    print(net)
     return (net,)
 
 
 @app.cell
-def _(FullyConnectedLayer, np):
-    # Create a fully connected layer that maps input_dim=4 to output_dim=3
-    fc = FullyConnectedLayer(4, 3, bias=True)
-
-    # A sample input vector of dimension 4
-    x = np.array([0.5, -0.2, 0.1, 0.4])
-    print("Forward pass output:")
-    y = fc.forward(x)
-    print(y)
-
-    # Suppose we have an upstream gradient from subsequent layers
-    # For example, gradient from loss with respect to fc output (shape (3,))
-    upstream_grad = np.array([0.1, -0.05, 0.2])
-    dx = fc.backward(upstream_grad)
-    print("\nGradient with respect to input:")
-    print(dx)
-
-    # Update parameters with a learning rate of 0.1
-    fc.update_params(lr=0.1)
-    print("\nUpdated layer parameters:")
-    print(fc)
-    return
-
-
-@app.cell
 def _(cross_entropy_loss, net, np, softmax, x_train, y_train):
-
     # Hyperparameters:
     epochs = 10
     lr = 0.1
@@ -548,7 +403,7 @@ def _(cross_entropy_loss, net, np, softmax, x_train, y_train):
             # Forward pass:
             output = net.forward(x)          # raw scores (logits)
             probs = softmax(output)            # convert scores to probabilities
-        
+
             # Compute loss:
             loss = cross_entropy_loss(probs, label)
             epoch_loss += loss
@@ -565,13 +420,15 @@ def _(cross_entropy_loss, net, np, softmax, x_train, y_train):
             dout[label] -= 1  # subtract 1 for the true class
 
             # Backward pass:
-            net.backward(dout)
+            net.fc1.backward(dout)
+            net.fc2.backward(dout)
             # Update parameters:
-            net.update_params(lr)
+            net.fc1.update_params(lr)
+            net.fc2.update_params(lr)
 
         # Because we have one sample, accuracy is 100% if correct else 0%
-        accuracy2 = (correct / len(x_train)) * 100  
-        print(f"Epoch {epoch+1:3d} | Loss: {epoch_loss:.5f} | Accuracy: {accuracy2:.1f}%")
+        accuracy = (correct / len(x_train)) * 100  
+        print(f"Epoch {epoch+1:3d} | Loss: {epoch_loss:.5f} | Accuracy: {accuracy:.1f}%")
 
     print("\nTrained network parameters:")
     print(net)
@@ -635,6 +492,12 @@ def _(mo):
     https://pixabay.com/de/photos/ai-generiert-junge-junger-mann-7772478/
     """
     )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r""" # Appendix""")
     return
 
 
@@ -744,7 +607,18 @@ def _():
         x_shifted = x - np.max(x, axis=-1, keepdims=True)
         exp_x = np.exp(x_shifted)
         return exp_x / np.sum(exp_x, axis=-1, keepdims=True)
-    return FullyConnectedLayer, np, relu, softmax
+
+    def cross_entropy_loss(probs, label):
+        """
+        probs: The predicted probability vector from softmax.
+        label: The true class (integer)
+
+        Returns:
+            loss: Cross entropy loss (scalar)
+        """
+        # Add a small number to avoid log(0)
+        return -np.log(probs[label] + 1e-15)
+    return FullyConnectedLayer, cross_entropy_loss, np, relu, softmax
 
 
 @app.cell

@@ -6,12 +6,12 @@
   "cells": [
     {
       "id": "BYtC",
-      "code_hash": "bf5dfb066c32f30441913c734a3fbeca",
+      "code_hash": "deed631c0775f5f950daff328d781e28",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<marimo-accordion data-labels='[&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;Tipp 1&lt;/span&gt;&lt;/span&gt;&quot;, &quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;Tipp 2&lt;/span&gt;&lt;/span&gt;&quot;, &quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;Tipp 3&lt;/span&gt;&lt;/span&gt;&quot;, &quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;L&#92;u00f6sung&lt;/span&gt;&lt;/span&gt;&quot;]' data-multiple='false'><div><span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">Sieh dir nochmal die Definition von <code>class Net</code> an.</span></span></div><div><span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">Du brauchst um ein eigenes neuronales Netz zu implementieren eine eigene Klasse mit 2 Eingaben und 2 Ausgaben sowie 2 versteckten Schichten</span></span></div><div><span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">Tipp 3</span></span></div><div><span class=\"markdown prose dark:prose-invert\"><div class=\"codehilite\"><pre><span></span><code><span class=\"k\">class</span><span class=\"w\"> </span><span class=\"nc\">Net_1</span><span class=\"p\">:</span>\n        <span class=\"k\">def</span><span class=\"w\"> </span><span class=\"fm\">__init__</span><span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"p\">,</span> <span class=\"n\">num_in</span><span class=\"p\">,</span> <span class=\"n\">num_out</span><span class=\"p\">):</span>\n            <span class=\"c1\"># First fully connected layer maps from num_in to 2</span>\n            <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">fc1</span> <span class=\"o\">=</span> <span class=\"n\">FullyConnectedLayer</span><span class=\"p\">(</span><span class=\"n\">num_in</span><span class=\"p\">,</span> <span class=\"mi\">2</span><span class=\"p\">)</span>\n            <span class=\"c1\"># Second fully connected layer maps from 2 to 2</span>\n            <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">fc2</span> <span class=\"o\">=</span> <span class=\"n\">FullyConnectedLayer</span><span class=\"p\">(</span><span class=\"mi\">2</span><span class=\"p\">,</span> <span class=\"mi\">2</span><span class=\"p\">)</span>\n\n        <span class=\"k\">def</span><span class=\"w\"> </span><span class=\"nf\">forward</span><span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"p\">,</span> <span class=\"n\">x</span><span class=\"p\">):</span>\n            <span class=\"n\">x</span> <span class=\"o\">=</span> <span class=\"n\">relu</span><span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">fc1</span><span class=\"o\">.</span><span class=\"n\">forward</span><span class=\"p\">(</span><span class=\"n\">x</span><span class=\"p\">))</span>\n            <span class=\"n\">x</span> <span class=\"o\">=</span> <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">fc2</span><span class=\"o\">.</span><span class=\"n\">forward</span><span class=\"p\">(</span><span class=\"n\">x</span><span class=\"p\">)</span>\n            <span class=\"n\">x</span> <span class=\"o\">=</span> <span class=\"n\">softmax</span><span class=\"p\">(</span><span class=\"n\">x</span><span class=\"p\">)</span>\n            <span class=\"k\">return</span> <span class=\"n\">x</span>\n\n        <span class=\"k\">def</span><span class=\"w\"> </span><span class=\"fm\">__str__</span><span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"p\">):</span>\n            <span class=\"n\">rep</span> <span class=\"o\">=</span> <span class=\"s2\">&quot;Net_1 architecture:</span><span class=\"se\">\\n</span><span class=\"s2\">&quot;</span>\n            <span class=\"n\">rep</span> <span class=\"o\">+=</span> <span class=\"s2\">&quot;Layer 1 (fc1):</span><span class=\"se\">\\n</span><span class=\"s2\">&quot;</span> <span class=\"o\">+</span> <span class=\"nb\">str</span><span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">fc1</span><span class=\"p\">)</span> <span class=\"o\">+</span> <span class=\"s2\">&quot;</span><span class=\"se\">\\n</span><span class=\"s2\">&quot;</span>\n            <span class=\"n\">rep</span> <span class=\"o\">+=</span> <span class=\"s2\">&quot;Layer 2 (fc2):</span><span class=\"se\">\\n</span><span class=\"s2\">&quot;</span> <span class=\"o\">+</span> <span class=\"nb\">str</span><span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">fc2</span><span class=\"p\">)</span> <span class=\"o\">+</span> <span class=\"s2\">&quot;</span><span class=\"se\">\\n</span><span class=\"s2\">&quot;</span>\n            <span class=\"k\">return</span> <span class=\"n\">rep</span>\n</code></pre></div></span></div></marimo-accordion>"
+            "text/html": "<marimo-accordion data-labels='[&quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;Tipp 1&lt;/span&gt;&lt;/span&gt;&quot;, &quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;Tipp 2&lt;/span&gt;&lt;/span&gt;&quot;, &quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;Tipp 3&lt;/span&gt;&lt;/span&gt;&quot;, &quot;&lt;span class=&#92;&quot;markdown prose dark:prose-invert&#92;&quot;&gt;&lt;span class=&#92;&quot;paragraph&#92;&quot;&gt;L&#92;u00f6sung&lt;/span&gt;&lt;/span&gt;&quot;]' data-multiple='false'><div><span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">Sieh dir nochmal die Definition von <code>class Net</code> an.</span></span></div><div><span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">Du brauchst um ein eigenes neuronales Netz zu implementieren eine eigene Klasse mit 2 Eingaben und 2 Ausgaben sowie 2 versteckten Schichten</span></span></div><div><span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">Tipp 3</span></span></div><div><span class=\"markdown prose dark:prose-invert\"><div class=\"codehilite\"><pre><span></span><code><span class=\"k\">class</span><span class=\"w\"> </span><span class=\"nc\">Net_1</span><span class=\"p\">:</span>\n        <span class=\"k\">def</span><span class=\"w\"> </span><span class=\"fm\">__init__</span><span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"p\">,</span> <span class=\"n\">num_in</span><span class=\"p\">,</span> <span class=\"n\">num_out</span><span class=\"p\">):</span>\n            <span class=\"c1\"># First fully connected layer maps from num_in to 2</span>\n            <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">fc1</span> <span class=\"o\">=</span> <span class=\"n\">FullyConnectedLayer</span><span class=\"p\">(</span><span class=\"n\">num_in</span><span class=\"p\">,</span> <span class=\"mi\">2</span><span class=\"p\">)</span>\n            <span class=\"c1\"># Second fully connected layer maps from 2 to 2</span>\n            <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">fc2</span> <span class=\"o\">=</span> <span class=\"n\">FullyConnectedLayer</span><span class=\"p\">(</span><span class=\"mi\">2</span><span class=\"p\">,</span> <span class=\"mi\">2</span><span class=\"p\">)</span>\n\n        <span class=\"k\">def</span><span class=\"w\"> </span><span class=\"nf\">forward</span><span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"p\">,</span> <span class=\"n\">x</span><span class=\"p\">):</span>\n            <span class=\"n\">x</span> <span class=\"o\">=</span> <span class=\"n\">relu</span><span class=\"p\">(</span><span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">fc1</span><span class=\"o\">.</span><span class=\"n\">forward</span><span class=\"p\">(</span><span class=\"n\">x</span><span class=\"p\">))</span>\n            <span class=\"n\">x</span> <span class=\"o\">=</span> <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">fc2</span><span class=\"o\">.</span><span class=\"n\">forward</span><span class=\"p\">(</span><span class=\"n\">x</span><span class=\"p\">)</span>\n            <span class=\"n\">x</span> <span class=\"o\">=</span> <span class=\"n\">softmax</span><span class=\"p\">(</span><span class=\"n\">x</span><span class=\"p\">)</span>\n            <span class=\"k\">return</span> <span class=\"n\">x</span>\n</code></pre></div></span></div></marimo-accordion>"
           }
         }
       ],
@@ -22,17 +22,17 @@
       "code_hash": "e964c04e08451e17994f6ad423e312b1",
       "outputs": [
         {
-          "type": "error",
-          "ename": "exception",
-          "evalue": "name 'FullyConnectedLayer' is not defined",
-          "traceback": []
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
         }
       ],
       "console": [
         {
           "type": "stream",
-          "name": "stderr",
-          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">&quot;/home/silas/dev/Lehr-Lern-Labor/SCKI/.venv/lib/python3.10/site-packages/marimo/_runtime/executor.py&quot;</span>, line <span class=\"m\">122</span>, in <span class=\"n\">execute_cell</span>\n<span class=\"w\">    </span><span class=\"n\">exec</span><span class=\"p\">(</span><span class=\"n\">cell</span><span class=\"o\">.</span><span class=\"n\">body</span><span class=\"p\">,</span> <span class=\"n\">glbls</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_5516/__marimo__cell_MJUe_.py&quot;</span>, line <span class=\"m\">30</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">erstes_nn</span> <span class=\"o\">=</span> <span class=\"n\">Net</span><span class=\"p\">(</span><span class=\"mi\">4</span><span class=\"p\">,</span> <span class=\"mi\">3</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_5516/__marimo__cell_MJUe_.py&quot;</span>, line <span class=\"m\">6</span>, in <span class=\"n\">__init__</span>\n<span class=\"w\">    </span><span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">fc1</span> <span class=\"o\">=</span> <span class=\"n\">FullyConnectedLayer</span><span class=\"p\">(</span><span class=\"n\">num_in</span><span class=\"p\">,</span> <span class=\"mi\">5</span><span class=\"p\">)</span>      <span class=\"c1\"># first layer: num_in -&gt; 5</span>\n<span class=\"gr\">NameError</span>: <span class=\"n\">name &#39;FullyConnectedLayer&#39; is not defined</span>\n</pre></div>\n</span>"
+          "name": "stdout",
+          "text": "Hallo mein Name ist Netzi!\n\nDas ist mein Aufbau:\n\nModel name: Netzi\nLayer 1 (fc1):\nWeights shape: (5, 4)\nBias shape: (5,)\n\nLayer 2 (fc2):\nWeights shape: (5, 5)\nBias shape: (5,)\n\nLayer 3 (fc3):\nWeights shape: (3, 5)\nBias disabled\n \n\nUnd das sind meine zuf\u00e4llig initialisiert/en Gewichte:\n\nfc1 layer parameters:\n Weights:\n [[ 0.07774904 -0.03073648 -0.03665239  0.1119712 ]\n [-0.04579224  0.04253934 -0.00279712  0.14759898]\n [ 0.06467801 -0.03643343 -0.06787774 -0.03536279]\n [-0.07407475 -0.06750218 -0.01327843  0.06198011]\n [ 0.17911685  0.01710004 -0.17256714  0.01606585]]\nBias:\n [-0.08589853 -0.02064209  0.04884265 -0.0838331   0.03811637]\n\nfc2 layer parameters:\n Weights:\n [[-9.90903282e-02  1.01788005e-01  3.41587396e-02 -1.25088622e-01\n   9.25250752e-02]\n [-9.04786158e-02  1.84369153e-01  1.52550724e-01 -1.44553558e-01\n   3.77160611e-02]\n [-7.05572292e-03  6.04159707e-02  4.72148998e-02  8.19917293e-02\n   9.07519617e-02]\n [-5.85822875e-02  9.37558842e-02 -2.54608092e-02  9.73598712e-02\n   2.07282772e-02]\n [ 1.09964197e-01  9.39896981e-02  6.06389001e-02  1.76084071e-04\n  -9.90160143e-02]]\nBias:\n [ 0.18723941 -0.02410736  0.00533449  0.10308159 -0.1276989 ]\n\nfc3 layer parameters:\n Weights:\n [[ 0.08377198 -0.14901114 -0.1070215  -0.02091286  0.06045723]\n [-0.17430582  0.15242268  0.18635753  0.12913779  0.13006963]\n [ 0.09182028 -0.01588005 -0.09640634 -0.19907788  0.00897307]]\n\nAusgabe (Ergebnis des Vorw\u00e4rtsdurchlaufs): [0.33781522 0.32972721 0.33245757]\n"
         }
       ]
     },
@@ -94,7 +94,7 @@
     },
     {
       "id": "Hstk",
-      "code_hash": "9a3048735af5200c15ce9757b6e8e2cd",
+      "code_hash": "c3a848e32b1afca17c577ff813ed7315",
       "outputs": [
         {
           "type": "data",
@@ -107,13 +107,13 @@
     },
     {
       "id": "nWHF",
-      "code_hash": "a67f3beb1d8ffa663f8ce26a2952986f",
+      "code_hash": "4d818ff070a9fa360650fab17ecae25e",
       "outputs": [
         {
-          "type": "data",
-          "data": {
-            "text/plain": ""
-          }
+          "type": "error",
+          "ename": "multiple-defs",
+          "evalue": "The variable 'cross_entropy_loss' was defined by another cell",
+          "traceback": []
         }
       ],
       "console": []
@@ -133,20 +133,65 @@
     },
     {
       "id": "ZHCJ",
-      "code_hash": "285e2c5d2cbcdde96b24bc4406551610",
+      "code_hash": "bd6b2ae57299baf69650df75cef67521",
       "outputs": [
         {
-          "type": "error",
-          "ename": "exception",
-          "evalue": "object of type 'numpy.int64' has no len()",
-          "traceback": []
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
         }
       ],
       "console": [
         {
           "type": "stream",
-          "name": "stderr",
-          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">&quot;/home/silas/dev/Lehr-Lern-Labor/SCKI/.venv/lib/python3.10/site-packages/marimo/_runtime/executor.py&quot;</span>, line <span class=\"m\">122</span>, in <span class=\"n\">execute_cell</span>\n<span class=\"w\">    </span><span class=\"n\">exec</span><span class=\"p\">(</span><span class=\"n\">cell</span><span class=\"o\">.</span><span class=\"n\">body</span><span class=\"p\">,</span> <span class=\"n\">glbls</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_5516/__marimo__cell_ZHCJ_.py&quot;</span>, line <span class=\"m\">18</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">loss</span> <span class=\"o\">=</span> <span class=\"n\">cross_entropy_loss</span><span class=\"p\">(</span><span class=\"n\">probs</span><span class=\"p\">,</span> <span class=\"n\">label</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_5516/__marimo__cell_nWHF_.py&quot;</span>, line <span class=\"m\">14</span>, in <span class=\"n\">cross_entropy_loss</span>\n<span class=\"w\">    </span><span class=\"n\">probs</span> <span class=\"o\">=</span> <span class=\"n\">outputs</span><span class=\"p\">[</span><span class=\"n\">np</span><span class=\"o\">.</span><span class=\"n\">arange</span><span class=\"p\">(</span><span class=\"nb\">len</span><span class=\"p\">(</span><span class=\"n\">labels</span><span class=\"p\">)),</span> <span class=\"n\">labels</span><span class=\"p\">]</span>\n<span class=\"gr\">TypeError</span>: <span class=\"n\">object of type &#39;numpy.int64&#39; has no len()</span>\n</pre></div>\n</span>"
+          "name": "stdout",
+          "text": "Epoch   1 | Loss: 149.30468 | Accuracy: 94.0%\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Epoch   2 | Loss: 149.30468 | Accuracy: 94.0%\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Epoch   3 | Loss: 149.30468 | Accuracy: 94.0%\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Epoch   4 | Loss: 148.30468 | Accuracy: 94.2%\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Epoch   5 | Loss: 148.30468 | Accuracy: 94.2%\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Epoch   6 | Loss: 148.30468 | Accuracy: 94.2%\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Epoch   7 | Loss: 148.30468 | Accuracy: 94.2%\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Epoch   8 | Loss: 148.30468 | Accuracy: 94.2%\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Epoch   9 | Loss: 148.30468 | Accuracy: 94.2%\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Epoch  10 | Loss: 148.30468 | Accuracy: 94.2%\n\nTrained network parameters:\nNet_1 architecture:\nLayer 1 (fc1):\nWeights shape: (2, 2)\nBias shape: (2,)\n\nLayer 2 (fc2):\nWeights shape: (2, 2)\nBias shape: (2,)\n\n\n"
         }
       ]
     },
@@ -371,7 +416,7 @@
     },
     {
       "id": "PRzz",
-      "code_hash": "2f6c8804026a0b912386a6cc47f8f8a8",
+      "code_hash": "51d410267bf235723fe265d9986fe683",
       "outputs": [
         {
           "type": "data",
@@ -384,7 +429,7 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Loss: 0.66752\nAccuracy: 70.0\n"
+          "text": "Net_1 architecture:\nLayer 1 (fc1):\nWeights shape: (2, 2)\nBias shape: (2,)\n\nLayer 2 (fc2):\nWeights shape: (2, 2)\nBias shape: (2,)\n\n\n"
         }
       ]
     },
@@ -403,7 +448,7 @@
     },
     {
       "id": "acIg",
-      "code_hash": "c72bdeee4fd611357a37096efc28c436",
+      "code_hash": "bd32ccbd45f99cd111eda1ff52c744f7",
       "outputs": [
         {
           "type": "data",
@@ -432,6 +477,45 @@
           "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">&quot;/home/silas/dev/Lehr-Lern-Labor/SCKI/.venv/lib/python3.10/site-packages/marimo/_runtime/executor.py&quot;</span>, line <span class=\"m\">122</span>, in <span class=\"n\">execute_cell</span>\n<span class=\"w\">    </span><span class=\"n\">exec</span><span class=\"p\">(</span><span class=\"n\">cell</span><span class=\"o\">.</span><span class=\"n\">body</span><span class=\"p\">,</span> <span class=\"n\">glbls</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_5516/__marimo__cell___scratch___.py&quot;</span>, line <span class=\"m\">29</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">loss</span> <span class=\"o\">=</span> <span class=\"n\">cross_entropy_loss</span><span class=\"p\">(</span><span class=\"n\">probs</span><span class=\"p\">,</span> <span class=\"n\">label</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_5516/__marimo__cell_nWHF_.py&quot;</span>, line <span class=\"m\">14</span>, in <span class=\"n\">cross_entropy_loss</span>\n<span class=\"w\">    </span><span class=\"n\">probs</span> <span class=\"o\">=</span> <span class=\"n\">outputs</span><span class=\"p\">[</span><span class=\"n\">np</span><span class=\"o\">.</span><span class=\"n\">arange</span><span class=\"p\">(</span><span class=\"nb\">len</span><span class=\"p\">(</span><span class=\"n\">labels</span><span class=\"p\">)),</span> <span class=\"n\">labels</span><span class=\"p\">]</span>\n<span class=\"gr\">TypeError</span>: <span class=\"n\">object of type &#39;numpy.int64&#39; has no len()</span>\n</pre></div>\n</span>"
         }
       ]
+    },
+    {
+      "id": "dkig",
+      "code_hash": "9aae221cf61546dbff906277b6d7ae31",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "multiple-defs",
+          "evalue": "The variable 'x' was defined by another cell",
+          "traceback": []
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lBGr",
+      "code_hash": "4f7e04afd34a7ac864c5744c0c39efa3",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h1 id=\"musterlosung-fur-aufgabe-2\">Musterl\u00f6sung f\u00fcr Aufgabe 2</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "GytU",
+      "code_hash": "f62cbde47da7257bbde3465461badf43",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h1 id=\"appendix\">Appendix</h1></span>"
+          }
+        }
+      ],
+      "console": []
     }
   ]
 }
