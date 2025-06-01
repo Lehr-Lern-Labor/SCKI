@@ -4,31 +4,21 @@ __generated_with = "0.13.10"
 app = marimo.App(width="full")
 
 
-@app.cell(hide_code=True)
-def _(mo):
+app._unparsable_cell(
+    r"""
     mo.md(
-        r"""
+        rf\"\"\"
     # Neuronale Netze
 
     In der letzten Einheit haben wir das Perzeptron kennen gelernt, das durch Fehler lernt und in bestimmten Szenarien Daten richtig klassifizieren kann. Der Klassifikationsalgorithmus des Perzeptrons stößt allerdings schnell an seine Grenzen. In dieser Einheit schauen wir uns an, wie wir das Perzeptron schrittweise verbessern können. Diese Verbesserungen führen uns zu neuronalen Netzen, die die rasante Entwicklung der KI der letzten Jahre entscheidend prägten.
 
     KI wird in den nächsten Jahren immer mehr Aufgaben übernehmen, die jetzt noch von Menschen ausgeführt werden. Gleichzeitig schafft KI auch neue Berufe und Perspektiven. Eine wichtige Herausforderung der Zukuft ist u.a. die Gestaltung einer sinnvollen Zusammenarbeit zwischen Mensch und KI. 
 
-    &nbsp;
-
-    <figure>
-      <img src="public/resources/img/artificial-intelligence.jpg" alt="Deep Neural Network" style="width:50%">
-        &nbsp;
-      <figcaption><i>Dieses Bild wurde übrigens von einer KI erzeugt.</i></figcaption>
-    </figure> 
+    {mo.image(src=\"public/resources/img/artificial-intelligence.jpg\", alt=\"Deep Neural Network\", style={\"width\":\"50%\"}, caption=\"Dieses Bild wurde übrigens von einer KI erzeugt.\")}
 
     Zum Einstieg in diese Einheit rufen wir uns den Aufbau des Perzeptrons in Erinnerung. Das Perzeptron besteht aus einer festen Anzahl Inputs (abhängig von den Dimensionen der Punkte, die als Datengrundlage dienen), Gewichten mit denen die Eingaben mulipliziert und zusammen mit dem Bias addiert werden und einer Aktivierungsfunktion. Diesen Aufbau bezeichnen wir im Folgenden als <b>Neuron</b>.
 
-
-    <figure>
-      <img src="public/resources/img/perzeptron.png" alt="perzeptron" style="width:70%">
-    </figure> 
-
+    {mo.image(src=\"public/resources/img/perzeptron.png\", alt=\"perzeptron\", style={\"width\": \"70%\"})}
 
     ## Aufbau neuronaler Netze
 
@@ -38,9 +28,7 @@ def _(mo):
 
     Um die Performance unserer KI zu steigern, schalten wir mehrere Neuronen hinter- und nebeneinander. Die Ausgabe eines Neurons dient nun als Eingabe von nachfolgenden Neuronen. Sind Neuronen parallel in einer Ebene angeordnet, wird die Gesamtheit dieser Neuronen als <b>Layer</b> (bzw. Schicht) bezeichnet. Das gesamte Konstrukt mehreren Neuronenschichten bezeichnet man als <b>neuronales Netz</b>. Wenn es mehrere verdeckte Schichten gibt, bezeichnet man das Netz als <b>tiefes neuronales Netz</b> (deep neural network).
 
-    <figure>
-      <img src="public/resources/img/nn1.png" alt="perzeptron" style="width:60%">
-    </figure> 
+    {mo.image(src=\"public/resources/img/nn1.png\", alt=\"perzeptron\", style={\"width\": \"60%\"})}
 
     Um nicht nur zwei Klassen von Datenpunkten klassifizieren zu können, wird die Ausgabe durch mehrere Neuronen erweitert. Die Nummer des Neurons, das den größten Wert in der Ausgabeschicht ausgibt, ist auch die Ausgabe des gesamten neuronalen Netzes. Wenn es also fünf Ausgabeneuronen gibt und das mittlere den größten Wert hat, dann weist das neuronale Netz den Datenpunkt der Klasse 2 zu (Outputs 0 bis 5). Bisher sind die Ausgaben der Neuronen allerdings entweder 0 oder 1, so dass es oft zu einem Gleichstand kommen kann. Nicht nur deswegen sollten wir die bisherige Aktivierungsfunktion durch eine geeignetere ersetzen.
 
@@ -58,27 +46,25 @@ def _(mo):
     \end{array}
     \right. $$
 
-    <figure>
-      <img src="public/resources/img/sigmoid_and_relu.png" alt="Sigmoid and ReLU" style="width:50%">
-    </figure> 
+    {mo.image(src=\"public/resources/img/sigmoid_and_relu.png\", alt=\"Sigmoid and ReLU\", style={\"width\": \"50%\"})}
 
     ### Softmax
 
     Jetzt fehlt nur noch eine kleine Änderung, um ein herkömmliches neuronales Netz zu erhalten. Wie im vorletzten Abschnitt bereits umrissen, wird die Klassifikation des Datenpunkts jetzt nicht mehr durch eine 0- oder 1-Ausgabe des letzten Neurons ermittelt, sondern durch die Nummer des Neurons in der Ausgabeschicht, das die größte Ausgabe hat. Durch die neue ReLU-Aktivierungsfunktion erhalten wir in der letzten Ausgabeschicht nicht mehr 0- oder 1-Ausgaben, sondern Werte größer oder gleich 0. 
     Um als Ausgabe des neuronalen Netzes die Wahrscheinlichkeit zu erhalten, mit der ein Datenpunkt einer Klasse zugeordnet wird, wird eine am Ende eine zusätzliche Schicht mit einer speziellen Aktivierungsfunktion (Softmax-Funktion) eingefügt, deren Gewichte nicht trainiert werden.
 
-    <figure>
-      <img src="public/resources/img/nn2.png" alt="perzeptron" style="width:80%">
-    </figure> 
+    {mo.image(src=\"public/resources/img/nn2.png\", alt=\"perzeptron\", style={\"width\": \"80%\"})}
 
     Jetzt sind wir bereit unser erstes neuronales Netz in Code umzusetzen. Damit wir nicht alles selbst implementieren müssen, verwenden wir die Bibliothek <i>Numpy</i>.
 
     ## Numpy
 
     Numpy bietet eine sehr einfache Weise, neuronale Netze zu konstruieren. Gehe das folgende Codefeld durch und führe es aus, um mit den Funktionsaufrufen vertraut zu werden. Wir konstruieren dabei das obige neuronale Netze mit vier Eingabe- und drei Ausgabeneuronen.
-    """
+    \"\"\"
     )
-    return
+    """,
+    name="_"
+)
 
 
 @app.cell
@@ -497,7 +483,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r""" # Appendix""")
+    mo.md(r"""# Appendix""")
     return
 
 
