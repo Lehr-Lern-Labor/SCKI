@@ -1,24 +1,21 @@
 import marimo
 
-__generated_with = "0.13.10"
-app = marimo.App(width="full")
+__generated_with = "0.13.15"
+app = marimo.App(width="medium")
 
 
-app._unparsable_cell(
-    r"""
-    mo.md(
-        rf\"\"\"
+@app.cell
+def _(mo):
+    mo.vstack([
+        mo.accordion({
+            "🗬 Neuronale Netze":r"""
     # Neuronale Netze
 
-    In der letzten Einheit haben wir das Perzeptron kennen gelernt, das durch Fehler lernt und in bestimmten Szenarien Daten richtig klassifizieren kann. Der Klassifikationsalgorithmus des Perzeptrons stößt allerdings schnell an seine Grenzen. In dieser Einheit schauen wir uns an, wie wir das Perzeptron schrittweise verbessern können. Diese Verbesserungen führen uns zu neuronalen Netzen, die die rasante Entwicklung der KI der letzten Jahre entscheidend prägten.
+    Das Perzeptron besteht aus einer festen Anzahl Inputs (abhängig von den Dimensionen der Punkte, die als Datengrundlage dienen), Gewichten mit denen die Eingaben mulipliziert und zusammen mit dem Bias addiert werden und einer Aktivierungsfunktion. Diesen Aufbau bezeichnen wir im Folgenden als <b>Neuron</b>.
 
-    KI wird in den nächsten Jahren immer mehr Aufgaben übernehmen, die jetzt noch von Menschen ausgeführt werden. Gleichzeitig schafft KI auch neue Berufe und Perspektiven. Eine wichtige Herausforderung der Zukuft ist u.a. die Gestaltung einer sinnvollen Zusammenarbeit zwischen Mensch und KI. 
-
-    {mo.image(src=\"public/resources/img/artificial-intelligence.jpg\", alt=\"Deep Neural Network\", style={\"width\":\"50%\"}, caption=\"Dieses Bild wurde übrigens von einer KI erzeugt.\")}
-
-    Zum Einstieg in diese Einheit rufen wir uns den Aufbau des Perzeptrons in Erinnerung. Das Perzeptron besteht aus einer festen Anzahl Inputs (abhängig von den Dimensionen der Punkte, die als Datengrundlage dienen), Gewichten mit denen die Eingaben mulipliziert und zusammen mit dem Bias addiert werden und einer Aktivierungsfunktion. Diesen Aufbau bezeichnen wir im Folgenden als <b>Neuron</b>.
-
-    {mo.image(src=\"public/resources/img/perzeptron.png\", alt=\"perzeptron\", style={\"width\": \"70%\"})}
+    <figure>
+      <img src="public/resources/img/perzeptron.png" alt="perzeptron" style="width:70%">
+    </figure> 
 
     ## Aufbau neuronaler Netze
 
@@ -28,7 +25,9 @@ app._unparsable_cell(
 
     Um die Performance unserer KI zu steigern, schalten wir mehrere Neuronen hinter- und nebeneinander. Die Ausgabe eines Neurons dient nun als Eingabe von nachfolgenden Neuronen. Sind Neuronen parallel in einer Ebene angeordnet, wird die Gesamtheit dieser Neuronen als <b>Layer</b> (bzw. Schicht) bezeichnet. Das gesamte Konstrukt mehreren Neuronenschichten bezeichnet man als <b>neuronales Netz</b>. Wenn es mehrere verdeckte Schichten gibt, bezeichnet man das Netz als <b>tiefes neuronales Netz</b> (deep neural network).
 
-    {mo.image(src=\"public/resources/img/nn1.png\", alt=\"perzeptron\", style={\"width\": \"60%\"})}
+    <figure>
+      <img src="public/resources/img/nn1.png" alt="perzeptron" style="width:60%">
+    </figure> 
 
     Um nicht nur zwei Klassen von Datenpunkten klassifizieren zu können, wird die Ausgabe durch mehrere Neuronen erweitert. Die Nummer des Neurons, das den größten Wert in der Ausgabeschicht ausgibt, ist auch die Ausgabe des gesamten neuronalen Netzes. Wenn es also fünf Ausgabeneuronen gibt und das mittlere den größten Wert hat, dann weist das neuronale Netz den Datenpunkt der Klasse 2 zu (Outputs 0 bis 5). Bisher sind die Ausgaben der Neuronen allerdings entweder 0 oder 1, so dass es oft zu einem Gleichstand kommen kann. Nicht nur deswegen sollten wir die bisherige Aktivierungsfunktion durch eine geeignetere ersetzen.
 
@@ -46,25 +45,31 @@ app._unparsable_cell(
     \end{array}
     \right. $$
 
-    {mo.image(src=\"public/resources/img/sigmoid_and_relu.png\", alt=\"Sigmoid and ReLU\", style={\"width\": \"50%\"})}
+    <figure>
+      <img src="public/resources/img/sigmoid_and_relu.png" alt="Sigmoid and ReLU" style="width:50%">
+    </figure> 
 
     ### Softmax
 
     Jetzt fehlt nur noch eine kleine Änderung, um ein herkömmliches neuronales Netz zu erhalten. Wie im vorletzten Abschnitt bereits umrissen, wird die Klassifikation des Datenpunkts jetzt nicht mehr durch eine 0- oder 1-Ausgabe des letzten Neurons ermittelt, sondern durch die Nummer des Neurons in der Ausgabeschicht, das die größte Ausgabe hat. Durch die neue ReLU-Aktivierungsfunktion erhalten wir in der letzten Ausgabeschicht nicht mehr 0- oder 1-Ausgaben, sondern Werte größer oder gleich 0. 
     Um als Ausgabe des neuronalen Netzes die Wahrscheinlichkeit zu erhalten, mit der ein Datenpunkt einer Klasse zugeordnet wird, wird eine am Ende eine zusätzliche Schicht mit einer speziellen Aktivierungsfunktion (Softmax-Funktion) eingefügt, deren Gewichte nicht trainiert werden.
+    """
+        }),
+        mo.md(
+        r"""
+    <figure>
+      <img src="public/resources/img/nn2.png" alt="perzeptron" style="width:80%">
+    </figure> 
 
-    {mo.image(src=\"public/resources/img/nn2.png\", alt=\"perzeptron\", style={\"width\": \"80%\"})}
-
-    Jetzt sind wir bereit unser erstes neuronales Netz in Code umzusetzen. Damit wir nicht alles selbst implementieren müssen, verwenden wir die Bibliothek <i>Numpy</i>.
+    Jetzt sind wir bereit unser erstes neuronales Netz in Code umzusetzen. Damit wir nicht alles selbst implementieren müssen, verwenden wir die Bibliothek <i>PyTorch</i>, die von einem Facebook-Forschungsteam entwickelt wurde.
 
     ## Numpy
 
     Numpy bietet eine sehr einfache Weise, neuronale Netze zu konstruieren. Gehe das folgende Codefeld durch und führe es aus, um mit den Funktionsaufrufen vertraut zu werden. Wir konstruieren dabei das obige neuronale Netze mit vier Eingabe- und drei Ausgabeneuronen.
-    \"\"\"
+    """
     )
-    """,
-    name="_"
-)
+    ])
+    return
 
 
 @app.cell
@@ -127,30 +132,28 @@ def _(FullyConnectedLayer, np, relu, softmax):
     return (erstes_nn,)
 
 
-@app.cell(hide_code=True)
+@app.cell
 def _(mo):
-    mo.md(r"""# Aufgabe 1""")
+    mo.md(r"# Aufgabe 1")
     return
 
 
-@app.cell(hide_code=True)
+@app.cell
 def _(mo):
     mo.md(
         r"""
-    ____
-
-    <img style="float: left;" src="public/resources/img/laptop_icon.png" width=50 height=50 /> <br><br>
-
-    <i>Im letzten Codefeld wurden unser erstes neuronales Netz erzeugt. Lies die gesuchten Gewichte anhand der letzten Ausgabe ab und überprüfe deine Eingabe, indem du das Codefeld ausführst. Runde gegebenenfalls die Eingaben auf die vierte Nachkommastelle ab.</i>
-    """
+        ____
+    
+        <img style="float: left;" src="public/resources/img/laptop_icon.png" width=50 height=50 /> <br><br>
+    
+        <i>Im letzten Codefeld wurden unser erstes neuronales Netz erzeugt. Lies die gesuchten Gewichte anhand der letzten Ausgabe ab und überprüfe deine Eingabe, indem du das Codefeld ausführst. Runde gegebenenfalls die Eingaben auf die vierte Nachkommastelle ab.</i>
+        """
     )
     return
 
 
 @app.cell
-def _(erstes_nn):
-    from public.resources.code.help_functions import pruefe_gewichte
-
+def _(erstes_nn, pruefe_gewichte):
     # Ersetze die Nullen durch die richtigen Werte.
 
     # Gewicht zwischen dem ersten Neuron der Eingabeschicht und dem ersten Neuron der ersten verdeckten Schicht
@@ -170,27 +173,27 @@ def _(erstes_nn):
     return
 
 
-@app.cell(hide_code=True)
+@app.cell
 def _(mo):
-    mo.md(r"""# Aufgabe 2""")
+    mo.md(r"# Aufgabe 2")
     return
 
 
-@app.cell(hide_code=True)
+@app.cell
 def _(mo):
     mo.md(
         r"""
-    ____
-
-    <img style="float: left;" src="public/resources/img/laptop_icon.png" width=50 height=50 /> <br><br>
-
-    <i>Jetzt bist du bereit ein neuronales Netz eigenständig zu konstruieren. Implementiere das abgebildete neuronale Netz und gib das Ergebnis des durchpropagierten Datenpunkts an.</i>
-
-    <figure>
-      <img src="public/resources/img/nn3.png" alt="neuronales Netz" style="width:60%">
-      <figcaption></figcaption>
-    </figure>
-    """
+        ____
+    
+        <img style="float: left;" src="public/resources/img/laptop_icon.png" width=50 height=50 /> <br><br>
+    
+        <i>Jetzt bist du bereit ein neuronales Netz eigenständig zu konstruieren. Implementiere das abgebildete neuronale Netz und gib das Ergebnis des durchpropagierten Datenpunkts an.</i>
+    
+        <figure>
+          <img src="public/resources/img/nn3.png" alt="neuronales Netz" style="width:60%">
+          <figcaption></figcaption>
+        </figure>
+        """
     )
     return
 
@@ -203,7 +206,7 @@ def _(np):
     return
 
 
-@app.cell(hide_code=True)
+@app.cell
 def _(mo):
     mo.accordion({
         "Tipp 1": "Sieh dir nochmal die Definition von `class Net` an.",
@@ -231,9 +234,9 @@ def _(mo):
     return
 
 
-@app.cell(hide_code=True)
+@app.cell
 def _(mo):
-    mo.md(
+    mo.vstack([mo.md(
         r"""
     Bis jetzt haben wir zwar neuronale Netze konstruiert, aber sie noch nicht trainieren lassen. Die vorhandenen Trainingsdaten müssen wir nutzen, um die Gewichte so anzupassen, dass das neuronale Netz auf den Testdaten (die wir nicht für das Training benutzen) gute Ergebnisse erzielt. Im nächsten Abschnitt schauen wir uns an, wie das funktioniert.
 
@@ -260,12 +263,8 @@ def _(mo):
 
 
     <i>Wenn wir z.B. einen Datenpunkt betrachten, der ein Blaumeisen-Ei repräsentiert, dann ist die optimale Ausgabe bei drei möglichen Klassen (Klasse 0 = Blaumeisen, Klasse 1 = Ente, Klasse 2 = Greifvogel) der Vektor $(1, 0, 0)$. Wenn die tatsächliche Ausgabe des neuronalen Netzes $(0.5, 0.25, 0.25)$ ist, was ist dann der Verlust nach der oberen Formel?</i>
-
-    <details>
-
-    <summary>➤ Klicke hier, um deine Antwort zu prüfen.</summary>
-
-    $$\dfrac{1}{3} \bigl[ (1 - 0.5)^2 + (0 - 0.25)^2 + (0 - 0.25)^2 \bigr] = 0.375.$$
+    """),
+    mo.accordion({r"Klicke hier, um deine Antwort zu prüfen.":r"""$$\dfrac{1}{3} \bigl[ (1 - 0.5)^2 + (0 - 0.25)^2 + (0 - 0.25)^2 \bigr] = 0.375.$$
 
     Wenn das neuronale Netz nur ein Gewicht hat, könnte die Verlustfunktion so aussehen:
 
@@ -273,10 +272,9 @@ def _(mo):
       <img src="public/resources/img/loss_function2.png" alt="Verlustfunktion" style="width:45%">
     </figure> 
 
-    Das aktuelle Gewicht $w_1$ von $0.7$ muss also ein bisschen vergrößert werden, um den Verlust zu verkleinern.
+    Das aktuelle Gewicht $w_1$ von $0.7$ muss also ein bisschen vergrößert werden, um den Verlust zu verkleinern."""}),
 
-    </details>
-
+    mo.md(r"""
     Wenn das neuronale Netz nur zwei Gewichte hat, könnte eine Verlustfunktion wie folgt aussehen. Bei mehr als zwei Gewichten (in der Praxis eingesetzte neuronale Netze haben Millionen von trainierbaren Gewichten) ist eine Visualisierung allerdings nicht mehr so einfach möglich.
 
     <figure>
@@ -307,38 +305,34 @@ def _(mo):
 
     Nach so viel Theorie können wir endlich neuronale Netze trainieren lassen! Untersuche den Code, um dein eigenes neuronales Netz weiter unten an die Daten anzupassen.
     """
-    )
+         )])
     return
 
 
 @app.cell
-def _():
-    from public.resources.code.help_functions import daten, datenpunkte_zeichnen
-    import matplotlib.pyplot as plt
-    from matplotlib import colors
-
+def _(daten, datenpunkte_zeichnen):
     (x_train, y_train, x_test, y_test) = daten()
     print(f'Wir haben {len(y_train)} Trainingsdatenpunkte und {len(y_test)} Testdatenpunkte zur Verfügung.')
     datenpunkte_zeichnen(x_train, y_train, ['#ec90cc', '#4f7087'])
-    return datenpunkte_zeichnen, x_train, y_train
+    return x_train, y_train
 
 
-@app.cell(hide_code=True)
+@app.cell
 def _(mo):
     mo.md(
         r"""
-    Wir implementieren folgendes neuronales Netz, das du bereits oben konstruiert hast.
-
-    &nbsp;
-
-
-     <figure>
-      <img src="public/resources/img/nn3.png" alt="neuronales Netz" style="width:60%">
-      <figcaption></figcaption>
-    </figure> 
-
-    &nbsp;
-    """
+        Wir implementieren folgendes neuronales Netz, das du bereits oben konstruiert hast.
+    
+        &nbsp;
+    
+    
+         <figure>
+          <img src="public/resources/img/nn3.png" alt="neuronales Netz" style="width:60%">
+          <figcaption></figcaption>
+        </figure> 
+    
+        &nbsp;
+        """
     )
     return
 
@@ -421,23 +415,22 @@ def _(cross_entropy_loss, net, np, softmax, x_train, y_train):
     return
 
 
-@app.cell(hide_code=True)
+@app.cell
 def _(mo):
     mo.md(
         r"""
-    ____
-
-    <img style="float: left;" src="public/resources/img/laptop_icon.png" width=50 height=50 /> <br><br>
-
-    <i>Du kennst nun alle Codebausteine, um dein eigenes neuronales Netz zu konstruieren und es trainieren zu lassen. Setze ein neuronales Netz für die folgenden Daten um und passe die Gewichte an den Datensatz an. Brich das Training ab, sobald das Netz eine 93%-Genauigkeit auf dem Trainingsdatensatz erzielt. Speichere außerdem in jeder Epoche das Netz, das über alle vergangenen Durchläufe hinweg die höchste Genauigkeit erreicht hat.</i>
-    """
+        ____
+    
+        <img style="float: left;" src="public/resources/img/laptop_icon.png" width=50 height=50 /> <br><br>
+    
+        <i>Du kennst nun alle Codebausteine, um dein eigenes neuronales Netz zu konstruieren und es trainieren zu lassen. Setze ein neuronales Netz für die folgenden Daten um und passe die Gewichte an den Datensatz an. Brich das Training ab, sobald das Netz eine 93%-Genauigkeit auf dem Trainingsdatensatz erzielt. Speichere außerdem in jeder Epoche das Netz, das über alle vergangenen Durchläufe hinweg die höchste Genauigkeit erreicht hat.</i>
+        """
     )
     return
 
 
 @app.cell
-def _(datenpunkte_zeichnen):
-    from public.resources.code.help_functions import daten2
+def _(daten2, datenpunkte_zeichnen):
     (x_train_1, y_train_1, x_test_1, y_test_1) = daten2()
     print(f'Wir haben {len(y_train_1)} Trainingsdatenpunkte und {len(y_test_1)} Testdatenpunkte zur Verfügung.')
     datenpunkte_zeichnen(x_train_1, y_train_1, ['#ec90cc', '#8b4513', '#4f7087'])
@@ -469,21 +462,21 @@ def _():
     return
 
 
-@app.cell(hide_code=True)
+@app.cell
 def _(mo):
     mo.md(
         r"""
-    <h2>Bildquellen</h2>
-
-    https://pixabay.com/de/photos/ai-generiert-junge-junger-mann-7772478/
-    """
+        <h2>Bildquellen</h2>
+    
+        https://pixabay.com/de/photos/ai-generiert-junge-junger-mann-7772478/
+        """
     )
     return
 
 
-@app.cell(hide_code=True)
+@app.cell
 def _(mo):
-    mo.md(r"""# Appendix""")
+    mo.md(r"# Appendix")
     return
 
 
@@ -605,6 +598,148 @@ def _():
         # Add a small number to avoid log(0)
         return -np.log(probs[label] + 1e-15)
     return FullyConnectedLayer, cross_entropy_loss, np, relu, softmax
+
+
+@app.cell
+def _(np):
+    import matplotlib.pyplot as plt
+    from matplotlib import colors
+
+    def pruefe_gewichte(nn, gewicht1, gewicht2, gewicht3, gewicht4):
+        """
+        Parameters:
+        nn: A network object with attributes fc1, fc2, fc3, whose parameters are NumPy arrays.
+        gewicht1: Expected value for fc1.weight[0][0]
+        gewicht2: Expected value for fc1.bias[4]
+        gewicht3: Expected value for fc2.bias[1]
+        gewicht4: Expected value for fc3.weight[2][3]
+
+        Returns:
+          A string summarizing whether each weight has been read correctly.
+        """
+        # For instance, nn.fc1.weight is assumed to be a NumPy array.
+        g1 = round(nn.fc1.weight[0][0], 4)
+        g2 = round(nn.fc1.bias[4], 4)
+        g3 = round(nn.fc2.bias[1], 4)
+        g4 = round(nn.fc3.weight[2][3], 4)
+
+        wrong = False
+        result = ""
+
+        if g1 == round(gewicht1, 4):
+            result = "Das erste Gewicht hast du richtig abgelesen!\n"
+        else:
+            result = "Das erste Gewicht hast du nicht richtig abgelesen!\n"
+            wrong = True
+
+        if g2 == round(gewicht2, 4):
+            result += "Das zweite Gewicht hast du richtig abgelesen!\n"
+        else:
+            result += "Das zweite Gewicht hast du nicht richtig abgelesen!\n"
+            wrong = True
+
+        if g3 == round(gewicht3, 4):
+            result += "Das dritte Gewicht hast du richtig abgelesen!\n"
+        else:
+            result += "Das dritte Gewicht hast du nicht richtig abgelesen!\n"
+            wrong = True 
+
+        if g4 == round(gewicht4, 4):
+            result += "Das vierte Gewicht hast du richtig abgelesen!\n"
+        else:
+            result += "Das vierte Gewicht hast du nicht richtig abgelesen!\n"
+            wrong = True
+
+        if wrong:
+            return result
+        else:
+            return "Super! Du hast alle Gewichte richtig abgelesen!"
+
+
+    def daten():
+        """
+        Returns:
+        x_train: A NumPy array of training input data of shape (400, 2)
+        y_train: A NumPy array of training labels of shape (400,)
+        x_test:  A NumPy array of test input data of shape (100, 2)
+        y_test:  A NumPy array of test labels of shape (100,)
+        """
+        # Create base data (all ones)
+        n_data_train = np.ones((200, 2))
+        n_data_test  = np.ones((50, 2))
+
+        # Create training data:
+        # Class 0: Normal distribution centered at [2.5, 5] (for all 200 samples)
+        x0 = np.random.normal(loc=n_data_train + np.array([2.5, 5]), scale=1.0)
+        y0 = np.zeros(200, dtype=int)
+        # Class 1: Normal distribution centered at [8, 2]
+        x1 = np.random.normal(loc=n_data_train + np.array([8, 2]), scale=1.0)
+        y1 = np.ones(200, dtype=int)
+
+        x_train = np.concatenate((x0, x1), axis=0).astype(np.float32)
+        y_train = np.concatenate((y0, y1), axis=0)
+
+        # Create test data:
+        n_data_test = np.ones((50, 2))
+        x0_test = np.random.normal(loc=n_data_test + np.array([2.5, 5]), scale=1.0)
+        y0_test = np.zeros(50, dtype=int)
+        x1_test = np.random.normal(loc=n_data_test + np.array([8, 2]), scale=1.0)
+        y1_test = np.ones(50, dtype=int)
+
+        x_test = np.concatenate((x0_test, x1_test), axis=0).astype(np.float32)
+        y_test = np.concatenate((y0_test, y1_test), axis=0)
+
+        return x_train, y_train, x_test, y_test
+
+    def datenpunkte_zeichnen(x_data, labels, farben):
+        """
+        Parameters:
+          x_data: A NumPy array with the data points, shape (N, 2)
+          labels: A NumPy array with the class labels of each data point.
+          farben: A list of color names for the classes.
+        """
+        plt.scatter(x_data[:, 0], x_data[:, 1], c=labels, s=50, cmap=colors.ListedColormap(farben))
+        plt.show()
+
+
+    def daten2():
+        """
+        Returns:
+        x_train: A NumPy array of training input data of shape (600, 2)
+        y_train: A NumPy array of training labels of shape (600,)
+        x_test:  A NumPy array of test input data of shape (150, 2)
+        y_test:  A NumPy array of test labels of shape (150,)`
+        """
+        # Training data:
+        n_data_train = np.ones((200, 2))
+
+        x0 = np.random.normal(loc=n_data_train + np.array([6, 5]), scale=1.0)
+        y0 = np.zeros(200, dtype=int)
+        x1 = np.random.normal(loc=n_data_train + np.array([2, 2]), scale=1.0)
+        y1 = np.ones(200, dtype=int)
+        x2 = np.random.normal(loc=n_data_train + np.array([10, 2]), scale=1.0)
+        y2 = 2 * np.ones(200, dtype=int)
+
+        x_train = np.concatenate((x0, x1, x2), axis=0).astype(np.float32)
+        y_train = np.concatenate((y0, y1, y2), axis=0)
+
+        # Test data:
+        n_data_test = np.ones((50, 2))
+
+        x0_test = np.random.normal(loc=n_data_test + np.array([6, 5]), scale=1.0)
+        y0_test = np.zeros(50, dtype=int)
+        x1_test = np.random.normal(loc=n_data_test + np.array([2, 2]), scale=1.0)
+        y1_test = np.ones(50, dtype=int)
+        x2_test = np.random.normal(loc=n_data_test + np.array([10, 2]), scale=1.0)
+        y2_test = 2 * np.ones(50, dtype=int)
+
+        x_test = np.concatenate((x0_test, x1_test, x2_test), axis=0).astype(np.float32)
+        y_test = np.concatenate((y0_test, y1_test, y2_test), axis=0)
+
+        return x_train, y_train, x_test, y_test
+
+
+    return daten, daten2, datenpunkte_zeichnen, pruefe_gewichte
 
 
 @app.cell
