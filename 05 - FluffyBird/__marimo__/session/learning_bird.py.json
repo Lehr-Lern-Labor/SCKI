@@ -1,0 +1,214 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.13.15"
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "f6b13f610c6278626d6711c388c7bda5",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "d774b5c3e8fde08db42292bfedccc408",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "0630e3bcd3cb54a6f00b5e99eff509d6",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "5605fac7ea6ba3f66a3df3a4a798e745",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "96dd9659041eb54c0f6150611389f7ad",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": "b03f4aa36aeb93a00ce7dd074552ad1c",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "Xref",
+      "code_hash": "4131de2681ab9ae8ee2943fbfa6756f7",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "SFPL",
+      "code_hash": "d43297d9bdcc9790b47a87e4e605aada",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "BYtC",
+      "code_hash": "0b770a1682d7df635ff26bfb8417980b",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "RGSE",
+      "code_hash": "b09352d23dbf05bb20e59be22bac0855",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "Kclp",
+      "code_hash": "312d72f81a73c8df69fce0f427c666dc",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "emfo",
+      "code_hash": "63aac63241f0dc9e9efadfb13ead1958",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "Hstk",
+      "code_hash": "d6a9bbdab9c5b5f8b5b84f63aa319255",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "nWHF",
+      "code_hash": "edb5bbd7690c781702ebead5578b21fc",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "iLit",
+      "code_hash": "0f592ffb089b13176b4b3c608615683f",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "ZHCJ",
+      "code_hash": "2c975403525503f6dfa80b218a0a15aa",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "ROlb",
+      "code_hash": "cc3c1948b0edbf8bcd084fcced9caa19",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "cpEY",
+      "code_hash": "b7e6d9a88c45f8bb6018f566af4e8322",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h1 id=\"das-spiel-vorbereiten\">Das Spiel vorbereiten</h1>\n<h2 id=\"animationen-individualisieren\">Animationen individualisieren</h2>\n<span class=\"paragraph\">Lege hier die Animationen f\u00fcr dein Spiel fest. Die einzelnen Frames f\u00fcr den Spieler und den Hintergrund werden jeweils in \u00c4bh\u00e4ngigkeit der angegebenen Zeit aneinander gereiht und so zu einer Animation. Die Farbe der Rohre wird als RGB-Wert angegeben.</span>\n<span class=\"paragraph\">Um eigene Animationen zu erstellen, kannst du <a href=\"https://www.piskelapp.com/\" rel=\"noopener\" target=\"_blank\">Piskel</a> verwenden. Achte auf die richtige Gr\u00f6\u00dfe deiner Sprites: 34 x 24 Pixel (Spieler) und 288 x 512 Pixel (Hintergrund).</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "BThp",
+      "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "uRlU",
+      "code_hash": "9de773da3203744766314f2f470ef4be",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"feature-extrahieren\">Feature extrahieren</h2>\n<span class=\"paragraph\">Entscheide, welche Informationen \u00fcber das Spiel der KI zur Verf\u00fcgung gestellt werden sollen.</span>\n<details>\n    <summary><b>\ud83d\udde0 Verf\u00fcgbare Feature</b></summary>\n    <public/img src=\"public/img/ingame.jpg\" align=\"left\" />\n</details></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "KnKv",
+      "code_hash": "ffc9b712d95479365ad88c0ee642d95f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h1 id=\"die-ki-vorbereiten\">Die KI vorbereiten</h1>\n<h2 id=\"das-neuronale-netz-initialisieren\">Das Neuronale Netz initialisieren</h2>\n<span class=\"paragraph\">Initialisiere dein neuronales Netz. \u00dcberlege dir dazu, wie die Topologie deines Netzes aussehen soll und wie viele Inputs und Outputs du ben\u00f6tigst.</span>\n<span class=\"paragraph\">Hast du einmal ein neuronales Netz erzeugt, kannst du es exportieren, um den Zustand zu speichern, und dann auch importieren, um den Zustand wieder zu laden. Achte darauf, dass du dabei keine Zust\u00e4nde unbeabsichtigt \u00fcberschreibst und ersetze <code>Mein-Name</code> durch deinen Namen.</span>\n<details>\n    <summary>Layer</summary>\n\n    nn.Linear(X, Y), Input dim X, Output dim Y\n</details>\n<details>\n    <summary>Aktivierungsfunktionen</summary>\n\n    nn.ReLU()\n    nn.Sigmoid()\n    nn.Softmax(dim=1))\n</details>\n<details>\n    <summary>Topologie</summary>\n\n    nn.Sequential(Layer, Aktivierungsfunktion, Layer, Aktivierungsfunktion...., Layer)\n\n    z.B. nn.Sequential(nn.Linear(5, 5),nn.Sigmoid(),nn.Linear(5, 1))\n</details>\n<details>\n    <summary>Weiterf\u00fchrende Links</summary>\n    <a href=\"https://pytorch.org/docs/stable/nn.html#linear-layers\">https://pytorch.org/docs/stable/nn.html#linear-layers</a><br>\n    <a href=\"https://pytorch.org/docs/stable/generated/torch.nn.Sigmoid.html?highlight=sigmoid#torch.nn.Sigmoid\">https://pytorch.org/docs/stable/generated/torch.nn.Sigmoid.html?highlight=sigmoid#torch.nn.Sigmoid</a>\n</details></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "fguQ",
+      "code_hash": "1a9ea22ba8072ed8d79da8f6a44f0203",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"entscheidungen-verarbeiten\">Entscheidungen verarbeiten</h2>\n<span class=\"paragraph\">Lege fest, wie der Vogel auf eine Entscheidung reagieren soll, d.h. wie er mit der Ausgabe des neuronalen Netzes umgehen soll.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "xhTf",
+      "code_hash": "15fa3931db154c25dda4e4a9a8327085",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"belohnung-festlegen\">Belohnung festlegen</h2>\n<span class=\"paragraph\">Lege fest, wie die Belohnungsstrategie aussehen soll.</span>\n<details>\n    <summary><b>\ud83d\udde0 Reward</b></summary>\n    <public/img src=\"public/img/ingame_2.jpg\" align=\"left\" />\n</details></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lvOt",
+      "code_hash": "088fb59d24deab2b9610ad0336c5eabe",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"die-nachste-generation\">Die n\u00e4chste Generation</h2>\n<span class=\"paragraph\">Lege fest, wie die V\u00f6gel mutiert werden sollen, um die n\u00e4chste Generation zu bilden.</span>\n<details>\n    <summary><b>\ud83d\udde0 Mutation</b></summary>\n    <public/img src=\"public/img/ingame_3.jpg\" align=\"left\" >\n</details></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Vchp",
+      "code_hash": "da6c3a24c1e856d25c290ddf27308727",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h1 id=\"die-ki-trainieren\">Die KI trainieren</h1>\n<span class=\"paragraph\">Beginne nun mit dem Training. Mit <code>Score_Max</code> legst du fest, wann ein Trainingsvorgang sp\u00e4testens beendet wird.</span>\n<span class=\"paragraph\">Mit <code>print_weights</code> und <code>print_plot</code> kannst du steuern, wie die Ausgabe w\u00e4hrend des Trainingprozesses aussieht.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    }
+  ]
+}

@@ -4,9 +4,9 @@ import os
 import gym
 import public.flappyBird.genetics as gen
 
-img_bird = ['public/sprites/sparrow.png','public/sprites/sparrow_flap.png']
+img_bird = ['05 - FluffyBird/public/sprites/sparrow.png','05 - FluffyBird/public/sprites/sparrow_flap.png']
 tick_bird = 8
-img_bg = ['public/sprites/background-day.png']
+img_bg = ['05 - FluffyBird/public/sprites/background-day.png']
 tick_bg = 8
 color_pipe = pygame.Color(15,104,47)
 
