@@ -8,8 +8,8 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
-   sodipodi:docname="koordinatensystem_eier.svg"
-   inkscape:export-filename="/home/mp/Documents/Hiwi/Science-KI-Camp2023/Science-Camp-KI/01-Perzeptron/resources/img/koordinatensystem_eier.png"
+   sodipodi:docname="koordinatensystem_eier_knn.svg"
+   inkscape:export-filename="/home/mp/Documents/Hiwi/Science-KI-Camp2023/Science-Camp-KI/01-Perzeptron/public/img/koordinatensystem_eier.png"
    inkscape:export-xdpi="155"
    inkscape:export-ydpi="155"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -27,9 +27,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="1.1360799"
-     inkscape:cx="156.23902"
-     inkscape:cy="346.36649"
+     inkscape:zoom="1.8541681"
+     inkscape:cx="331.41548"
+     inkscape:cy="346.51659"
      inkscape:window-width="1846"
      inkscape:window-height="1016"
      inkscape:window-x="74"
@@ -11642,5 +11642,46 @@ Ir8AAAAASUVORK5CYII=
        y="185.79623"
        clip-path="url(#clipPath12405-56)"
        transform="matrix(0.15803061,0,0,0.15755748,124.2798,61.857616)" />
+    <ellipse
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#005e00;stroke-width:0.564999;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+       id="path23398"
+       cx="103.6655"
+       cy="93.721046"
+       rx="3.3612905"
+       ry="3.7727633" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.40416px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.160104"
+       x="101.91389"
+       y="95.888924"
+       id="text24970"><tspan
+         sodipodi:role="line"
+         id="tspan24968"
+         style="stroke-width:0.160104"
+         x="101.91389"
+         y="95.888924">?</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 101.04341,90.768904 C 94.045063,85.414979 94.045063,85.414979 94.045063,85.414979"
+       id="path26361" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 99.937407,95.221289 C 87.843451,96.088336 87.843451,96.141168 87.843451,96.141168"
+       id="path26363" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 107.01336,95.505044 c 14.2935,13.064416 14.2935,13.064416 14.2935,13.064416"
+       id="path26365" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.93889px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="111.13068"
+       y="89.429863"
+       id="text27607"><tspan
+         sodipodi:role="line"
+         id="tspan27605"
+         style="font-size:4.93889px;stroke-width:0.264583"
+         x="111.13068"
+         y="89.429863">k=3</tspan></text>
   </g>
 </svg>

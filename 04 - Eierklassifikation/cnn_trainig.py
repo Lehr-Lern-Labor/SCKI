@@ -1,6 +1,6 @@
 import warnings
 warnings.filterwarnings('ignore')
-from resources.code.help_functions import ei_zeichnen
+from public.code.help_functions import ei_zeichnen
 import torchvision
 from torchvision import transforms
 from torch.utils.data import DataLoader
