@@ -12,8 +12,8 @@ def _():
     import time as time
     import torch
     import torch.nn as nn
-    from public.flappyBird.io import setImgBird, setImgBg, setColorPipe
-    import public.flappyBird.genetics as gen
+    from flappyBird.io import setImgBird, setImgBg, setColorPipe
+    import flappyBird.genetics as gen
     from tensorboardX import SummaryWriter
     import matplotlib.pyplot as plt
     import math
@@ -42,8 +42,8 @@ def _(mo):
 def _(setImgBird):
     # Animation für Spieler
     setImgBird([
-        'public/sprites/sparrow.png',
-        'public/sprites/sparrow_flap.png'
+        '05 - FluffyBird/public/sprites/sparrow.png',
+        '05 - FluffyBird/public/sprites/sparrow_flap.png'
     ],40)
     return
 
@@ -52,8 +52,8 @@ def _(setImgBird):
 def _(setImgBg):
     # Animation für Hintergrund
     setImgBg([
-        'public/sprites/background-day.png',
-        'public/sprites/background-night.png'
+        '05 - FluffyBird/public/sprites/background-day.png',
+        '05 - FluffyBird/public/sprites/background-night.png'
     ],400)
     return
 
