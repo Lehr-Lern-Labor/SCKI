@@ -18,7 +18,7 @@ def _():
     import matplotlib.pyplot as plt
     import math
     import pygame
-    #from pygame.locals import *
+    from pygame.locals import KEYDOWN, K_ESCAPE, K_SPACE
     import warnings
     warnings.filterwarnings('ignore')
     return gen, gym, nn, plt, setColorPipe, setImgBg, setImgBird
@@ -115,21 +115,21 @@ def _(mo):
 
     <details>
         <summary>Layer</summary>
-    
+
         nn.Linear(X, Y), Input dim X, Output dim Y
     </details>
     <details>
         <summary>Aktivierungsfunktionen</summary>
-    
+
         nn.ReLU()
         nn.Sigmoid()
         nn.Softmax(dim=1))
     </details>
     <details>
         <summary>Topologie</summary>
-    
+
         nn.Sequential(Layer, Aktivierungsfunktion, Layer, Aktivierungsfunktion...., Layer)
-    
+
         z.B. nn.Sequential(nn.Linear(5, 5),nn.Sigmoid(),nn.Linear(5, 1))
     </details>
     <details>
@@ -299,20 +299,20 @@ def _(
         ecount +=1
         if(ecount % 5 == 0):
             _net = population.population[0][1]
-            score_e = population.population[0][0]
-            score_p = env.playWithNet(_net, generateFeatures, Score_Max, computeReward, ecount)
+            _score_e = population.population[0][0]
+            _score_p = env.playWithNet(_net, generateFeatures, Score_Max, computeReward, ecount)
             if print_weights or print_plot:
                 print('--- Population ', ecount, '------------------------------------------------------------')
-                print('Score Training: ', score_e, ' Score Spiel: ', score_p)
+                print('Score Training: ', _score_e, ' Score Spiel: ', _score_p)
             else:
-                print('|{:>11} |{:>11} |{:>11} |'.format(ecount, score_e, score_p))
+                print('|{:>11} |{:>11} |{:>11} |'.format(ecount, _score_e, _score_p))
             if print_weights:
-                for name, param in _net.named_parameters():
-                    print(name, param)
+                for _name, _param in _net.named_parameters():
+                    print(_name, _param)
             scores = [score[0] for score in fittestBirds]
             plot_scores(scores)
 
-    return ecount, fittestBirds, score_e, scores
+    return ecount, fittestBirds, scores
 
 
 @app.cell

@@ -1,11 +1,11 @@
 import marimo
 
-__generated_with = "0.10.18"
+__generated_with = "0.13.15"
 app = marimo.App()
 
 
-app._unparsable_cell(
-    r"""
+@app.cell
+def _():
     import gym
     import copy
     import numpy as np
@@ -18,31 +18,23 @@ app._unparsable_cell(
     import matplotlib.pyplot as plt
     import math
     import pygame
-    from pygame.locals import *
-    """,
-    name="_"
-)
+    from pygame.locals import KEYDOWN, K_ESCAPE, K_SPACE
+    return KEYDOWN, K_ESCAPE, K_SPACE, gym, pygame, time
 
 
-@app.cell
-def _():
-    def birdAction(decission, bird):
-            bird.forceY = 400*decission[0]
-    return (birdAction,)
+@app.function
+def birdAction(decission, bird):
+        bird.forceY = 400*decission[0]
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
-        ## HIT SPACE TO FLAP
-        """
-    )
+    mo.md(r"""## HIT SPACE TO FLAP""")
     return
 
 
 @app.cell
-def _(KEYDOWN, K_ESCAPE, K_SPACE, birdAction, gym, pygame, time):
+def _(KEYDOWN, K_ESCAPE, K_SPACE, gym, pygame, time):
     done = False
     reward = 0
     env = gym.make("scienceCampBird-v1")
@@ -53,7 +45,7 @@ def _(KEYDOWN, K_ESCAPE, K_SPACE, birdAction, gym, pygame, time):
         decission = [0.0]     
         for event in pygame.event.get():
             if event.type == KEYDOWN and event.key == K_ESCAPE:
-                
+
                 pygame.quit()
             elif event.type == KEYDOWN and event.key == K_SPACE:
                 decission = [1.0]
@@ -68,7 +60,7 @@ def _(KEYDOWN, K_ESCAPE, K_SPACE, birdAction, gym, pygame, time):
             print ('Score:', reward)
             reward = 0
             time.sleep(1)
-    return decission, done, env, event, reward, state, state_old
+    return
 
 
 @app.cell
@@ -79,4 +71,3 @@ def _():
 
 if __name__ == "__main__":
     app.run()
-

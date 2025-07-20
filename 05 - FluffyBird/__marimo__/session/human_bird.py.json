@@ -6,32 +6,233 @@
   "cells": [
     {
       "id": "Hbol",
-      "code_hash": "53adc3c772ce8278f08b1ef8e2609223",
-      "outputs": [],
+      "code_hash": "2ea4dca5df74cb9e8391e6260fe1b6d8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "MJUe",
       "code_hash": "5fc5501f054969a5ffa1371b5e24f401",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "vblA",
-      "code_hash": "6c82feae6511333f33df290fd88a2017",
-      "outputs": [],
+      "code_hash": "a59d277345816c3c4df1b2a90b564d61",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"hit-space-to-flap\">HIT SPACE TO FLAP</h2></span>"
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "bkHC",
       "code_hash": "f85f0c6689c28567c941ca4fe6065e5e",
-      "outputs": [],
-      "console": []
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "video system not initialized",
+          "traceback": []
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "/home/silas/dev/Lehr-Lern-Labor/SCKI/.venv/lib/python3.10/site-packages/gym/utils/passive_env_checker.py:174: UserWarning: \u001b[33mWARN: Future gym versions will require that `Env.reset` can be passed a `seed` instead of using `Env.seed` for resetting the environment random number generator.\u001b[0m\n  logger.warn(\n/home/silas/dev/Lehr-Lern-Labor/SCKI/.venv/lib/python3.10/site-packages/gym/utils/passive_env_checker.py:187: UserWarning: \u001b[33mWARN: Future gym versions will require that `Env.reset` can be passed `options` to allow the environment initialisation to be passed additional information.\u001b[0m\n  logger.warn(\n/home/silas/dev/Lehr-Lern-Labor/SCKI/.venv/lib/python3.10/site-packages/gym/utils/passive_env_checker.py:195: UserWarning: \u001b[33mWARN: The result returned by `env.reset()` was not a tuple of the form `(obs, info)`, where `obs` is a observation and `info` is a dictionary containing additional information. Actual type: `<class 'dict'>`\u001b[0m\n  logger.warn(\n/home/silas/dev/Lehr-Lern-Labor/SCKI/.venv/lib/python3.10/site-packages/gym/utils/passive_env_checker.py:219: DeprecationWarning: \u001b[33mWARN: Core environment is written in old step API which returns one bool instead of two. It is recommended to rewrite the environment with new step API. \u001b[0m\n  logger.deprecation(\n/home/silas/dev/Lehr-Lern-Labor/SCKI/.venv/lib/python3.10/site-packages/gym/utils/passive_env_checker.py:133: UserWarning: \u001b[33mWARN: The obs returned by the `step()` method should be an int or np.int64, actual type: <class 'dict'>\u001b[0m\n  logger.warn(f\"{pre} should be an int or np.int64, actual type: {type(obs)}\")\n/home/silas/dev/Lehr-Lern-Labor/SCKI/.venv/lib/python3.10/site-packages/gym/utils/passive_env_checker.py:165: UserWarning: \u001b[33mWARN: The obs returned by the `step()` method is not within the observation space.\u001b[0m\n  logger.warn(f\"{pre} is not within the observation space.\")\n/home/silas/dev/Lehr-Lern-Labor/SCKI/.venv/lib/python3.10/site-packages/gym/utils/passive_env_checker.py:272: UserWarning: \u001b[33mWARN: No render modes was declared in the environment (env.metadata['render_modes'] is None or not defined), you may have trouble when calling `.render()`.\u001b[0m\n  logger.warn(\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 71\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 107\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 74\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 83\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 71\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 92\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 99\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 128\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 105\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 115\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 263\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 92\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 667\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 110\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 100\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 93\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 98\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 50\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 99\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 105\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 97\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 64\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 109\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 556\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 689\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 457\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 108\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 242\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 66\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 71\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Score: 71\n"
+        },
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">&quot;/home/silas/dev/Lehr-Lern-Labor/SCKI/.venv/lib/python3.10/site-packages/marimo/_runtime/executor.py&quot;</span>, line <span class=\"m\">138</span>, in <span class=\"n\">execute_cell</span>\n<span class=\"w\">    </span><span class=\"n\">exec</span><span class=\"p\">(</span><span class=\"n\">cell</span><span class=\"o\">.</span><span class=\"n\">body</span><span class=\"p\">,</span> <span class=\"n\">glbls</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_27449/__marimo__cell_bkHC_.py&quot;</span>, line <span class=\"m\">18</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">state</span><span class=\"p\">,</span> <span class=\"n\">_</span><span class=\"p\">,</span> <span class=\"n\">done</span><span class=\"p\">,</span> <span class=\"n\">_</span> <span class=\"o\">=</span> <span class=\"n\">env</span><span class=\"o\">.</span><span class=\"n\">step</span><span class=\"p\">(</span><span class=\"n\">decission</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/home/silas/dev/Lehr-Lern-Labor/SCKI/.venv/lib/python3.10/site-packages/gym/wrappers/order_enforcing.py&quot;</span>, line <span class=\"m\">37</span>, in <span class=\"n\">step</span>\n<span class=\"w\">    </span><span class=\"k\">return</span> <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">env</span><span class=\"o\">.</span><span class=\"n\">step</span><span class=\"p\">(</span><span class=\"n\">action</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/home/silas/dev/Lehr-Lern-Labor/SCKI/.venv/lib/python3.10/site-packages/gym/wrappers/env_checker.py&quot;</span>, line <span class=\"m\">39</span>, in <span class=\"n\">step</span>\n<span class=\"w\">    </span><span class=\"k\">return</span> <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">env</span><span class=\"o\">.</span><span class=\"n\">step</span><span class=\"p\">(</span><span class=\"n\">action</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/home/silas/dev/Lehr-Lern-Labor/SCKI/05 - FluffyBird/public/flappyBird/env.py&quot;</span>, line <span class=\"m\">216</span>, in <span class=\"n\">step</span>\n<span class=\"w\">    </span><span class=\"k\">for</span> <span class=\"n\">event</span> <span class=\"ow\">in</span> <span class=\"n\">pygame</span><span class=\"o\">.</span><span class=\"n\">event</span><span class=\"o\">.</span><span class=\"n\">get</span><span class=\"p\">():</span>\n<span class=\"gr\">pygame.error</span>: <span class=\"n\">video system not initialized</span>\n</pre></div>\n</span>"
+        }
+      ]
     },
     {
       "id": "lEQa",
       "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     }
   ]

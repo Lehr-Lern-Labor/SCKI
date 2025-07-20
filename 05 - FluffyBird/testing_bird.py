@@ -1,27 +1,25 @@
 import marimo
 
-__generated_with = "0.10.18"
+__generated_with = "0.13.15"
 app = marimo.App()
 
 
-app._unparsable_cell(
-    r"""
+@app.cell
+def _():
     import gym
     import copy
     import numpy as np
     import time as time
     import torch
     import torch.nn as nn
-    from public.flappyBird.io import *
+    from public.flappyBird.io import setImgBird, setImgBg, setColorPipe
     import public.flappyBird.genetics as gen
     from tensorboardX import SummaryWriter
     import matplotlib.pyplot as plt
     import math
     import pygame
-    from pygame.locals import *
-    """,
-    name="_"
-)
+    from pygame.locals import KEYDOWN, K_ESCAPE, K_SPACE
+    return setColorPipe, setImgBg, setImgBird, torch
 
 
 @app.cell
@@ -39,7 +37,7 @@ def _(birdAction, computeReward, generateFeatures, run, torch):
             generateFeatures,
             10000              #Score_Max
         )
-    return net, runDefault
+    return (runDefault,)
 
 
 @app.cell
@@ -72,4 +70,3 @@ def _(runDefault, setColorPipe, setImgBg, setImgBird):
 
 if __name__ == "__main__":
     app.run()
-

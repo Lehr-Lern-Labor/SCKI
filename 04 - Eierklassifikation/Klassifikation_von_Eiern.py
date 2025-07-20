@@ -222,8 +222,8 @@ def _(cnn, loss_func, optimizer, train_loader):
         for (_x, _y) in train_loader:
             cnn.train(True)
             optimizer.zero_grad()
-            output = cnn(_x)
-            loss = loss_func(output, _y)
+            _output = cnn(_x)
+            loss = loss_func(_output, _y)
             loss.backward()
             optimizer.step()
             loss_epoch = loss_epoch + loss
@@ -284,7 +284,7 @@ def _(cnn, plt, test_loader, torch):
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
     mo.md(
         r"""
@@ -302,7 +302,7 @@ def _(mo):
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
     mo.md(
         r"""

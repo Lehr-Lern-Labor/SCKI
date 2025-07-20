@@ -1,56 +1,56 @@
 import marimo
 
-__generated_with = "0.12.0"
+__generated_with = "0.13.15"
 app = marimo.App()
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""# Einführung""")
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
     mo.md(
         r"""
-        ### Listen
+    ### Listen
 
-        Du kannst mit Hilfe von Listen mehrere Elemente speichern, so wie du es oben bei Tupeln gesehen hast. Allerdings kannst du die Elemente von Listen verändern, löschen und neue Elemente hinzufügen.
+    Du kannst mit Hilfe von Listen mehrere Elemente speichern, so wie du es oben bei Tupeln gesehen hast. Allerdings kannst du die Elemente von Listen verändern, löschen und neue Elemente hinzufügen.
 
-        ```Python
-        # Liste definieren und erweitern
-        list = [wertA, wertB, wertC]     # Liste definieren
-        otherList = [wert1, wert2, wer3]
+    ```Python
+    # Liste definieren und erweitern
+    list = [wertA, wertB, wertC]     # Liste definieren
+    otherList = [wert1, wert2, wer3]
 
-        list.append(wertD)               # Element hinten hinzufügen
-        list = list + wertE              # Element zu Liste hinzufügen
+    list.append(wertD)               # Element hinten hinzufügen
+    list = list + wertE              # Element zu Liste hinzufügen
 
-        newList = list + otherList       # Zwei Listen aneinanderhängen
-        zip(list, otherList)             # Hängt Paare aus Elementen aus beiden Listen aneinander: [[wertA,wert1], ...]
+    newList = list + otherList       # Zwei Listen aneinanderhängen
+    zip(list, otherList)             # Hängt Paare aus Elementen aus beiden Listen aneinander: [[wertA,wert1], ...]
 
-        # Liste auslesen
-        list[0]                          # erstes Element
-        list[-1]                         # letztes Element
+    # Liste auslesen
+    list[0]                          # erstes Element
+    list[-1]                         # letztes Element
 
-        len(list)                        # Länge der Liste
+    len(list)                        # Länge der Liste
 
-        erstesElement = list.pop()       # Erstes Element entfernen und zurückgeben
-        zweitesElement = list.pop(1)     # Zweites Element entfernen und zurückgeben
+    erstesElement = list.pop()       # Erstes Element entfernen und zurückgeben
+    zweitesElement = list.pop(1)     # Zweites Element entfernen und zurückgeben
 
-        ```
-        Bei Listen wird in der Regel nur die *Referenz* kopiert, d.h. wenn man in der "Kopie" etwas verändert, wird auch das Original verändert. Um das zu verhindern, muss man die Liste gezielt kopieren.
-        ```Python
-        list[0] = neuerWert              # Element verändern
-        newList = list                   # Referenz kopieren (newList[0] = neuerWert ändert auch list[0])
-        newList = list[:]                # Liste kopieren
-        ```
+    ```
+    Bei Listen wird in der Regel nur die *Referenz* kopiert, d.h. wenn man in der "Kopie" etwas verändert, wird auch das Original verändert. Um das zu verhindern, muss man die Liste gezielt kopieren.
+    ```Python
+    list[0] = neuerWert              # Element verändern
+    newList = list                   # Referenz kopieren (newList[0] = neuerWert ändert auch list[0])
+    newList = list[:]                # Liste kopieren
+    ```
 
-        ---
-        ✎ *Ergänze die Liste der Fibonacci-Zahlen mit den ersten 15 Fibonacci-Zahlen. Überprüfe dein Ergebnis mit der Funktion `pruefe_fibonacci()`*
+    ---
+    ✎ *Ergänze die Liste der Fibonacci-Zahlen mit den ersten 15 Fibonacci-Zahlen. Überprüfe dein Ergebnis mit der Funktion `pruefe_fibonacci()`*
 
-        Eine Fibonacci-Zahl ist jeweils die Summe ihrer beiden Vorgänger, wobei die erste Zahl 0 und die zweite Zahl 1 ist. In der Liste `fibonacci` sind die ersten beiden Zahlen bereits abgespeichert.
-        """
+    Eine Fibonacci-Zahl ist jeweils die Summe ihrer beiden Vorgänger, wobei die erste Zahl 0 und die zweite Zahl 1 ist. In der Liste `fibonacci` sind die ersten beiden Zahlen bereits abgespeichert.
+    """
     )
     return
 
@@ -68,22 +68,23 @@ def _():
     # -----------------
 
     pruefe_fibonacci(fibonacci)
-    return fibonacci, pruefe_fibonacci
+    return
 
-@app.cell
+
+@app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""# Weitere Aufgaben""")
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
     mo.md(
         r"""
-        ## Zahlen sortieren
+    ## Zahlen sortieren
 
-        ✎ *Schreibe eine Funktion, die eine beliebige Liste von Zahlen aufsteigend sortiert und die sortierte Liste ausgibt (z.B. `[3, -5, 1]` → `[-5, 1, 3]`).*
-        """
+    ✎ *Schreibe eine Funktion, die eine beliebige Liste von Zahlen aufsteigend sortiert und die sortierte Liste ausgibt (z.B. `[3, -5, 1]` → `[-5, 1, 3]`).*
+    """
     )
     return
 
@@ -105,17 +106,17 @@ def _():
         print(list)
     sort([3, -5, 1])
     sort(unsortierte_liste)
-    return sort, unsortierte_liste
+    return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
     mo.md(
         r"""
-        ## Primzahlen
+    ## Primzahlen
 
-        ✎ *Schreibe eine Funktion, die als Parameter eine natürliche Zahl `n` übergeben bekommt und alle Primzahlen bis `n` als Liste zurückgibt (z.B. `10` → `[2, 3, 5, 7]`).*
-        """
+    ✎ *Schreibe eine Funktion, die als Parameter eine natürliche Zahl `n` übergeben bekommt und alle Primzahlen bis `n` als Liste zurückgibt (z.B. `10` → `[2, 3, 5, 7]`).*
+    """
     )
     return
 
@@ -136,14 +137,14 @@ def _():
     return (prime,)
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
     mo.md(
         r"""
-        ## Größter gemeinsamer Teiler
+    ## Größter gemeinsamer Teiler
 
-        ✎ *Schreibe eine Funktion, die den größten gemeinsamen Teiler zweier natürlicher Zahlen bestimmt (z.B. `30, 20` → `10`).*
-        """
+    ✎ *Schreibe eine Funktion, die den größten gemeinsamen Teiler zweier natürlicher Zahlen bestimmt (z.B. `30, 20` → `10`).*
+    """
     )
     return
 
@@ -157,17 +158,17 @@ def _():
                 ggT = _i
         return ggT
     ggT(30, 20)
-    return (ggT,)
+    return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
     mo.md(
         r"""
-        ## Primfaktorzerlegung
+    ## Primfaktorzerlegung
 
-        ✎ *Schreibe eine Funktion, die eine natürliche Zahl in ihre Primfaktoren zerlegt (z.B. 60 = 2 $\cdot$ 2 $\cdot$ 3 $\cdot$ 5, also `60` → `2, 2, 3, 5`).*
-        """
+    ✎ *Schreibe eine Funktion, die eine natürliche Zahl in ihre Primfaktoren zerlegt (z.B. 60 = 2 $\cdot$ 2 $\cdot$ 3 $\cdot$ 5, also `60` → `2, 2, 3, 5`).*
+    """
     )
     return
 
@@ -183,17 +184,17 @@ def _(prime):
                 n = n / p
         print(primeFactors)
     primeFactor(60)
-    return (primeFactor,)
+    return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
     mo.md(
         r"""
-        ## Permutationen einer Zahlenliste
+    ## Permutationen einer Zahlenliste
 
-        ✎ *Schreibe eine Funktion, die alle Permutation einer Zahlenliste zurückgibt (z.B. `[1,2,3]` → `[1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], [3,2,1]`).*
-        """
+    ✎ *Schreibe eine Funktion, die alle Permutation einer Zahlenliste zurückgibt (z.B. `[1,2,3]` → `[1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], [3,2,1]`).*
+    """
     )
     return
 
@@ -222,17 +223,17 @@ def _():
 
     permute([1,2,3])
     # -----------------
-    return permute, zahlen
+    return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
     mo.md(
         r"""
-        ## Binäres Palindrom
+    ## Binäres Palindrom
 
-        ✎ *Schreibe eine Funktion, die eine Zahl in ihre binäre Darstellung umwandelt und anschließend prüft, ob diese Binärzahl ein Palindrom (also vorwärts und rückwärts gelesen das gleiche) ist (z.B. $5_{10}=101_2$ → Palindrom / $6_{10}=110_2$ → kein Palindrom).*
-        """
+    ✎ *Schreibe eine Funktion, die eine Zahl in ihre binäre Darstellung umwandelt und anschließend prüft, ob diese Binärzahl ein Palindrom (also vorwärts und rückwärts gelesen das gleiche) ist (z.B. $5_{10}=101_2$ → Palindrom / $6_{10}=110_2$ → kein Palindrom).*
+    """
     )
     return
 
@@ -259,22 +260,22 @@ def _():
             print(n, 'ist kein Palindrom')
     palindrom(5)
     palindrom(6)
-    return binary, palindrom
+    return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
     mo.md(
         r"""
-        ## Nim-Spiel
+    ## Nim-Spiel
 
-        ✎ *Bearbeite diese Aufgaben nur, wenn du bereits sehr fit in Python bist! Implementiere die Standardvariante des Nim-Spiels (siehe https://library.ethz.ch/standorte-und-medien/plattformen/virtuelle-ausstellungen/alles-ist-spiel/nim.html) für zwei Spieler:innen (ohne eine graphische Benutzeroberfläche). Stelle die aktuelle Anzahl der Streichhölzer mit `|` in der Ausgaben dar und frage bei jedem Zug den aktuellen Spieler, wie viele Streichhölzer er wegnehmen möchte. Verarbeite seine Ausgaben entsprechend. Recherchiere gegebenenfalls nach geeigneten Funktionen (und Bibliotheken).*
-        """
+    ✎ *Bearbeite diese Aufgaben nur, wenn du bereits sehr fit in Python bist! Implementiere die Standardvariante des Nim-Spiels (siehe https://library.ethz.ch/standorte-und-medien/plattformen/virtuelle-ausstellungen/alles-ist-spiel/nim.html) für zwei Spieler:innen (ohne eine graphische Benutzeroberfläche). Stelle die aktuelle Anzahl der Streichhölzer mit `|` in der Ausgaben dar und frage bei jedem Zug den aktuellen Spieler, wie viele Streichhölzer er wegnehmen möchte. Verarbeite seine Ausgaben entsprechend. Recherchiere gegebenenfalls nach geeigneten Funktionen (und Bibliotheken).*
+    """
     )
     return
 
 
-@app.cell
+@app.cell(disabled=True)
 def _():
     def nim(playerA='Spieler 1', playerB='Spieler 2'):
         nim = [4, 5, 6, 7]
@@ -320,7 +321,7 @@ def _():
             if not isPlaying:
                 print(player, 'gewinnt!')
     nim()
-    return (nim,)
+    return
 
 
 @app.cell

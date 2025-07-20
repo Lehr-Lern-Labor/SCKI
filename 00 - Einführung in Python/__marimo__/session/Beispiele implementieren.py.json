@@ -1,0 +1,272 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.13.15"
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "67b91ea42ed27bc8f8ce66c297eb0fe2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h1 id=\"einfuhrung\">Einf\u00fchrung</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "85a9572657082188014a0cdd32f7c307",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3 id=\"listen\">Listen</h3>\n<span class=\"paragraph\">Du kannst mit Hilfe von Listen mehrere Elemente speichern, so wie du es oben bei Tupeln gesehen hast. Allerdings kannst du die Elemente von Listen ver\u00e4ndern, l\u00f6schen und neue Elemente hinzuf\u00fcgen.</span>\n<span class=\"paragraph\"><div class=\"language-Python codehilite\"><pre><span></span><code><span class=\"c1\"># Liste definieren und erweitern</span>\n<span class=\"nb\">list</span> <span class=\"o\">=</span> <span class=\"p\">[</span><span class=\"n\">wertA</span><span class=\"p\">,</span> <span class=\"n\">wertB</span><span class=\"p\">,</span> <span class=\"n\">wertC</span><span class=\"p\">]</span>     <span class=\"c1\"># Liste definieren</span>\n<span class=\"n\">otherList</span> <span class=\"o\">=</span> <span class=\"p\">[</span><span class=\"n\">wert1</span><span class=\"p\">,</span> <span class=\"n\">wert2</span><span class=\"p\">,</span> <span class=\"n\">wer3</span><span class=\"p\">]</span>\n\n<span class=\"nb\">list</span><span class=\"o\">.</span><span class=\"n\">append</span><span class=\"p\">(</span><span class=\"n\">wertD</span><span class=\"p\">)</span>               <span class=\"c1\"># Element hinten hinzuf\u00fcgen</span>\n<span class=\"nb\">list</span> <span class=\"o\">=</span> <span class=\"nb\">list</span> <span class=\"o\">+</span> <span class=\"n\">wertE</span>              <span class=\"c1\"># Element zu Liste hinzuf\u00fcgen</span>\n\n<span class=\"n\">newList</span> <span class=\"o\">=</span> <span class=\"nb\">list</span> <span class=\"o\">+</span> <span class=\"n\">otherList</span>       <span class=\"c1\"># Zwei Listen aneinanderh\u00e4ngen</span>\n<span class=\"nb\">zip</span><span class=\"p\">(</span><span class=\"nb\">list</span><span class=\"p\">,</span> <span class=\"n\">otherList</span><span class=\"p\">)</span>             <span class=\"c1\"># H\u00e4ngt Paare aus Elementen aus beiden Listen aneinander: [[wertA,wert1], ...]</span>\n\n<span class=\"c1\"># Liste auslesen</span>\n<span class=\"nb\">list</span><span class=\"p\">[</span><span class=\"mi\">0</span><span class=\"p\">]</span>                          <span class=\"c1\"># erstes Element</span>\n<span class=\"nb\">list</span><span class=\"p\">[</span><span class=\"o\">-</span><span class=\"mi\">1</span><span class=\"p\">]</span>                         <span class=\"c1\"># letztes Element</span>\n\n<span class=\"nb\">len</span><span class=\"p\">(</span><span class=\"nb\">list</span><span class=\"p\">)</span>                        <span class=\"c1\"># L\u00e4nge der Liste</span>\n\n<span class=\"n\">erstesElement</span> <span class=\"o\">=</span> <span class=\"nb\">list</span><span class=\"o\">.</span><span class=\"n\">pop</span><span class=\"p\">()</span>       <span class=\"c1\"># Erstes Element entfernen und zur\u00fcckgeben</span>\n<span class=\"n\">zweitesElement</span> <span class=\"o\">=</span> <span class=\"nb\">list</span><span class=\"o\">.</span><span class=\"n\">pop</span><span class=\"p\">(</span><span class=\"mi\">1</span><span class=\"p\">)</span>     <span class=\"c1\"># Zweites Element entfernen und zur\u00fcckgeben</span>\n</code></pre></div>\nBei Listen wird in der Regel nur die <em>Referenz</em> kopiert, d.h. wenn man in der \"Kopie\" etwas ver\u00e4ndert, wird auch das Original ver\u00e4ndert. Um das zu verhindern, muss man die Liste gezielt kopieren.\n<div class=\"language-Python codehilite\"><pre><span></span><code><span class=\"nb\">list</span><span class=\"p\">[</span><span class=\"mi\">0</span><span class=\"p\">]</span> <span class=\"o\">=</span> <span class=\"n\">neuerWert</span>              <span class=\"c1\"># Element ver\u00e4ndern</span>\n<span class=\"n\">newList</span> <span class=\"o\">=</span> <span class=\"nb\">list</span>                   <span class=\"c1\"># Referenz kopieren (newList[0] = neuerWert \u00e4ndert auch list[0])</span>\n<span class=\"n\">newList</span> <span class=\"o\">=</span> <span class=\"nb\">list</span><span class=\"p\">[:]</span>                <span class=\"c1\"># Liste kopieren</span>\n</code></pre></div></span>\n<hr />\n<span class=\"paragraph\">\u270e <em>Erg\u00e4nze die Liste der Fibonacci-Zahlen mit den ersten 15 Fibonacci-Zahlen. \u00dcberpr\u00fcfe dein Ergebnis mit der Funktion <code>pruefe_fibonacci()</code></em></span>\n<span class=\"paragraph\">Eine Fibonacci-Zahl ist jeweils die Summe ihrer beiden Vorg\u00e4nger, wobei die erste Zahl 0 und die zweite Zahl 1 ist. In der Liste <code>fibonacci</code> sind die ersten beiden Zahlen bereits abgespeichert.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "5438741b315c2fa5b86b2f7b2140cc66",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Irgendwo hat sich ein Fehler eingeschlichen. Probiere es noch einmal.\n"
+        }
+      ]
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "1822c3d7984eb45f0f0f5741be45a246",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h1 id=\"weitere-aufgaben\">Weitere Aufgaben</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "3239d88d3a805aa59e32cc7cd7aa4fe8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"zahlen-sortieren\">Zahlen sortieren</h2>\n<span class=\"paragraph\">\u270e <em>Schreibe eine Funktion, die eine beliebige Liste von Zahlen aufsteigend sortiert und die sortierte Liste ausgibt (z.B. <code>[3, -5, 1]</code> \u2192 <code>[-5, 1, 3]</code>).</em></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": "8154e18cbb5a901c4be6d6b3e9adb873",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "[-5, 1, 3]\n[-102, -73, -11, -2, 0, 42, 45, 89, 99, 123, 231]\n"
+        }
+      ]
+    },
+    {
+      "id": "Xref",
+      "code_hash": "fe6fa42872a07f6805559a7bb8caf739",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"primzahlen\">Primzahlen</h2>\n<span class=\"paragraph\">\u270e <em>Schreibe eine Funktion, die als Parameter eine nat\u00fcrliche Zahl <code>n</code> \u00fcbergeben bekommt und alle Primzahlen bis <code>n</code> als Liste zur\u00fcckgibt (z.B. <code>10</code> \u2192 <code>[2, 3, 5, 7]</code>).</em></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SFPL",
+      "code_hash": "c021473f1765fba3c80c6d43bb0225ab",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[2, 3, 5, 7]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "BYtC",
+      "code_hash": "86c60eefc2f7ce79691e793548a7a9cc",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"groter-gemeinsamer-teiler\">Gr\u00f6\u00dfter gemeinsamer Teiler</h2>\n<span class=\"paragraph\">\u270e <em>Schreibe eine Funktion, die den gr\u00f6\u00dften gemeinsamen Teiler zweier nat\u00fcrlicher Zahlen bestimmt (z.B. <code>30, 20</code> \u2192 <code>10</code>).</em></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "RGSE",
+      "code_hash": "47d6e57749ee653ac590453e3601a576",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre style='font-size: 12px'>10</pre>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Kclp",
+      "code_hash": "0b9f9eb9d5ceef9e52068f7be839d537",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"primfaktorzerlegung\">Primfaktorzerlegung</h2>\n<span class=\"paragraph\">\u270e <em>Schreibe eine Funktion, die eine nat\u00fcrliche Zahl in ihre Primfaktoren zerlegt (z.B. 60 = 2 <marimo-tex class=\"arithmatex\">||(\\cdot||)</marimo-tex> 2 <marimo-tex class=\"arithmatex\">||(\\cdot||)</marimo-tex> 3 <marimo-tex class=\"arithmatex\">||(\\cdot||)</marimo-tex> 5, also <code>60</code> \u2192 <code>2, 2, 3, 5</code>).</em></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "emfo",
+      "code_hash": "ffe189325f5bbc327acc187b21e4ebd8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "[2, 2, 3, 5]\n"
+        }
+      ]
+    },
+    {
+      "id": "Hstk",
+      "code_hash": "0568ab77b60d5fd238583dce0456518f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"permutationen-einer-zahlenliste\">Permutationen einer Zahlenliste</h2>\n<span class=\"paragraph\">\u270e <em>Schreibe eine Funktion, die alle Permutation einer Zahlenliste zur\u00fcckgibt (z.B. <code>[1,2,3]</code> \u2192 <code>[1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], [3,2,1]</code>).</em></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nWHF",
+      "code_hash": "dfada6a63ea09e598014ea0843728ad8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "iLit",
+      "code_hash": "ca34ff9abfa9bdba78a38f5e58275173",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"binares-palindrom\">Bin\u00e4res Palindrom</h2>\n<span class=\"paragraph\">\u270e <em>Schreibe eine Funktion, die eine Zahl in ihre bin\u00e4re Darstellung umwandelt und anschlie\u00dfend pr\u00fcft, ob diese Bin\u00e4rzahl ein Palindrom (also vorw\u00e4rts und r\u00fcckw\u00e4rts gelesen das gleiche) ist (z.B. <marimo-tex class=\"arithmatex\">||(5_{10}=101_2||)</marimo-tex> \u2192 Palindrom / <marimo-tex class=\"arithmatex\">||(6_{10}=110_2||)</marimo-tex> \u2192 kein Palindrom).</em></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZHCJ",
+      "code_hash": "79866c512f85500d165b80b68a71f013",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "5 ist ein Palindrom\n6 ist kein Palindrom\n"
+        }
+      ]
+    },
+    {
+      "id": "ROlb",
+      "code_hash": "981d6334a7e1ea4cd2ab43e6dd37633f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"nim-spiel\">Nim-Spiel</h2>\n<span class=\"paragraph\">\u270e <em>Bearbeite diese Aufgaben nur, wenn du bereits sehr fit in Python bist! Implementiere die Standardvariante des Nim-Spiels (siehe <a href=\"https://library.ethz.ch/standorte-und-medien/plattformen/virtuelle-ausstellungen/alles-ist-spiel/nim.html\" rel=\"noopener\" target=\"_blank\">https://library.ethz.ch/standorte-und-medien/plattformen/virtuelle-ausstellungen/alles-ist-spiel/nim.html</a>) f\u00fcr zwei Spieler:innen (ohne eine graphische Benutzeroberfl\u00e4che). Stelle die aktuelle Anzahl der Streichh\u00f6lzer mit <code>|</code> in der Ausgaben dar und frage bei jedem Zug den aktuellen Spieler, wie viele Streichh\u00f6lzer er wegnehmen m\u00f6chte. Verarbeite seine Ausgaben entsprechend. Recherchiere gegebenenfalls nach geeigneten Funktionen (und Bibliotheken).</em></span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "qnkX",
+      "code_hash": "9549c72bdee342f8bdcaba00e3d7a00b",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "TqIu",
+      "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    }
+  ]
+}
