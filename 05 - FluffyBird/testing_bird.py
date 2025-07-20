@@ -63,8 +63,8 @@ def _():
 @app.cell
 def _(runDefault, setColorPipe, setImgBg, setImgBird):
     # DEFAULT -> setup.txt
-    setImgBird(['sprites/sparrow.png', 'sprites/sparrow_flap.png'], 40)
-    setImgBg(['sprites/background-night.png', 'sprites/background-day.png'], 400)
+    setImgBird(['public/sprites/sparrow.png', 'public/sprites/sparrow_flap.png'], 40)
+    setImgBg(['public/sprites/background-night.png', 'public/sprites/background-day.png'], 400)
     setColorPipe(0, 150, 130)
     runDefault()
     return

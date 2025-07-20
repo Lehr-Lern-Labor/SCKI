@@ -4,8 +4,8 @@ __generated_with = "0.13.15"
 app = marimo.App()
 
 
-app._unparsable_cell(
-    r"""
+@app.cell
+def _():
     import gym
     import copy
     import numpy as np
@@ -18,10 +18,8 @@ app._unparsable_cell(
     import matplotlib.pyplot as plt
     import math
     import pygame
-    from pygame.locals import *
-    """,
-    name="_"
-)
+    from pygame.locals import K_ESCAPE, K_SPACE, KEYDOWN
+    return KEYDOWN, K_ESCAPE, K_SPACE, gym, pygame, time
 
 
 @app.function
@@ -31,11 +29,7 @@ def birdAction(decission, bird):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(
-        r"""
-        ## HIT SPACE TO FLAP
-        """
-    )
+    mo.md(r"""## HIT SPACE TO FLAP""")
     return
 
 
@@ -51,7 +45,7 @@ def _(KEYDOWN, K_ESCAPE, K_SPACE, gym, pygame, time):
         decission = [0.0]     
         for event in pygame.event.get():
             if event.type == KEYDOWN and event.key == K_ESCAPE:
-            
+
                 pygame.quit()
             elif event.type == KEYDOWN and event.key == K_SPACE:
                 decission = [1.0]
@@ -77,4 +71,3 @@ def _():
 
 if __name__ == "__main__":
     app.run()
-
