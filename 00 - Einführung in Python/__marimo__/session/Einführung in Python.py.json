@@ -161,6 +161,19 @@
     },
     {
       "id": "emfo",
+      "code_hash": "79696eb9065c25aef7e856f8d6659664",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">\u270e \u00c4ndere nun die Zelle <code>a = 1</code> zu <code>a = 2</code> und beobachte wie sich die anderen Zellen automatisch anpassen. Welche Zahl wird jetzt am Ende ausgegeben?</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hstk",
       "code_hash": "2dd58922d067546551509676a29a257d",
       "outputs": [
         {
@@ -179,7 +192,7 @@
       ]
     },
     {
-      "id": "Hstk",
+      "id": "nWHF",
       "code_hash": "847ebd1ff394a2922c71b6120499ad1c",
       "outputs": [
         {
@@ -192,7 +205,7 @@
       "console": []
     },
     {
-      "id": "nWHF",
+      "id": "iLit",
       "code_hash": "2cc300a14bd0c5441d163d9f4d74eb28",
       "outputs": [
         {
@@ -205,7 +218,7 @@
       "console": []
     },
     {
-      "id": "iLit",
+      "id": "ZHCJ",
       "code_hash": "74bea529dea52412ed68b7165eae0b3d",
       "outputs": [
         {
@@ -218,7 +231,7 @@
       "console": []
     },
     {
-      "id": "ZHCJ",
+      "id": "ROlb",
       "code_hash": "1a38533d82a302d1fbfa9ce12897dc29",
       "outputs": [
         {
@@ -231,7 +244,7 @@
       "console": []
     },
     {
-      "id": "ROlb",
+      "id": "qnkX",
       "code_hash": "2e28e2e5b736c8950f48109bac084dd4",
       "outputs": [
         {
@@ -244,7 +257,7 @@
       "console": []
     },
     {
-      "id": "qnkX",
+      "id": "TqIu",
       "code_hash": "606e945304134126ec765d941a0bf35e",
       "outputs": [
         {
@@ -257,7 +270,7 @@
       "console": []
     },
     {
-      "id": "TqIu",
+      "id": "Vxnm",
       "code_hash": "caec7626c6769a8376237eff66427283",
       "outputs": [
         {
@@ -270,7 +283,7 @@
       "console": []
     },
     {
-      "id": "Vxnm",
+      "id": "DnEU",
       "code_hash": "51322e01e87548cd2cc13903c2b7a7a3",
       "outputs": [
         {
@@ -283,7 +296,7 @@
       "console": []
     },
     {
-      "id": "DnEU",
+      "id": "ulZA",
       "code_hash": "9c469b3537cba333caacb5840b273637",
       "outputs": [
         {
@@ -296,7 +309,7 @@
       "console": []
     },
     {
-      "id": "ulZA",
+      "id": "ecfG",
       "code_hash": "57da143530f045199355924934f1babf",
       "outputs": [
         {
@@ -309,7 +322,7 @@
       "console": []
     },
     {
-      "id": "ecfG",
+      "id": "Pvdt",
       "code_hash": "1a2f3f3dce799702cb5884140c4f38e1",
       "outputs": [
         {
@@ -322,7 +335,7 @@
       "console": []
     },
     {
-      "id": "Pvdt",
+      "id": "ZBYS",
       "code_hash": "825ec0f734c52c175d1e4b39fc7376f8",
       "outputs": [
         {
@@ -335,7 +348,7 @@
       "console": []
     },
     {
-      "id": "ZBYS",
+      "id": "aLJB",
       "code_hash": "b528c01c9486b2a62034dc92653dfdf8",
       "outputs": [
         {
@@ -345,16 +358,10 @@
           "traceback": []
         }
       ],
-      "console": [
-        {
-          "type": "stream",
-          "name": "stdout",
-          "text": "Hallo!\nHi!\n"
-        }
-      ]
+      "console": []
     },
     {
-      "id": "aLJB",
+      "id": "nHfw",
       "code_hash": "ad7ce54608774daaf0503c85b2df974a",
       "outputs": [
         {
@@ -367,7 +374,7 @@
       "console": []
     },
     {
-      "id": "nHfw",
+      "id": "xXTn",
       "code_hash": "68ddead2a4c695cabfbedb10d8b46666",
       "outputs": [
         {
@@ -380,7 +387,7 @@
       "console": []
     },
     {
-      "id": "xXTn",
+      "id": "AjVT",
       "code_hash": "a76cc19c0e76ec7a0c105b6249ff7e0e",
       "outputs": [
         {
@@ -394,12 +401,12 @@
         {
           "type": "stream",
           "name": "stderr",
-          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">&quot;/home/silas/dev/Lehr-Lern-Labor/SCKI/.venv/lib/python3.10/site-packages/marimo/_runtime/executor.py&quot;</span>, line <span class=\"m\">139</span>, in <span class=\"n\">execute_cell</span>\n<span class=\"w\">    </span><span class=\"k\">return</span> <span class=\"nb\">eval</span><span class=\"p\">(</span><span class=\"n\">cell</span><span class=\"o\">.</span><span class=\"n\">last_expr</span><span class=\"p\">,</span> <span class=\"n\">glbls</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_34132/__marimo__cell_xXTn_.py&quot;</span>, line <span class=\"m\">10</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"n\">steckbrief</span><span class=\"p\">,</span> <span class=\"s2\">&quot;Name: &quot;</span><span class=\"p\">,</span> <span class=\"n\">name</span><span class=\"p\">,</span> <span class=\"s2\">&quot;</span><span class=\"se\">\\n</span><span class=\"s2\">&quot;</span><span class=\"p\">,</span> <span class=\"s2\">&quot;m\u00e4nnlich:&quot;</span><span class=\"p\">,</span> <span class=\"n\">maennlich</span><span class=\"p\">,</span>\n<span class=\"gr\">NameError</span>: <span class=\"n\">name &#39;name&#39; is not defined</span>\n</pre></div>\n</span>"
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">&quot;/home/silas/dev/Lehr-Lern-Labor/SCKI/.venv/lib/python3.10/site-packages/marimo/_runtime/executor.py&quot;</span>, line <span class=\"m\">139</span>, in <span class=\"n\">execute_cell</span>\n<span class=\"w\">    </span><span class=\"k\">return</span> <span class=\"nb\">eval</span><span class=\"p\">(</span><span class=\"n\">cell</span><span class=\"o\">.</span><span class=\"n\">last_expr</span><span class=\"p\">,</span> <span class=\"n\">glbls</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_36807/__marimo__cell_AjVT_.py&quot;</span>, line <span class=\"m\">10</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"n\">steckbrief</span><span class=\"p\">,</span> <span class=\"s2\">&quot;Name: &quot;</span><span class=\"p\">,</span> <span class=\"n\">name</span><span class=\"p\">,</span> <span class=\"s2\">&quot;</span><span class=\"se\">\\n</span><span class=\"s2\">&quot;</span><span class=\"p\">,</span> <span class=\"s2\">&quot;m\u00e4nnlich:&quot;</span><span class=\"p\">,</span> <span class=\"n\">maennlich</span><span class=\"p\">,</span>\n<span class=\"gr\">NameError</span>: <span class=\"n\">name &#39;name&#39; is not defined</span>\n</pre></div>\n</span>"
         }
       ]
     },
     {
-      "id": "AjVT",
+      "id": "pHFh",
       "code_hash": "aef1b6c34cc454a443100859533f2656",
       "outputs": [
         {
@@ -412,7 +419,7 @@
       "console": []
     },
     {
-      "id": "pHFh",
+      "id": "NCOB",
       "code_hash": "636264449220aa9fc2ff1655693d7674",
       "outputs": [
         {
@@ -425,7 +432,7 @@
       "console": []
     },
     {
-      "id": "NCOB",
+      "id": "aqbW",
       "code_hash": "495877ab23f7318a24c6efd874b170bd",
       "outputs": [
         {
@@ -438,7 +445,7 @@
       "console": []
     },
     {
-      "id": "aqbW",
+      "id": "TRpd",
       "code_hash": "c980110019a3f75473cb6e34f08bbc24",
       "outputs": [
         {
@@ -457,7 +464,7 @@
       ]
     },
     {
-      "id": "TRpd",
+      "id": "TXez",
       "code_hash": "4ced00f159d697d93da8584f620c66e8",
       "outputs": [
         {
@@ -470,7 +477,7 @@
       "console": []
     },
     {
-      "id": "TXez",
+      "id": "dNNg",
       "code_hash": "0b2faa63cd6b511bf61ab014e25e9cf8",
       "outputs": [
         {
@@ -489,7 +496,7 @@
       ]
     },
     {
-      "id": "dNNg",
+      "id": "yCnT",
       "code_hash": "d8779d1fdaf67e1f809ac5292b7ff33d",
       "outputs": [
         {
@@ -502,7 +509,7 @@
       "console": []
     },
     {
-      "id": "yCnT",
+      "id": "wlCL",
       "code_hash": "4914df87d2a7d06899b353c37e441ec5",
       "outputs": [
         {
@@ -521,7 +528,7 @@
       ]
     },
     {
-      "id": "wlCL",
+      "id": "kqZH",
       "code_hash": "a689f09a8f0be450c1497cc53531f38c",
       "outputs": [
         {
@@ -534,7 +541,7 @@
       "console": []
     },
     {
-      "id": "kqZH",
+      "id": "wAgl",
       "code_hash": "1d61489c8d6593579fec9f1776bb9502",
       "outputs": [
         {
@@ -547,7 +554,7 @@
       "console": []
     },
     {
-      "id": "wAgl",
+      "id": "rEll",
       "code_hash": "84bf9a637d22dc750c64c2642e7107e0",
       "outputs": [
         {
@@ -566,7 +573,7 @@
       ]
     },
     {
-      "id": "rEll",
+      "id": "dGlV",
       "code_hash": "bcf9bbf6904faabd1fa222d767fab8aa",
       "outputs": [
         {
@@ -579,7 +586,7 @@
       "console": []
     },
     {
-      "id": "dGlV",
+      "id": "SdmI",
       "code_hash": "23ee5e6bd1108bb5b3a6febcef9a1ae9",
       "outputs": [
         {
@@ -592,7 +599,7 @@
       "console": []
     },
     {
-      "id": "SdmI",
+      "id": "lgWD",
       "code_hash": "e1b795b2d3f488d2824c8f90ab6b91e8",
       "outputs": [
         {
@@ -611,7 +618,7 @@
       ]
     },
     {
-      "id": "lgWD",
+      "id": "yOPj",
       "code_hash": "5c89af41876f59ee65d6ef798e2b38b7",
       "outputs": [
         {
@@ -624,7 +631,7 @@
       "console": []
     },
     {
-      "id": "yOPj",
+      "id": "fwwy",
       "code_hash": "50f9cf813d1903c21990431a8134c112",
       "outputs": [
         {
@@ -643,7 +650,7 @@
       ]
     },
     {
-      "id": "fwwy",
+      "id": "LJZf",
       "code_hash": "daa3ceccd5864c820807cbe2bbb5dcad",
       "outputs": [
         {
@@ -656,7 +663,7 @@
       "console": []
     },
     {
-      "id": "LJZf",
+      "id": "urSm",
       "code_hash": "7dba7d315a58c99c78a5b867e8223fd2",
       "outputs": [
         {
@@ -675,7 +682,7 @@
       ]
     },
     {
-      "id": "urSm",
+      "id": "jxvo",
       "code_hash": "532df9a82225a71da90d54ca80fb13ed",
       "outputs": [
         {
@@ -688,7 +695,7 @@
       "console": []
     },
     {
-      "id": "jxvo",
+      "id": "mWxS",
       "code_hash": "a68c6fffae580857430f27678a36c93a",
       "outputs": [
         {
@@ -701,7 +708,7 @@
       "console": []
     },
     {
-      "id": "mWxS",
+      "id": "CcZR",
       "code_hash": "1aa0f459de0d4979fe1ed9e7e9dcc3c1",
       "outputs": [
         {
@@ -720,7 +727,7 @@
       ]
     },
     {
-      "id": "CcZR",
+      "id": "YWSi",
       "code_hash": "85a9572657082188014a0cdd32f7c307",
       "outputs": [
         {
@@ -733,7 +740,7 @@
       "console": []
     },
     {
-      "id": "YWSi",
+      "id": "zlud",
       "code_hash": "7dfacbd8cd89b5a5a00db09a1ffe8161",
       "outputs": [
         {
@@ -752,7 +759,7 @@
       ]
     },
     {
-      "id": "zlud",
+      "id": "tZnO",
       "code_hash": "009edee0e6c55750981cde09d03a77f0",
       "outputs": [
         {
@@ -765,7 +772,7 @@
       "console": []
     },
     {
-      "id": "tZnO",
+      "id": "xvXZ",
       "code_hash": "db3edd91e6d22bf3502797db794d496d",
       "outputs": [
         {
@@ -784,7 +791,7 @@
       ]
     },
     {
-      "id": "xvXZ",
+      "id": "CLip",
       "code_hash": "2647386276b805caf38cb4614032fdce",
       "outputs": [
         {
@@ -797,7 +804,7 @@
       "console": []
     },
     {
-      "id": "CLip",
+      "id": "YECM",
       "code_hash": "6465d10ab7ae1b134eafc89709c854c1",
       "outputs": [
         {
@@ -816,7 +823,7 @@
       ]
     },
     {
-      "id": "YECM",
+      "id": "cEAS",
       "code_hash": "8d1076ed5ca80be6d1bc7dd64d54fd0e",
       "outputs": [
         {
@@ -829,7 +836,7 @@
       "console": []
     },
     {
-      "id": "cEAS",
+      "id": "iXej",
       "code_hash": "a787d8258eaa15d89587a0d30c41ccd6",
       "outputs": [
         {
@@ -843,12 +850,12 @@
         {
           "type": "stream",
           "name": "stdout",
-          "text": "Heute: Sun Jul 20 09:50:37 2025\nHallo! Das ist eine importierte Funktion.\n"
+          "text": "Heute: Sun Jul 20 10:15:31 2025\nHallo! Das ist eine importierte Funktion.\n"
         }
       ]
     },
     {
-      "id": "iXej",
+      "id": "EJmg",
       "code_hash": "534ad43fab60e6b5ab458377b80cf137",
       "outputs": [
         {
@@ -861,7 +868,7 @@
       "console": []
     },
     {
-      "id": "EJmg",
+      "id": "UmEG",
       "code_hash": "67530ea10d7077c465656390e0b47cac",
       "outputs": [
         {
@@ -880,7 +887,7 @@
       ]
     },
     {
-      "id": "UmEG",
+      "id": "vEBW",
       "code_hash": "1822c3d7984eb45f0f0f5741be45a246",
       "outputs": [
         {
@@ -893,7 +900,7 @@
       "console": []
     },
     {
-      "id": "vEBW",
+      "id": "kLmu",
       "code_hash": "3239d88d3a805aa59e32cc7cd7aa4fe8",
       "outputs": [
         {
@@ -906,7 +913,7 @@
       "console": []
     },
     {
-      "id": "kLmu",
+      "id": "IpqN",
       "code_hash": "8154e18cbb5a901c4be6d6b3e9adb873",
       "outputs": [
         {
@@ -925,7 +932,7 @@
       ]
     },
     {
-      "id": "IpqN",
+      "id": "dxZZ",
       "code_hash": "fe6fa42872a07f6805559a7bb8caf739",
       "outputs": [
         {
@@ -938,7 +945,7 @@
       "console": []
     },
     {
-      "id": "dxZZ",
+      "id": "dlnW",
       "code_hash": "c021473f1765fba3c80c6d43bb0225ab",
       "outputs": [
         {
@@ -951,7 +958,7 @@
       "console": []
     },
     {
-      "id": "dlnW",
+      "id": "TTti",
       "code_hash": "86c60eefc2f7ce79691e793548a7a9cc",
       "outputs": [
         {
@@ -964,7 +971,7 @@
       "console": []
     },
     {
-      "id": "TTti",
+      "id": "RKFZ",
       "code_hash": "47d6e57749ee653ac590453e3601a576",
       "outputs": [
         {
@@ -977,7 +984,7 @@
       "console": []
     },
     {
-      "id": "RKFZ",
+      "id": "IaQp",
       "code_hash": "0b9f9eb9d5ceef9e52068f7be839d537",
       "outputs": [
         {
@@ -990,7 +997,7 @@
       "console": []
     },
     {
-      "id": "IaQp",
+      "id": "IWgg",
       "code_hash": "ffe189325f5bbc327acc187b21e4ebd8",
       "outputs": [
         {
@@ -1009,7 +1016,7 @@
       ]
     },
     {
-      "id": "IWgg",
+      "id": "fCoF",
       "code_hash": "0568ab77b60d5fd238583dce0456518f",
       "outputs": [
         {
@@ -1022,7 +1029,7 @@
       "console": []
     },
     {
-      "id": "fCoF",
+      "id": "LkGn",
       "code_hash": "dfada6a63ea09e598014ea0843728ad8",
       "outputs": [
         {
@@ -1035,7 +1042,7 @@
       "console": []
     },
     {
-      "id": "LkGn",
+      "id": "zVRe",
       "code_hash": "ca34ff9abfa9bdba78a38f5e58275173",
       "outputs": [
         {
@@ -1048,7 +1055,7 @@
       "console": []
     },
     {
-      "id": "zVRe",
+      "id": "woaO",
       "code_hash": "79866c512f85500d165b80b68a71f013",
       "outputs": [
         {
@@ -1067,7 +1074,7 @@
       ]
     },
     {
-      "id": "woaO",
+      "id": "HnMC",
       "code_hash": "981d6334a7e1ea4cd2ab43e6dd37633f",
       "outputs": [
         {
@@ -1080,55 +1087,19 @@
       "console": []
     },
     {
-      "id": "HnMC",
+      "id": "wadT",
       "code_hash": "9549c72bdee342f8bdcaba00e3d7a00b",
-      "outputs": [
-        {
-          "type": "error",
-          "ename": "interruption",
-          "evalue": "This cell was interrupted and needs to be re-run",
-          "traceback": []
-        }
-      ],
-      "console": [
-        {
-          "type": "stream",
-          "name": "stdout",
-          "text": "1     | | | |     \n2    | | | | |    \n3   | | | | | |   \n4  | | | | | | |  \n\nSpieler 1\n"
-        },
-        {
-          "type": "stream",
-          "name": "stdout",
-          "text": "> Reihe: "
-        },
-        {
-          "type": "stream",
-          "name": "stderr",
-          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">&quot;/home/silas/dev/Lehr-Lern-Labor/SCKI/.venv/lib/python3.10/site-packages/marimo/_runtime/executor.py&quot;</span>, line <span class=\"m\">139</span>, in <span class=\"n\">execute_cell</span>\n<span class=\"w\">    </span><span class=\"k\">return</span> <span class=\"nb\">eval</span><span class=\"p\">(</span><span class=\"n\">cell</span><span class=\"o\">.</span><span class=\"n\">last_expr</span><span class=\"p\">,</span> <span class=\"n\">glbls</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_34132/__marimo__cell_HnMC_.py&quot;</span>, line <span class=\"m\">44</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">nim</span><span class=\"p\">()</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_34132/__marimo__cell_HnMC_.py&quot;</span>, line <span class=\"m\">17</span>, in <span class=\"n\">nim</span>\n<span class=\"w\">    </span><span class=\"n\">_x</span> <span class=\"o\">=</span> <span class=\"nb\">int</span><span class=\"p\">(</span><span class=\"nb\">input</span><span class=\"p\">(</span><span class=\"s1\">&#39;&gt; Reihe: &#39;</span><span class=\"p\">))</span>\n  File <span class=\"nb\">&quot;/home/silas/dev/Lehr-Lern-Labor/SCKI/.venv/lib/python3.10/site-packages/marimo/_runtime/input_override.py&quot;</span>, line <span class=\"m\">9</span>, in <span class=\"n\">input_override</span>\n<span class=\"w\">    </span><span class=\"k\">return</span> <span class=\"n\">sys</span><span class=\"o\">.</span><span class=\"n\">stdin</span><span class=\"o\">.</span><span class=\"n\">_readline_with_prompt</span><span class=\"p\">(</span><span class=\"n\">prompt</span><span class=\"p\">)</span>  <span class=\"c1\"># type: ignore[attr-defined, no-any-return, union-attr]  # noqa: E501</span>\n  File <span class=\"nb\">&quot;/home/silas/dev/Lehr-Lern-Labor/SCKI/.venv/lib/python3.10/site-packages/marimo/_messaging/streams.py&quot;</span>, line <span class=\"m\">386</span>, in <span class=\"n\">_readline_with_prompt</span>\n<span class=\"w\">    </span><span class=\"k\">return</span> <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">_stream</span><span class=\"o\">.</span><span class=\"n\">input_queue</span><span class=\"o\">.</span><span class=\"n\">get</span><span class=\"p\">()</span>\n  File <span class=\"nb\">&quot;/home/silas/.local/share/uv/python/cpython-3.10.16-linux-x86_64-gnu/lib/python3.10/multiprocessing/queues.py&quot;</span>, line <span class=\"m\">103</span>, in <span class=\"n\">get</span>\n<span class=\"w\">    </span><span class=\"n\">res</span> <span class=\"o\">=</span> <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">_recv_bytes</span><span class=\"p\">()</span>\n  File <span class=\"nb\">&quot;/home/silas/.local/share/uv/python/cpython-3.10.16-linux-x86_64-gnu/lib/python3.10/multiprocessing/connection.py&quot;</span>, line <span class=\"m\">216</span>, in <span class=\"n\">recv_bytes</span>\n<span class=\"w\">    </span><span class=\"n\">buf</span> <span class=\"o\">=</span> <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">_recv_bytes</span><span class=\"p\">(</span><span class=\"n\">maxlength</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/home/silas/.local/share/uv/python/cpython-3.10.16-linux-x86_64-gnu/lib/python3.10/multiprocessing/connection.py&quot;</span>, line <span class=\"m\">414</span>, in <span class=\"n\">_recv_bytes</span>\n<span class=\"w\">    </span><span class=\"n\">buf</span> <span class=\"o\">=</span> <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">_recv</span><span class=\"p\">(</span><span class=\"mi\">4</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/home/silas/.local/share/uv/python/cpython-3.10.16-linux-x86_64-gnu/lib/python3.10/multiprocessing/connection.py&quot;</span>, line <span class=\"m\">379</span>, in <span class=\"n\">_recv</span>\n<span class=\"w\">    </span><span class=\"n\">chunk</span> <span class=\"o\">=</span> <span class=\"n\">read</span><span class=\"p\">(</span><span class=\"n\">handle</span><span class=\"p\">,</span> <span class=\"n\">remaining</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/home/silas/dev/Lehr-Lern-Labor/SCKI/.venv/lib/python3.10/site-packages/marimo/_runtime/handlers.py&quot;</span>, line <span class=\"m\">32</span>, in <span class=\"n\">interrupt_handler</span>\n<span class=\"w\">    </span><span class=\"k\">raise</span> <span class=\"n\">MarimoInterrupt</span>\n<span class=\"gr\">KeyboardInterrupt</span>\n</pre></div>\n</span>"
-        }
-      ]
+      "outputs": [],
+      "console": []
     },
     {
-      "id": "wadT",
+      "id": "VCRE",
       "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
       "outputs": [
         {
           "type": "data",
           "data": {
             "text/plain": ""
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "hLoE",
-      "code_hash": "79696eb9065c25aef7e856f8d6659664",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">\u270e \u00c4ndere nun die Zelle <code>a = 1</code> zu <code>a = 2</code> und beobachte wie sich die anderen Zellen automatisch anpassen. Welche Zahl wird jetzt am Ende ausgegeben?</span></span>"
           }
         }
       ],
